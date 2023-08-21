@@ -51,12 +51,13 @@ function AppStack() {
           return <Ionicons name={iconName} size={size} color={color} />;
         },
       })}
-      tabBarOptions={{
-        activeTintColor: 'white',
-        inactiveTintColor: 'gray',
-        labelStyle: { fontSize: 12 },        
-        style: { backgroundColor: 'red' }
-      }}>
+      // tabBarOptions={{
+      //   activeTintColor: 'white',
+      //   inactiveTintColor: 'gray',
+      //   labelStyle: { fontSize: 12 },        
+      //   style: { backgroundColor: 'red' }
+      // }}
+      >
       <Tab.Screen name={homeName} component={Home}/>
       <Tab.Screen name={reportsName} component={Report} />
       <Tab.Screen name={settingsName} component={Setting} />
