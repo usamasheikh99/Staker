@@ -2,15 +2,19 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { Home, Setting, Report } from "../../screens/app/index"
+import { Home, Setting, Report, Control, Audit } from "../../screens/app/index"
+import { Icons } from '../../constants';
+import { Image } from 'react-native'
 
 //Screen names
 const homeName = "Home";
 const reportsName = "Report";
 const settingsName = "Settings";
+const controlsName = "Control";
+const auditsName = "Audit";
+
 
 const Tab = createBottomTabNavigator();
-
 function AppStack() {
   return (
     // <NavigationContainer>
@@ -28,27 +32,34 @@ function AppStack() {
           left: 0,
           paddingBottom: 15,
           paddingTop: 6,
-          borderTopLeftRadius: 40,
-          borderTopRightRadius: 40,
-          backgroundColor: '#0a104c',
-          borderTopColor: '#0a104c'
-      },
+          borderTopLeftRadius: 30,
+          borderTopRightRadius: 30,
+          backgroundColor: '#121319',
+          borderTopColor: '#121319',
+          paddingHorizontal:10
+        },
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
           let rn = route.name;
 
           if (rn === homeName) {
-            iconName = focused ? 'home' : 'home-outline';
-
-          } else if (rn === reportsName) {
-            iconName = focused ? 'list' : 'list-outline';
+            iconName = focused ? Icons.HomeIcon : Icons.HomeIcon;
+          }
+          if (rn === controlsName) {
+            iconName = focused ? Icons.TargetDeactive : Icons.TargetDeactive;
+          }
+          else if (rn === reportsName) {
+            iconName = focused ? Icons.ReportDeactive : Icons.ReportDeactive;
 
           } else if (rn === settingsName) {
-            iconName = focused ? 'settings' : 'settings-outline';
+            iconName = focused ? Icons.SettingDeactive : Icons.SettingDeactive;
+          }
+          else if (rn === auditsName) {
+            iconName = focused ?  Icons.LogsDeactive : Icons.LogsDeactive;
           }
 
           // You can return any component !
-          return <Ionicons name={iconName} size={size} color={color} />;
+          return <Image source={iconName} style={{ width:22, height:22 }} color={color} />;
         },
       })}
       // tabBarOptions={{
@@ -59,10 +70,12 @@ function AppStack() {
       // }}
       >
       <Tab.Screen name={homeName} component={Home}/>
+      <Tab.Screen name={controlsName} component={Control} />
       <Tab.Screen name={reportsName} component={Report} />
+      <Tab.Screen name={homeName} component={Home} />
+      <Tab.Screen name={auditsName} component={Audit} />
       <Tab.Screen name={settingsName} component={Setting} />
     </Tab.Navigator>
-    // </NavigationContainer>
   );
 }
 
