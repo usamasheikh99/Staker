@@ -26,21 +26,36 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import AppStack from "./appstack";
 
-//Screens
-import HomeScreen from "../screens/app/HomeScreen";
-import { Login } from "../screens/auth";
-
 const Stack = createNativeStackNavigator();
 const index = () => {
     return (
         <NavigationContainer>
-            {/* <Stack.Navigator>
-                <Stack.Screen name="Login" component={Login} />
-                <Stack.Screen name="Home" component={HomeScreen} />
-            </Stack.Navigator> */}
             <AppStack/>
         </NavigationContainer>
         )
 }
 
 export default index
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {/* <Stack.Navigator>
+                <Stack.Screen name="Login" component={Login} />
+                <Stack.Screen name="Home" component={HomeScreen} />
+            </Stack.Navigator> */}

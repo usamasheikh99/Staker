@@ -1,15 +1,15 @@
 export default Icons = {
+    Homebg: require ("../assets/icons/bg.png"),
     HomeIcon: require('../assets/icons/Home.png'),
     TargetIcon: require('../assets/icons/Target.png'),
     ReportIcon: require('../assets/icons/Report.png'),
     LogsIcon: require('../assets/icons/Logs.png'),
     SettingIcon: require('../assets/icons/Setting.png'),
-    HomeIcon: require('../assets/icons/Home2.png'),
+    HomIcon: require('../assets/icons/Home2.png'),
     TargetDeactive: require('../assets/icons/TargetDeactive.png'),
     ReportDeactive: require('../assets/icons/ReportDeactive.png'),
     LogsDeactive: require('../assets/icons/LogsDeactive.png'),
     SettingDeactive: require('../assets/icons/SettingDeactive.png'),
-    // homebg: require('../assets/home_bg.png'),
     eyes_hide: require('../assets/icons/eyes_hide.png'),
     back_arrow: require('../assets/icons/left.png'),
     logout: require('../assets/icons/PowerOff.png'),
@@ -40,4 +40,5 @@ export default Icons = {
     hideeye: require('../assets/icons/hideeye.png'),
     amc2: require('../assets/icons/amc2.png'),
     getstarted : require('../assets/icons/getstarted.png'),
+    PuseShow : require('../assets/icons/puse.svg'),
 }
