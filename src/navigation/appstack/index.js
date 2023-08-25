@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Home, Setting, Report, Control, Audit } from "../../screens/app/index"
 import { Icons } from '../../constants';
 import { Image } from 'react-native'
@@ -36,14 +35,18 @@ function AppStack() {
           borderTopRightRadius: 30,
           backgroundColor: '#121319',
           borderTopColor: '#121319',
-          paddingHorizontal:10
+          paddingHorizontal: 10
         },
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
           let rn = route.name;
+          let iconsize = 22;
+          let style=null
 
           if (rn === homeName) {
             iconName = focused ? Icons.HomeIcon : Icons.HomeIcon;
+            iconsize = 50;
+            style= {bottom:15}
           }
           if (rn === controlsName) {
             iconName = focused ? Icons.TargetDeactive : Icons.TargetDeactive;
@@ -55,21 +58,16 @@ function AppStack() {
             iconName = focused ? Icons.SettingDeactive : Icons.SettingDeactive;
           }
           else if (rn === auditsName) {
-            iconName = focused ?  Icons.LogsDeactive : Icons.LogsDeactive;
+            iconName = focused ? Icons.LogsDeactive : Icons.LogsDeactive;
           }
 
-          // You can return any component !
-          return <Image source={iconName} style={{ width:22, height:22 }} color={color} />;
+
+          return <Image source={iconName} style={{ width: iconsize, height: iconsize, ...style}} color={color} />;
         },
       })}
-      // tabBarOptions={{
-      //   activeTintColor: 'white',
-      //   inactiveTintColor: 'gray',
-      //   labelStyle: { fontSize: 12 },        
-      //   style: { backgroundColor: 'red' }
-      // }}
-      >
-      <Tab.Screen name={homeName} component={Home}/>
+
+    >
+
       <Tab.Screen name={controlsName} component={Control} />
       <Tab.Screen name={reportsName} component={Report} />
       <Tab.Screen name={homeName} component={Home} />

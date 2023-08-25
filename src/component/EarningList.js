@@ -38,12 +38,12 @@ const styles = StyleSheet.create({
     container: {
         left: 3,
         paddingVertical: 40,
-        paddingHorizontal: 6,
+        paddingHorizontal: 5,
     },
     flexRow: {
         flexDirection: 'row',
-        paddingHorizontal: 8,
-        marginBottom:5
+        paddingHorizontal: 1,
+        marginBottom:6
     },
     alignItems: {
         alignItems: 'center',
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
         marginRight:32,
     },
     price: {
-        fontSize: 23,
+        fontSize: 20,
         color: Colors.white,
         left: 15,
         top: 8

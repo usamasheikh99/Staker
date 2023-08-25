@@ -16,13 +16,10 @@ import {
     ScrollView
 } from 'react-native';
 
-
-
-
 //publish dev branchs
 export default function HomeScreen({ navigation }) {
     return (
-        <View style={{ backgroundColor: Colors.background, flex: 1, color: "#fff" }}>
+        <View style={styles.container}>
             <View style={styles.Header}>
                 <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 25, paddingTop: 20, paddingBottom: 20 }}>
                     <View style={styles.Item}>
@@ -39,7 +36,7 @@ export default function HomeScreen({ navigation }) {
                     <Text style={styles.rating}><Text style={{ fontSize: 18 }}>$</Text>32,149,80</Text>
                 </ImageBackground>
             </View>
-            <ScrollView style={{ backgroundColor: Colors.background, flex: 1, color: "#fff" }}>
+            <ScrollView style={styles.scroll}>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', }}>
                     <Chat />
                     <Chat />
@@ -74,7 +71,7 @@ export default function HomeScreen({ navigation }) {
                 </View>
                 <View>
                     <MaketSentiment/>
-                    <MaketSentiment/>
+                    {/* <MaketSentiment/> */}
                 </View>
             </ScrollView>
         </View>
@@ -84,6 +81,12 @@ export default function HomeScreen({ navigation }) {
 
 
 const styles = StyleSheet.create({
+    container:{ 
+        flex: 1, 
+        backgroundColor: Colors.background, 
+        paddingBottom:80,
+        paddingHorizontal:5       
+    },
     eyeIcon: {
         width: 19,
         height: 19,
@@ -147,4 +150,7 @@ const styles = StyleSheet.create({
         fontSize:20,
         color:Colors.white
     },
+    scroll:{ 
+        backgroundColor: Colors.background, 
+        flex: 1, color: "#fff" }
 })

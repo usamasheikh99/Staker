@@ -1,17 +1,12 @@
 import * as React from 'react';
 import StackContainer from './src/navigation';
-import TradeList from './src/component/TradeList';
-import EarningList from './src/component/EarningList';
-import WeeklyTargets from './src/component/WeeklyTargets';
-import MaketSentiment from './src/component/MaketSentiment';
+import BackTest from './src/component/BackTest';
 
 function App() {
   return (
     <>  
        <StackContainer/>
-    {/* <EarningList/> */} 
-    {/* <WeeklyTargets/> */}
-    {/* <MaketSentiment/> */}
+       {/* <BackTest/> */}
     </>
   );
 }
