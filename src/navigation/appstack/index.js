@@ -69,7 +69,7 @@ function AppStack() {
       //   style: { backgroundColor: 'red' }
       // }}
       >
-      <Tab.Screen name={homeName} component={Home}/>
+      {/* <Tab.Screen name={homeName} component={Home}/> */}
       <Tab.Screen name={controlsName} component={Control} />
       <Tab.Screen name={reportsName} component={Report} />
       <Tab.Screen name={homeName} component={Home} />
