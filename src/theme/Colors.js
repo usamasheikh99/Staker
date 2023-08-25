@@ -12,5 +12,6 @@ export default Colors = {
     btnRed: '#c81e1e',
     Textgray: '#bbb6b6',
     BlueBg: '#013c88',
-    ButtonColor:'#D60354'
+    ButtonColor:'#D60354',
+    indicatorColor:'#00ced1'
 };
