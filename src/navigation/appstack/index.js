@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Home, Setting, Report, Control, Audit } from "../../screens/app/index"
 import { Icons } from '../../constants';
 import { Image } from 'react-native'
+import Position from '../../screens/app/Position';
 
 //Screen names
 const homeName = "Home";
@@ -41,12 +42,12 @@ function AppStack() {
           let iconName;
           let rn = route.name;
           let iconsize = 22;
-          let style=null
+          let style = null
 
           if (rn === homeName) {
             iconName = focused ? Icons.HomeIcon : Icons.HomeIcon;
             iconsize = 50;
-            style= {bottom:15}
+            style = { bottom: 15 }
           }
           if (rn === controlsName) {
             iconName = focused ? Icons.TargetDeactive : Icons.TargetDeactive;
@@ -62,7 +63,7 @@ function AppStack() {
           }
 
 
-          return <Image source={iconName} style={{ width: iconsize, height: iconsize, ...style}} color={color} />;
+          return <Image source={iconName} style={{ width: iconsize, height: iconsize, ...style }} color={color} />;
         },
       })}
 
@@ -73,7 +74,10 @@ function AppStack() {
       <Tab.Screen name={homeName} component={Home} />
       <Tab.Screen name={auditsName} component={Audit} />
       <Tab.Screen name={settingsName} component={Setting} />
+      <Tab.Screen name={'Position'} component={Position} options={{ tabBarButton: () => null }}/>
     </Tab.Navigator>
+
+    
   );
 }
 

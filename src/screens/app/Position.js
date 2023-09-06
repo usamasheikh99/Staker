@@ -18,7 +18,7 @@ const Position = () => {
 
     return (
 
-        <View style={{ backgroundColor: Colors.background, flex: 1, }}>
+        <View style={{ backgroundColor: Colors.background, flex: 1, paddingBottom:100}}>
             <View>
                 <Header />
             </View>

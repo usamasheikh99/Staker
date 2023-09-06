@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, ImageBackground, TouchableOpacity, Image, Animated, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, ImageBackground, TouchableOpacity, Pressable, Image, Animated, ScrollView } from 'react-native';
 import { Icons } from '../../constants';
 import { Colors } from '../../theme';
 import Header from '../../component/Header';
-
 
 
 
@@ -46,7 +45,9 @@ export default function ReportScreen({ navigation }) {
                     <Animated.View style={{ height: animatedHeight, overflow: 'hidden' }}>
 
                         <View style={styles.thirdline}>
-                            <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
+                            <Pressable onPress={()=>navigation.navigate('Position')}>
+                                <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
+                            </Pressable>
                             <View style={styles.amctext}>
                                 <Text style={styles.amctxt}>AMC</Text>
                                 <Text style={styles.longtxt}>Long  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
