@@ -74,7 +74,7 @@ function AppStack() {
       <Tab.Screen name={homeName} component={Home} />
       <Tab.Screen name={auditsName} component={Audit} />
       <Tab.Screen name={settingsName} component={Setting} />
-      <Tab.Screen name={'Position'} component={Position} options={{ tabBarButton: () => null }}/>
+      <Tab.Screen name={'Position'} component={Position}  options={{ tabBarButton: () => null }}/>
     </Tab.Navigator>
 
     

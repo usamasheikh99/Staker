@@ -3,14 +3,14 @@ import { Colors } from '../theme'
 import { Icons } from '../constants'
 import { View, Text, ImageBackground, StyleSheet, Image, TouchableOpacity } from 'react-native'
 
-const Header = ({ navigation }) => {
+const Header = ({ navigation, Type = false, ScreenName = "", isAcount = false }) => {
   return (
     <View style={{ backgroundColor: Colors.background, color: "#fff" }}>
 
       <View style={styles.Header}>
 
         <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 20, paddingTop: 50, paddingBottom: 30 }}>
-         
+
           <View style={styles.headertxt}>
 
             <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('')}>
@@ -18,13 +18,16 @@ const Header = ({ navigation }) => {
             </TouchableOpacity >
 
             <View style={styles.Item}>
-              <Text style={styles.reporttxt}>Position</Text>
+              <Text style={styles.reporttxt}>{ScreenName}</Text>
             </View>
-
-            <View style={styles.typebox}>
-              <Text style={styles.type}>Type</Text>
-            </View>
-
+            {Type &&
+              <View style={styles.typebox}>
+                <Text style={styles.type}>Type</Text>
+              </View>
+            }
+            {isAcount &&
+              <Text>Kashan</Text>
+            }
           </View>
         </ImageBackground>
       </View>
@@ -55,7 +58,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderColor: '#191a1f',
   },
-  })
+})
 
 //   <View style={[styles.alignItems, styles.advance]}>
 //   <Pressable>

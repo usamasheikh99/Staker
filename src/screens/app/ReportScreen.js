@@ -20,11 +20,16 @@ export default function ReportScreen({ navigation }) {
         }).start();
     }
 
+    const HeaderProps = {
+        ScreenName: 'Report',
+        Type:true
+    }
+
     return (
         <View style={{ backgroundColor: Colors.background, flex: 1, }}>
 
             <View>
-                <Header />
+                <Header {...HeaderProps} />
             </View>
             <ScrollView>
                 <View style={styles.mainbox}>
@@ -45,7 +50,7 @@ export default function ReportScreen({ navigation }) {
                     <Animated.View style={{ height: animatedHeight, overflow: 'hidden' }}>
 
                         <View style={styles.thirdline}>
-                            <Pressable onPress={()=>navigation.navigate('Position')}>
+                            <Pressable onPress={() => navigation.navigate('Position')}>
                                 <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
                             </Pressable>
                             <View style={styles.amctext}>

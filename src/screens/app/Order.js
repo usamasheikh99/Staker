@@ -6,10 +6,14 @@ import { Colors } from '../../theme';
 
 
 const Order = () => {
+    const HeaderProps = {
+        Type: true,
+        ScreenName: 'Order',
+    }
     return (
         <View style={{ backgroundColor: Colors.background, flex: 1, }}>
             <View>
-                <Header />
+                <Header {...HeaderProps} />
             </View>
 
             <View style={styles.container}>
