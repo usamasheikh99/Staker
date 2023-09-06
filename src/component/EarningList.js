@@ -5,100 +5,142 @@ import {
     View,
     Text,
     StyleSheet,
-    Image
+    Image,
+    ScrollView
 } from 'react-native'
 
 const EarningList = () => {
     return (
         <View style={styles.container}>
-            <View style={[styles.EarningList, { backgroundColor: Colors.lightDark, top: 30 }]}>
-                <View style={[styles.flexRow, styles.alignItems]}>
+            {/* EARNING BOX NO 1  */}
+            <View style={[styles.EarningList, { backgroundColor: Colors.lightDark }]}>
+                <View style={styles.flexRow}>
                     <View style={styles.logoContainer}>
-                        <Image source={Icons.AMC_show} style={{ width: 30, height: 30, borderRadius: 5 }} />
+                        <Image source={Icons.AMC_show} style={{ width: 25, height: 28 }} />
                     </View>
                     <Text style={styles.stockSymbol}>AMC</Text>
                 </View>
                 <View>
                     <Image source={Icons.Greenline_show} style={styles.tradeline} />
-                    <Text style={styles.price}><Text style={{fontSize:15}}>$</Text>43,00</Text></View>
+                    <Text style={styles.price}><Text style={{ fontSize: 13 }}>$</Text>43,00</Text></View>
 
-                <View style={[styles.flexRow, styles.alignItems,]}>
-                    <View style={[styles.flexRow, styles.alignItems, { flex: 1 }]}>
+                <View style={styles.flexRow}>
+                    <View style={[styles.flexRow, { flex: 1 }]}>
                         <Image source={Icons.UpTrend} style={styles.trend} />
-                        <Text style={{ color: Colors.green, top: 10 }}>3.15%</Text>
+                        <Text style={{ color: Colors.green, opacity: 0.8, top: 7 ,fontSize:13 }}>3.15%</Text>
                     </View>
                     <Image source={Icons.DotG} style={styles.trends} />
                 </View>
             </View>
+            {/* EARNING BOX NO 1 END */}
+
+            {/* EARNING BOX NO 2  */}
+            <View style={[styles.EarningList, { backgroundColor: Colors.lightDark }]}>
+                <View style={styles.flexRow}>
+                    <View style={styles.logoContainer}>
+                        <Image source={Icons.AFRM_show} style={{ width: 25, height: 28 }} />
+                    </View>
+                    <Text style={styles.stockSymbol}>AFRM</Text>
+                </View>
+                <View>
+                    <Image source={Icons.Redline_show} style={styles.tradeline} />
+                    <Text style={styles.price}><Text style={{ fontSize: 13 }}>$</Text>19,45</Text></View>
+
+                <View style={styles.flexRow}>
+                    <View style={[styles.flexRow, { flex: 1 }]}>
+                        <Image source={Icons.DownTrend} style={styles.trend} />
+                        <Text style={{ color: Colors.red, opacity: 0.7, top: 7 ,fontSize:13 }}>3.15%</Text>
+                    </View>
+                    <Image source={Icons.DotR} style={styles.trends} />
+                </View>
+            </View>
+            {/* EARNING BOX NO 2 END   */}
+
+            {/* EARNING BOX NO  3  */}
+            <View style={[styles.EarningList, { backgroundColor: Colors.lightDark }]}>
+                <View style={styles.flexRow}>
+                    <View style={styles.logoContainer}>
+                        <Image source={Icons.MARA_show} style={{ width: 25, height: 28 }} />
+                    </View>
+                    <Text style={styles.stockSymbol}>MARA</Text>
+                </View>
+                <View>
+                    <Image source={Icons.Greenline_show} style={styles.tradeline} />
+                    <Text style={styles.price}><Text style={{ fontSize: 13 }}>$</Text>89,45</Text></View>
+
+                <View style={styles.flexRow}>
+                    <View style={[styles.flexRow, { flex: 1 }]}>
+                        <Image source={Icons.UpTrend} style={styles.trend} />
+                        <Text style={{ color: Colors.green, opacity: 0.8, top: 7 ,fontSize:13 }}>3.15%</Text>
+                    </View>
+                    <Image source={Icons.DotG} style={styles.trends} />
+                </View>
+            </View>
+            {/* EARNING BOX NO 3 END  */}
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        left: 3,
-        paddingVertical: 40,
-        paddingHorizontal: 5,
+        flexDirection: 'row',
+        left: 10,
+        top: 30
     },
     flexRow: {
         flexDirection: 'row',
-        paddingHorizontal: 1,
-        marginBottom:6
-    },
-    alignItems: {
-        alignItems: 'center',
+        alignItems: 'center'
     },
     logoContainer: {
-        width: 28,
-        height: 28,
+        width: 25,
+        height: 25,
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 5,
+        borderRadius: 3,
         overflow: 'hidden',
-        marginRight: 20,
-        left: 6,
-        top: 10
+        marginRight: 7,
+        top: 5,
+        left: 3
     },
     EarningList: {
-        height: 150,
+        width: 124,
+        height: 148,
+        padding: 10,
+        marginRight: 10,
         borderRadius: 10,
     },
     stockSymbol: {
-        fontSize: 18,
+        fontSize: 17,
         color: Colors.white,
         fontWeight: '400',
-        top: 10,
-        marginRight:32,
-    },
-    price: {
-        fontSize: 20,
-        color: Colors.white,
-        left: 15,
-        top: 8
+        left: 9,
+        top: 5
     },
     trend: {
         width: 10,
         height: 5,
         marginRight: 5,
-        top: 10
+        opacity: 0.5,
+        top: 7
     },
     trends: {
         width: 11,
         height: 11,
         marginRight: 5,
-        top: 10
+        opacity: 0.5,
+        top: 7
     },
     tradeline: {
-        width: 60,
-        height: 25,
+        width: 55,
+        height: 24,
         marginVertical: 10,
-        left: 20,
-        top: 10
+        left: 5,
+        top: 10,
+        opacity: 0.5
     },
-    EarningText: {
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        top: 20
+    price: {
+        fontSize: 24,
+        top: 7
     }
 })
 export default EarningList;

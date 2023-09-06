@@ -31,3 +31,8 @@ const styles = StyleSheet.create({
       bottom:25
   },
   })
+
+//   <View style={[styles.alignItems, styles.advance]}>
+//   <Pressable>
+//       <Text style={{ letterSpacing: .0, fontSize: 16, textAlign: 'center', marginLeft: -15 }}>Type</Text></Pressable>
+// </View>

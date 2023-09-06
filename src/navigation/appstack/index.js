@@ -35,7 +35,7 @@ function AppStack() {
           borderTopRightRadius: 30,
           backgroundColor: '#121319',
           borderTopColor: '#121319',
-          paddingHorizontal: 10
+          paddingHorizontal: 13
         },
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
@@ -46,7 +46,7 @@ function AppStack() {
           if (rn === homeName) {
             iconName = focused ? Icons.HomeIcon : Icons.HomeIcon;
             iconsize = 50;
-            style= {bottom:15}
+            style= {bottom:15, height:65 ,width:58}
           }
           if (rn === controlsName) {
             iconName = focused ? Icons.TargetDeactive : Icons.TargetDeactive;

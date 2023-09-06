@@ -5,7 +5,6 @@ export default Icons = {
     ReportIcon: require('../assets/icons/Report.png'),
     LogsIcon: require('../assets/icons/Logs.png'),
     SettingIcon: require('../assets/icons/Setting.png'),
-    HomIcon: require('../assets/icons/Home2.png'),
     TargetDeactive: require('../assets/icons/TargetDeactive.png'),
     ReportDeactive: require('../assets/icons/ReportDeactive.png'),
     LogsDeactive: require('../assets/icons/LogsDeactive.png'),
@@ -41,4 +40,9 @@ export default Icons = {
     amc2: require('../assets/icons/amc2.png'),
     getstarted : require('../assets/icons/getstarted.png'),
     PuseShow : require('../assets/icons/puse.svg'),
+    warningShow : require('../assets/icons/warning.png'),
+    pauseShow : require('../assets/icons/pause.png'),
+    historyShow : require('../assets/icons/history.png'),
+    crosShow : require('../assets/icons/cros.png'),
+
 }
