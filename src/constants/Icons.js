@@ -40,6 +40,10 @@ export default Icons = {
     amc2: require('../assets/icons/amc2.png'),
     getstarted : require('../assets/icons/getstarted.png'),
     PuseShow : require('../assets/icons/puse.svg'),
+    downarrow : require('../assets/icons/downarrow.png'),
+    recordbutton : require('../assets/icons/recordbutton.png'),
+
+
     warningShow : require('../assets/icons/warning.png'),
     pauseShow : require('../assets/icons/pause.png'),
     historyShow : require('../assets/icons/history.png'),
