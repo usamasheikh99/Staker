@@ -34,7 +34,6 @@ const index = () => {
         </NavigationContainer>
         )
 }
-
 export default index
 
 
