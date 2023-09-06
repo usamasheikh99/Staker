@@ -1,4 +1,3 @@
-
 export default Colors = {
     background: '#0A0B0F',
     lightDark: "#131419",
@@ -10,8 +9,10 @@ export default Colors = {
     textBlue: '#09d0ea',
     btnGreen: '#0e8450',
     btnRed: '#c81e1e',
-    Textgray: '#bbb6b6',
+    Textgray: '#727983',
     BlueBg: '#013c88',
     ButtonColor:'#D60354',
-    indicatorColor:'#00ced1'
-};
+    indicatorColor:'#00ced1',
+    Card:'#075f69',
+    Card2:'#1b4bf6'
+}

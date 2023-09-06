@@ -55,22 +55,9 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderColor: '#191a1f',
   },
+  })
 
-  type: {
-    fontSize: 17,
-    paddingHorizontal: 8,
-    paddingVertical: 1,
-    color:Colors.white
-  }
-
-
-
-
-
-
-
-
-
-
-
-})
+//   <View style={[styles.alignItems, styles.advance]}>
+//   <Pressable>
+//       <Text style={{ letterSpacing: .0, fontSize: 16, textAlign: 'center', marginLeft: -15 }}>Type</Text></Pressable>
+// </View>

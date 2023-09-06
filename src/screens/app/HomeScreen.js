@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Colors } from "../../theme"
-import { Icons } from "../../constants"
+import { Colors } from '../../theme';
+import { Icons } from '../../constants';
 import Chat from '../../component/Chat';
 import TradeList from '../../component/TradeList';
 import EarningList from '../../component/EarningList';
@@ -10,10 +10,10 @@ import {
     View,
     Text,
     StyleSheet,
-    TouchableOpacity,
     Image,
-    ImageBackground,
-    ScrollView
+    ScrollView,
+    TouchableOpacity,
+    ImageBackground
 } from 'react-native';
 
 //publish dev branchs
@@ -21,7 +21,7 @@ export default function HomeScreen({ navigation }) {
     return (
         <View style={styles.container}>
             <View style={styles.Header}>
-                <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 25, paddingTop: 20, paddingBottom: 20 }}>
+                <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 25, paddingTop: 25, paddingBottom: 21 }}>
                     <View style={styles.Item}>
                         <Text style={styles.total}>Total Capital</Text>
                         <TouchableOpacity activeOpacity={1} >
@@ -33,27 +33,22 @@ export default function HomeScreen({ navigation }) {
                             <Image source={Icons.logout} style={styles.IconSize} />
                         </TouchableOpacity>
                     </View>
-                    <Text style={styles.rating}><Text style={{ fontSize: 18 }}>$</Text>32,149,80</Text>
+                    <Text style={styles.rating}><Text style={{ fontSize: 17 }}>$</Text>32,149.80</Text>
                 </ImageBackground>
             </View>
             <ScrollView style={styles.scroll}>
-                <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', }}>
-                    <Chat />
+                <View>
                     <Chat />
                 </View>
-                <View style={{flex: 1, paddingBottom: 5, top: 40 }}>
-                    <TradeList />
+                <View>
                     <TradeList />
                 </View>
                 <View style={styles.EarningText}>
                     <Text style={styles.earning}>Earnings</Text>
                     <Text style={styles.more}>More</Text>
                 </View>
-                <ScrollView style={{ flex: 1, height: 220 }}
+                <ScrollView style={{ flex: 1, height: 200 }}
                     horizontal={true}>
-                    <EarningList />
-                    <EarningList />
-                    <EarningList />
                     <EarningList />
                 </ScrollView>
                 <View style={styles.WeeklyText}>
@@ -61,18 +56,15 @@ export default function HomeScreen({ navigation }) {
                     <Text style={styles.more}>More</Text>
                 </View>
                 <ScrollView horizontal={true}>
-                <View style={{flexDirection:'row'}}>
-                    <WeeklyTargets/>
-                    <WeeklyTargets/>
-                </View>
+                    <View style={{ flexDirection: 'row' }}>
+                        <WeeklyTargets />
+                        <WeeklyTargets />
+                    </View>
                 </ScrollView>
                 <View style={styles.MarketView}>
                     <Text style={styles.MarketText}>Market Sentiment</Text>
                 </View>
-                <View>
-                    <MaketSentiment/>
-                    {/* <MaketSentiment/> */}
-                </View>
+                <MaketSentiment />
             </ScrollView>
         </View>
 
@@ -81,76 +73,75 @@ export default function HomeScreen({ navigation }) {
 
 
 const styles = StyleSheet.create({
-    container:{ 
-        flex: 1, 
-        backgroundColor: Colors.background, 
-        paddingBottom:80,
-        paddingHorizontal:5       
+    container: {
+        flex: 1,
+        backgroundColor: Colors.background,
+        paddingBottom: 80,
+        paddingHorizontal: 2
     },
     eyeIcon: {
         width: 19,
         height: 19,
-        left: 8,
-        top: 10
+        left: 10,
+        top: 22
     },
     Item: {
         flexDirection: 'row',
     },
     IconSize: {
-        width: 20,
+        width: 19,
         height: 20,
-        bottom: 10,
-        right: 10,
+        right: 7,
     },
     topHeaderLeft: {
         alignItems: 'flex-end',
     },
     total: {
-        fontSize: 14,
+        fontSize: 15,
         color: Colors.white,
-        top: 10
+        top: 22
     },
     rating: {
-        fontSize: 35,
+        fontSize: 37,
         color: Colors.white,
-        bottom: 10
-
     },
     EarningText: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingHorizontal: 13,
-        top: 60,
+        top: 20,
     },
     earning: {
         fontSize: 20,
-        color: Colors.white
+        color: Colors.white,
+
     },
     more: {
-        fontSize: 17,
+        fontSize: 16,
+        paddingHorizontal: 10,
+        color: Colors.Textgray
     },
     WeeklyText: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingHorizontal: 13,
-        top: 20,
     },
     Weekly: {
         fontSize: 20,
         color: Colors.white,
     },
-    MarketView:{
-        flexDirection:'row',
-        justifyContent:'space-between',
-        paddingHorizontal:19,
-        paddingVertical:10,
-        top:10
+    MarketView: {
+        justifyContent: 'space-between',
+        paddingHorizontal: 19,
+        top: 3
     },
-    MarketText:{
-        fontSize:20,
-        color:Colors.white
+    MarketText: {
+        fontSize: 20,
+        color: Colors.white,
+        top: 10
     },
-    scroll:{ 
-        backgroundColor: Colors.background, 
-        flex: 1, color: "#fff" }
+    scroll: {
+        backgroundColor: Colors.background,
+        flex: 1, color: "#fff"
+    },
 })
