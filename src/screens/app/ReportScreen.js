@@ -21,8 +21,10 @@ export default function ReportScreen({ navigation }) {
     }
 
     const HeaderProps = {
+        navigation: navigation,
         ScreenName: 'Report',
-        Type:true
+        Type: true,
+
     }
 
     return (

@@ -3,7 +3,8 @@ import { Colors } from '../theme'
 import { Icons } from '../constants'
 import { View, Text, ImageBackground, StyleSheet, Image, Pressable } from 'react-native'
 
-const Header = ({ navigation, Type = false, ScreenName = "", isAcount = false }) => {
+const Header = ({ navigation, Type = false, ScreenName = "", isAcount = false, goBack='Home' }) => {
+
   return (
     <View style={{ backgroundColor: Colors.background, color: "#fff" }}>
 
@@ -11,8 +12,7 @@ const Header = ({ navigation, Type = false, ScreenName = "", isAcount = false })
         <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 20, paddingTop: 50, paddingBottom: 30 }}>
 
           <View style={styles.headertxt}>
-
-            <Pressable activeOpacity={1} onPress={() => navigation.navigate('Home')}>
+            <Pressable activeOpacity={1} onPress={() => navigation.navigate(goBack)}>
               <Image source={Icons.left} resizeMode="cover" style={{ width: 30, height: 30, marginLeft: 8 }} />
             </Pressable >
 
@@ -27,6 +27,7 @@ const Header = ({ navigation, Type = false, ScreenName = "", isAcount = false })
             {isAcount &&
               <Text>Kashan</Text>
             }
+
           </View>
         </ImageBackground>
       </View>
@@ -43,20 +44,27 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between'
   },
-
+  Item: {
+    textAlign: 'center',
+    flex: 1
+  },
 
   reporttxt: {
     fontSize: 20,
     color: Colors.white,
+    textAlign: 'center',
+
   },
 
   typebox: {
     borderWidth: 1,
-    backgroundColor: '#191a1f',
+    backgroundColor: Colors.Textgray,
     borderRadius: 8,
     borderColor: '#191a1f',
   },
-
+  type: {
+    color: Colors.white
+  }
 })
 
 //   <View style={[styles.alignItems, styles.advance]}>

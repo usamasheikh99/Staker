@@ -6,35 +6,38 @@ import {
     View,
     Text,
     Image,
+    Pressable
 } from 'react-native'
 import Line from './Line'
 
-const TradeList = () => {
+const TradeList = ({ navigation }) => {
     return (
         <View>
             {/* Trade List  */}
-            <View style={styles.tradeList}>
-                <View style={styles.logoContainer}>
-                    <Image source={Icons.AMC_show} style={{ width: 30, height: 30 }} />
-                </View>
-                <View style={styles.tradeInfo}>
-                    <View>
-                        <View style={styles.flexRow}>
-                            <Text style={styles.stockSymbol}>AMC</Text>
-                            <Image source={Icons.warningShow} style={styles.thumupIcon} />
-                            <Image source={Icons.Sale_show} style={styles.thumupIcon} />
-                            <Image source={Icons.historyShow} style={styles.thumupIcon} />
+            <Pressable onPress={()=>navigation.navigate('Position')}>
+                <View style={styles.tradeList} >
+                    <View style={styles.logoContainer}>
+                        <Image source={Icons.AMC_show} style={{ width: 30, height: 30 }} />
+                    </View>
+                    <View style={styles.tradeInfo}>
+                        <View>
+                            <View style={styles.flexRow}>
+                                <Text style={styles.stockSymbol}>AMC</Text>
+                                <Image source={Icons.warningShow} style={styles.thumupIcon} />
+                                <Image source={Icons.Sale_show} style={styles.thumupIcon} />
+                                <Image source={Icons.historyShow} style={styles.thumupIcon} />
+                            </View>
+                            <Text style={styles.task}>
+                                <Text style={styles.Indicator}>Indicator</Text>︱Faizan</Text>
                         </View>
-                        <Text style={styles.task}>
-                            <Text style={styles.Indicator}>Indicator</Text>︱Faizan</Text>
-                    </View>
-                    <Image source={Icons.Greenline_show} style={styles.tradeline} />
-                    <View>
-                        <Text style={styles.flucP}>3.90%</Text>
-                        <Text style={styles.Dollar}><Text style={{ fontSize: 13 }}>$</Text>1300.15</Text>
+                        <Image source={Icons.Greenline_show} style={styles.tradeline} />
+                        <View>
+                            <Text style={styles.flucP}>3.90%</Text>
+                            <Text style={styles.Dollar}><Text style={{ fontSize: 13 }}>$</Text>1300.15</Text>
+                        </View>
                     </View>
                 </View>
-            </View>
+            </Pressable>
             {/* Trade List END */}
             <View>
                 <Line />
@@ -165,15 +168,15 @@ const styles = StyleSheet.create({
         height: 14,
         marginLeft: 10,
         left: 5,
-        opacity:0.7,
-        top:3
+        opacity: 0.7,
+        top: 3
     },
-    thumupIcons:{
+    thumupIcons: {
         width: 15,
         height: 15,
         marginLeft: 10,
-        opacity:0.6,
-        top:2,
+        opacity: 0.6,
+        top: 2,
     },
     Number: {
         color: Colors.red,
@@ -195,7 +198,7 @@ const styles = StyleSheet.create({
         fontSize: 17,
         color: Colors.white,
         fontWeight: '400',
-        bottom:2
+        bottom: 2
     },
     Dollar:
     {
@@ -206,7 +209,7 @@ const styles = StyleSheet.create({
     Indicator: {
         color: Colors.textBlue,
         fontSize: 11,
-        opacity:0.9
+        opacity: 0.9
     },
     Dollars: {
         color: Colors.btnRed,
@@ -215,6 +218,6 @@ const styles = StyleSheet.create({
     },
     task: {
         fontSize: 12,
-        opacity:0.9
+        opacity: 0.9
     }
 })

@@ -8,7 +8,7 @@ import PositiveView from '../../component/PositiveView';
 
 
 
-const Position = ({navigation}) => {
+const Position = ({ navigation }) => {
     const [selectPosition, setSelectPosition] = useState(null);
     const [typebyPopup, settypebyPopup] = useState(false);
 
@@ -17,7 +17,9 @@ const Position = ({navigation}) => {
     };
 
     const HeaderProps = {
+        navigation, navigation,
         ScreenName: 'Postion',
+        goBack:'Home'
     }
     return (
 

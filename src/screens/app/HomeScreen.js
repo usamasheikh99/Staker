@@ -42,7 +42,7 @@ export default function HomeScreen({ navigation }) {
                     <Chat />
                 </View>
                 <View>
-                    <TradeList />
+                    <TradeList navigation={navigation} />
                 </View>
                 <View style={styles.EarningText}>
                     <Text style={styles.earning}>Earnings</Text>

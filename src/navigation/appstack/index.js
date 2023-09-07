@@ -47,7 +47,7 @@ function AppStack() {
 
           if (rn === homeName) {
             iconName = focused ? Icons.HomeIcon : Icons.HomeIcon;
-            iconsize = 50;
+          iconsize = 50;
             style = { bottom: 15 , height:65 ,width:58}
           }
           if (rn === controlsName) {
@@ -67,12 +67,10 @@ function AppStack() {
           return <Image source={iconName} style={{ width: iconsize, height: iconsize, ...style }} color={color} />;
         },
       })}
-
     >
-
       <Tab.Screen name={controlsName} component={Control} />
       <Tab.Screen name={reportsName} component={Report} />
-      <Tab.Screen name={homeName} component={Home} />
+      <Tab.Screen name={homeName} component={Home}/>
       <Tab.Screen name={auditsName} component={Audit} />
       <Tab.Screen name={settingsName} component={Setting} />
       <Tab.Screen name={'Position'} component={Position}  options={{ tabBarButton: () => null }}/>

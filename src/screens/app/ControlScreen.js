@@ -21,12 +21,12 @@ export default function ControlScreen() {
   const [slider, setSilder] = useState(0)
   const HeaderProps = {
     ScreenName: 'Trading Control',
-    Type:true
-}
+    Type: true
+  }
   return (
     <View style={styles.container}>
       <View>
-        <Header {...HeaderProps}/>
+        <Header {...HeaderProps} />
       </View>
       <ScrollView style={styles.scroll}>
         <Text style={styles.carefullText}>Please select carefully</Text>
@@ -81,13 +81,18 @@ export default function ControlScreen() {
           <View style={styles.todaylists}>
             <Text style={styles.Scalping}>Potenial Loss Sale</Text>
             <View style={{ width: '70%' }}>
-              {/* <Text style={{ color: 'white', paddingHorizontal: 90, fontSize: 11 }}>Value: {slider}</Text>  */}
+              <Text style={{ color: 'white', paddingHorizontal: 90, fontSize: 11 }}>{slider}</Text>
               <Slider
                 value={slider}
-                onValueChange={e => setSilder(e)}
-                trackStyle={{ height: 0 }}
-                thumbStyle={{ width: 9, height: 2, backgroundColor: 'red' }}
-                minimumTrackTintColor={Colors.ButtonColor} />
+                onValueChange={(newValue) => setSilder(newValue)}
+                minimumValue={0}
+                maximumValue={20}
+                step={1}
+                thumbTintColor="red"
+                minimumTrackTintColor="red"
+                style={{ transform: [{ scaleY:1.7 }] }}
+              />
+
             </View>
           </View>
         </View>
