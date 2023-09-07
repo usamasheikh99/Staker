@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Colors } from '../../theme';
+import { Colors, Text } from '../../theme';
 import { Icons } from '../../constants';
 import Chat from '../../component/Chat';
 import TradeList from '../../component/TradeList';
@@ -8,12 +8,11 @@ import WeeklyTargets from '../../component/WeeklyTargets';
 import MaketSentiment from '../../component/MaketSentiment';
 import {
     View,
-    Text,
     StyleSheet,
     Image,
     ScrollView,
     TouchableOpacity,
-    ImageBackground
+    ImageBackground,
 } from 'react-native';
 
 //publish dev branchs
@@ -23,7 +22,7 @@ export default function HomeScreen({ navigation }) {
             <View style={styles.Header}>
                 <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 25, paddingTop: 25, paddingBottom: 21 }}>
                     <View style={styles.Item}>
-                        <Text style={styles.total}>Total Capital</Text>
+                        <Text fontWeight={'light'} style={styles.total}>Total Capital</Text>
                         <TouchableOpacity activeOpacity={1} >
                             <Image source={Icons.eyes_show} style={styles.eyeIcon} />
                         </TouchableOpacity>
@@ -33,7 +32,7 @@ export default function HomeScreen({ navigation }) {
                             <Image source={Icons.logout} style={styles.IconSize} />
                         </TouchableOpacity>
                     </View>
-                    <Text style={styles.rating}><Text style={{ fontSize: 16 }}>$</Text>32,149.80</Text>
+                    <Text fontWeight={'bold'} style={styles.rating}><Text style={{ fontSize: 16 }}>$</Text>32,149.80</Text>
                 </ImageBackground>
             </View>
             <ScrollView style={styles.scroll}
@@ -140,7 +139,7 @@ const styles = StyleSheet.create({
     MarketText: {
         fontSize: 20,
         color: Colors.white,
-        top: 10
+        top: 10,
     },
     scroll: {
         backgroundColor: Colors.background,
