@@ -8,7 +8,7 @@ import PositiveView from '../../component/PositiveView';
 
 
 
-const Position = () => {
+const Position = ({navigation}) => {
     const [selectPosition, setSelectPosition] = useState(null);
     const [typebyPopup, settypebyPopup] = useState(false);
 
@@ -16,11 +16,14 @@ const Position = () => {
         setSelectPosition(buttonName);
     };
 
+    const HeaderProps = {
+        ScreenName: 'Postion',
+    }
     return (
 
-        <View style={{ backgroundColor: Colors.background, flex: 1, paddingBottom:100}}>
+        <View style={{ backgroundColor: Colors.background, flex: 1, paddingBottom: 100 }}>
             <View>
-                <Header />
+                <Header {...HeaderProps} />
             </View>
             <ScrollView>
                 <View style={styles.container}>
@@ -28,10 +31,12 @@ const Position = () => {
                     <View style={styles.firstline}>
 
                         <Image source={Icons.AMC_show} style={{ height: 43, width: 43 }}></Image>
-                        <View style={styles.bathline}>
-                            <Text style={styles.bedtxt}>Bed Bath & Beyound Inc.</Text>
-                            <Text style={styles.BBBYtxt}>BBBY</Text>
-                        </View>
+                        <Pressable onPress={() => navigation.navigate('Order')}>
+                            <View style={styles.bathline}>
+                                <Text style={styles.bedtxt}>Bed Bath & Beyound Inc.</Text>
+                                <Text style={styles.BBBYtxt}>BBBY</Text>
+                            </View>
+                        </Pressable>
                         <View style={styles.button}>
                             <TouchableOpacity>
                                 <Text style={styles.btntxt}>Sale</Text>
@@ -227,7 +232,7 @@ const Position = () => {
 
                 </View>
             </ScrollView>
-                <PositiveView modalVisible={typebyPopup} setModalVisible={settypebyPopup} /> 
+            <PositiveView modalVisible={typebyPopup} setModalVisible={settypebyPopup} />
         </View>
 
     )
@@ -286,7 +291,7 @@ const styles = StyleSheet.create({
         borderColor: Colors.red,
         backgroundColor: Colors.btnRed,
         width: 75,
-        height: 30
+        height: 30,
     },
 
     btntxt: {

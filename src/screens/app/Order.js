@@ -7,7 +7,6 @@ import { Colors } from '../../theme';
 
 const Order = () => {
     const HeaderProps = {
-        Type: true,
         ScreenName: 'Order',
     }
     return (
@@ -135,7 +134,7 @@ const styles = StyleSheet.create({
     BBBYtxt: {
         color: Colors.Textgray,
         fontSize: 16,
-        opacity: 0.6
+        opacity: 0.8
     },
 
     usdline: {
@@ -154,7 +153,7 @@ const styles = StyleSheet.create({
         color: Colors.Textgray,
         fontSize: 13,
         marginLeft: 5,
-        opacity: 0.5
+        opacity: 0.8
     },
 
     pertxt: {
@@ -169,7 +168,7 @@ const styles = StyleSheet.create({
     hrstxt: {
         color: Colors.Textgray,
         fontSize: 13,
-        opacity: 0.5,
+        opacity: 0.8,
         textAlign: 'right'
     },
 
@@ -183,7 +182,7 @@ const styles = StyleSheet.create({
     assignedtxt: {
         color: Colors.Textgray,
         fontSize: 13,
-        opacity: 0.5,
+        opacity: 0.8,
         textAlign: 'right'
     },
 
