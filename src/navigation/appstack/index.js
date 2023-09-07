@@ -5,7 +5,6 @@ import { Home, Setting, Report, Control, Audit } from "../../screens/app/index"
 import { Icons } from '../../constants';
 import { Image } from 'react-native'
 import Position from '../../screens/app/Position';
-import HomeScreen from '../../screens/app/HomeScreen';
 
 //Screen names
 const homeName = "Home";
@@ -77,6 +76,7 @@ function AppStack() {
       <Tab.Screen name={settingsName} component={Setting} />
       <Tab.Screen name={'Position'} component={Position}  options={{ tabBarButton: () => null }}/>
       <Tab.Screen name={'HomeScreen'} component={HomeScreen}  options={{ tabBarButton: () => null }}/>
+      <Tab.Screen name={'Order'} component={Order}  options={{ tabBarButton: () => null }}/>
     </Tab.Navigator>
 
     

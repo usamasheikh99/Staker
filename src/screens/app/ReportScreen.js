@@ -309,6 +309,7 @@ const styles = StyleSheet.create({
     todaytxt: {
         color: Colors.Textgray,
         fontSize: 16,
+        opacity: 0.8
     },
 
     secline: {
@@ -316,17 +317,18 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         marginHorizontal: 18,
-        marginTop: 10
+        marginTop: 2
     },
 
     usdtxt: {
-        fontSize: 21,
-        color: Colors.Textgray
+        fontSize: 22,
+        color: Colors.white,
+        fontWeight: '500'
     },
 
     perctxt: {
         color: Colors.btnGreen,
-        marginRight: 45
+        marginRight: 38
     },
 
     txt: {
@@ -358,11 +360,12 @@ const styles = StyleSheet.create({
 
     USD2txt: {
         fontSize: 20,
-        color: Colors.white
+        color: Colors.white,
+        fontWeight: '500'
     },
 
     perctxt2: {
-        fontSize: 16,
+        fontSize: 17,
         color: Colors.btnGreen,
         marginLeft: 58
     },
