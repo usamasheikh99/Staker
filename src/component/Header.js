@@ -1,21 +1,20 @@
 import React from 'react'
 import { Colors } from '../theme'
 import { Icons } from '../constants'
-import { View, Text, ImageBackground, StyleSheet, Image, TouchableOpacity } from 'react-native'
+import { View, Text, ImageBackground, StyleSheet, Image, Pressable } from 'react-native'
 
 const Header = ({ navigation, Type = false, ScreenName = "", isAcount = false }) => {
   return (
     <View style={{ backgroundColor: Colors.background, color: "#fff" }}>
 
       <View style={styles.Header}>
-
         <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 20, paddingTop: 50, paddingBottom: 30 }}>
 
           <View style={styles.headertxt}>
 
-            <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('')}>
+            <Pressable activeOpacity={1} onPress={() => navigation.navigate('Home')}>
               <Image source={Icons.left} resizeMode="cover" style={{ width: 30, height: 30, marginLeft: 8 }} />
-            </TouchableOpacity >
+            </Pressable >
 
             <View style={styles.Item}>
               <Text style={styles.reporttxt}>{ScreenName}</Text>
@@ -49,7 +48,6 @@ const styles = StyleSheet.create({
   reporttxt: {
     fontSize: 20,
     color: Colors.white,
-    marginLeft: 19
   },
 
   typebox: {
@@ -58,6 +56,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderColor: '#191a1f',
   },
+
 })
 
 //   <View style={[styles.alignItems, styles.advance]}>

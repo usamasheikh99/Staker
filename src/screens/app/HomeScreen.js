@@ -29,14 +29,15 @@ export default function HomeScreen({ navigation }) {
                         </TouchableOpacity>
                     </View>
                     <View style={styles.topHeaderLeft}>
-                        <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('Login')}>
+                        <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('HomeScreen')}>
                             <Image source={Icons.logout} style={styles.IconSize} />
                         </TouchableOpacity>
                     </View>
-                    <Text style={styles.rating}><Text style={{ fontSize: 17 }}>$</Text>32,149.80</Text>
+                    <Text style={styles.rating}><Text style={{ fontSize: 16 }}>$</Text>32,149.80</Text>
                 </ImageBackground>
             </View>
-            <ScrollView style={styles.scroll}>
+            <ScrollView style={styles.scroll}
+                showsVerticalScrollIndicator={false}>
                 <View>
                     <Chat />
                 </View>
@@ -99,10 +100,11 @@ const styles = StyleSheet.create({
     total: {
         fontSize: 15,
         color: Colors.white,
-        top: 22
+        top: 22,
+        fontFamily: 'MyriadPro-Light'
     },
     rating: {
-        fontSize: 37,
+        fontSize: 34,
         color: Colors.white,
     },
     EarningText: {

@@ -1,0 +1,17 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/MyriadPro-Light.otf",
+      "sha1": "ebee3e0784b77f765e26487fc16ddc23e4750896"
+    },
+    {
+      "path": "src/assets/fonts/MYRIADPRO-REGULAR.OTF",
+      "sha1": "1966a887859fe819ecbeb846b8514353d2fbdbf4"
+    },
+    {
+      "path": "src/assets/fonts/MYRIADPRO-SEMIBOLD.OTF",
+      "sha1": "31b31ae6061fca9f368b83ef26e0506bf06feb61"
+    }
+  ]
+}

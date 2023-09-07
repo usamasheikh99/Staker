@@ -19,10 +19,14 @@ export default function ControlScreen() {
     setSelectedItem(itemText);
   };
   const [slider, setSilder] = useState(0)
+  const HeaderProps = {
+    ScreenName: 'Trading Control',
+    Type:true
+}
   return (
     <View style={styles.container}>
       <View>
-        <Header />
+        <Header {...HeaderProps}/>
       </View>
       <ScrollView style={styles.scroll}>
         <Text style={styles.carefullText}>Please select carefully</Text>

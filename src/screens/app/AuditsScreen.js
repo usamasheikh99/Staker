@@ -8,10 +8,14 @@ import {
 } from 'react-native'
 
 export default function AuditsScreen() {
+  const HeaderProps = {
+    ScreenName: 'Log',
+    Type: '2e'
+  }
   return (
     <View style={styles.container}>
       <View>
-        <Header />
+        <Header {...HeaderProps} />
       </View>
       <View style={styles.innerbox}>
         <View style={styles.Information}>

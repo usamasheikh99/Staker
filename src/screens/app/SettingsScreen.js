@@ -13,10 +13,14 @@ export default function SettingsScreen({ navigation }) {
     const handleItemPress = (itemText) => {
         setSelectedItem(itemText);
     };
+    const HeaderProps = {
+        ScreenName: 'Backtest',
+        Type:true,
+    }
     return (
         <View style={styles.container}>
             <View>
-                <Header />
+                <Header {...HeaderProps}/>
             </View>
             <TouchableOpacity style={{ paddingHorizontal: 45 }}>
                 <View style={styles.button}>

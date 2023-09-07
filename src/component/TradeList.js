@@ -2,9 +2,9 @@ import React from 'react'
 import { Colors } from "../theme"
 import { Icons } from '../constants'
 import {
+    StyleSheet,
     View,
     Text,
-    StyleSheet,
     Image,
 } from 'react-native'
 import Line from './Line'
@@ -15,7 +15,7 @@ const TradeList = () => {
             {/* Trade List  */}
             <View style={styles.tradeList}>
                 <View style={styles.logoContainer}>
-                    <Image source={Icons.AMC_show} style={{ width: 30, height: 30, }} />
+                    <Image source={Icons.AMC_show} style={{ width: 30, height: 30 }} />
                 </View>
                 <View style={styles.tradeInfo}>
                     <View>
@@ -30,7 +30,7 @@ const TradeList = () => {
                     </View>
                     <Image source={Icons.Greenline_show} style={styles.tradeline} />
                     <View>
-                        <Text style={styles.flucP}>3.90 %</Text>
+                        <Text style={styles.flucP}>3.90%</Text>
                         <Text style={styles.Dollar}><Text style={{ fontSize: 13 }}>$</Text>1300.15</Text>
                     </View>
                 </View>
@@ -56,7 +56,7 @@ const TradeList = () => {
                     </View>
                     <Image source={Icons.Redline_show} style={styles.tradeline} />
                     <View>
-                        <Text style={styles.flucP}>3.90 %</Text>
+                        <Text style={styles.flucP}>3.90%</Text>
                         <Text style={styles.Dollars}><Text style={{ fontSize: 13 }}>$</Text>1300.15</Text>
                     </View>
                 </View>
@@ -74,14 +74,14 @@ const TradeList = () => {
                     <View>
                         <View style={styles.flexRow}>
                             <Text style={styles.stockSymbol}>COIN</Text>
-                            <Image source={Icons.warningShow} style={styles.thumupIcon} />
+                            <Image source={Icons.warningShow} style={styles.thumupIcons} />
                         </View>
                         <Text style={styles.Indicator}>Indicator</Text>
                     </View>
-                    <Image source={Icons.Redline_show} style={styles.tradelines} />
+                    <Image source={Icons.Greenline_show} style={styles.tradelines} />
                     <View>
-                        <Text style={styles.flucP}>3.90 %</Text>
-                        <Text style={styles.Dollars}><Text style={{ fontSize: 13 }}>$</Text>1300.15</Text>
+                        <Text style={styles.flucP}>3.90%</Text>
+                        <Text style={styles.Dollar}><Text style={{ fontSize: 13 }}>$</Text>1300.15</Text>
                     </View>
                 </View>
             </View>
@@ -103,7 +103,7 @@ const TradeList = () => {
                     </View>
                     <Image source={Icons.Redline_show} style={styles.tradelinee} />
                     <View>
-                        <Text style={styles.flucP}>3.90 %</Text>
+                        <Text style={styles.flucP}>3.90%</Text>
                         <Text style={styles.Dollars}><Text style={{ fontSize: 13 }}>$</Text>1300.15</Text>
                     </View>
                 </View>
@@ -124,9 +124,9 @@ const styles = StyleSheet.create({
     logoContainer: {
         width: 39,
         height: 39,
-        marginRight: 12,
+        marginRight: 15,
         left: 6,
-        marginTop: 10
+        marginTop: 8
     },
     tradeInfo: {
         flex: 1,
@@ -161,10 +161,19 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     thumupIcon: {
+        width: 14,
+        height: 14,
+        marginLeft: 10,
+        left: 5,
+        opacity:0.7,
+        top:3
+    },
+    thumupIcons:{
         width: 15,
         height: 15,
         marginLeft: 10,
-        left: 5
+        opacity:0.6,
+        top:2,
     },
     Number: {
         color: Colors.red,
@@ -183,9 +192,10 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
     },
     stockSymbol: {
-        fontSize: 16,
+        fontSize: 17,
         color: Colors.white,
-        fontWeight: '400'
+        fontWeight: '400',
+        bottom:2
     },
     Dollar:
     {
@@ -195,7 +205,8 @@ const styles = StyleSheet.create({
     },
     Indicator: {
         color: Colors.textBlue,
-        fontSize: 12
+        fontSize: 11,
+        opacity:0.9
     },
     Dollars: {
         color: Colors.btnRed,
@@ -203,6 +214,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     task: {
-        fontSize: 12
+        fontSize: 12,
+        opacity:0.9
     }
 })
