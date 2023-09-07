@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Colors, Text } from '../../theme';
+import { Colors,Text } from '../../theme';
 import { Icons } from '../../constants';
 import Chat from '../../component/Chat';
 import TradeList from '../../component/TradeList';
