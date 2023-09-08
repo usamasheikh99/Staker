@@ -19,8 +19,11 @@ const Position = ({ navigation }) => {
     const HeaderProps = {
         navigation, navigation,
         ScreenName: 'Postion',
-        goBack:'Home'
+        goBack: 'Home',
+        isAcount: 'Kashan'
     }
+
+
     return (
 
         <View style={{ backgroundColor: Colors.background, flex: 1, paddingBottom: 100 }}>

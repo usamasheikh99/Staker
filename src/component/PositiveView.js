@@ -6,7 +6,7 @@ import { Colors } from '../theme';
 const PositiveView = ({ modalVisible, setModalVisible }) => {
     return (
         <Modal
-            animationType="slide"
+            animationType="none"
             transparent={true}
             visible={modalVisible}
             onRequestClose={() => {

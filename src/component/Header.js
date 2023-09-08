@@ -1,9 +1,9 @@
 import React from 'react'
 import { Colors } from '../theme'
 import { Icons } from '../constants'
-import { View, Text, ImageBackground, StyleSheet, Image, Pressable } from 'react-native'
+import { View, Text, ImageBackground, StyleSheet, Image, Pressable, TouchableOpacity } from 'react-native'
 
-const Header = ({ navigation, Type = false, ScreenName = "", isAcount = false, goBack='Home' }) => {
+const Header = ({ navigation, Type = false, ScreenName = "", isAcount = false, goBack = 'Home' }) => {
 
   return (
     <View style={{ backgroundColor: Colors.background, color: "#fff" }}>
@@ -24,8 +24,17 @@ const Header = ({ navigation, Type = false, ScreenName = "", isAcount = false, g
                 <Text style={styles.type}>Type</Text>
               </View>
             }
+
+            
             {isAcount &&
-              <Text>Kashan</Text>
+              <TouchableOpacity>
+                <View style={styles.assignbox}>
+                  <View style={styles.txtalign}>
+                    <Text style={styles.assigntxt}>Kashan</Text>
+                    <Image source={Icons.downarrow} style={{ height: 15, width: 15, }}></Image>
+                  </View>
+                </View>
+              </TouchableOpacity>
             }
 
           </View>
@@ -64,6 +73,28 @@ const styles = StyleSheet.create({
   },
   type: {
     color: Colors.white
+  },
+
+  assignbox: {
+    borderRadius: 8,
+    borderColor: Colors.MediumDark,
+    backgroundColor: Colors.MediumDark,
+    flexDirection: "row",
+    alignItems: "center",
+    width: 90,
+    height: 32
+  },
+
+  txtalign: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 12
+  },
+
+  assigntxt: {
+    color: Colors.white,
+    fontSize: 12,
+    marginHorizontal: 5
   }
 })
 
