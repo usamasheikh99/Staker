@@ -12,7 +12,7 @@ import {
     Image,
     ScrollView,
     TouchableOpacity,
-    ImageBackground,
+    ImageBackground
 } from 'react-native';
 
 //publish dev branchs
@@ -28,8 +28,8 @@ export default function HomeScreen({ navigation }) {
                         </TouchableOpacity>
                     </View>
                     <View style={styles.topHeaderLeft}>
-                        <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('HomeScreen')}>
-                            <Image source={Icons.logout} style={styles.IconSize} />
+                        <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('Login')}>
+                            <Image source={Icons.logout} style={styles.IconSize}/>
                         </TouchableOpacity>
                     </View>
                     <Text fontWeight={'bold'} style={styles.rating}><Text style={{ fontSize: 16 }}>$</Text>32,149.80</Text>

@@ -11,10 +11,12 @@ import {
 import Line from './Line'
 
 const TradeList = ({ navigation }) => {
+
     return (
         <View>
+
             {/* Trade List  */}
-            <Pressable onPress={()=>navigation.navigate('Position')}>
+            <Pressable onPress={() => navigation.navigate('Position')}>
                 <View style={styles.tradeList} >
                     <View style={styles.logoContainer}>
                         <Image source={Icons.AMC_show} style={{ width: 30, height: 30 }} />

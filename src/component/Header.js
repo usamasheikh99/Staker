@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Colors } from '../theme'
 import { Icons } from '../constants'
-import { View, Text, ImageBackground, StyleSheet, Image, Pressable, TouchableOpacity } from 'react-native'
+import { View, Text, ImageBackground, StyleSheet, Image, Pressable } from 'react-native'
+import Assign from './Assign'
 
 const Header = ({ navigation, Type = false, ScreenName = "", isAcount = false, goBack = 'Home' }) => {
+  const [isAssign, setIsAssign] = useState(false);
 
+  const AssignProps = {
+    isAssign: isAssign,
+    setIsAssign: setIsAssign
+  }
   return (
     <View style={{ backgroundColor: Colors.background, color: "#fff" }}>
 
@@ -25,21 +31,24 @@ const Header = ({ navigation, Type = false, ScreenName = "", isAcount = false, g
               </View>
             }
 
-            
+
             {isAcount &&
-              <TouchableOpacity>
+              <Pressable onPress={() => setIsAssign(!isAssign)}>
                 <View style={styles.assignbox}>
                   <View style={styles.txtalign}>
                     <Text style={styles.assigntxt}>Kashan</Text>
                     <Image source={Icons.downarrow} style={{ height: 15, width: 15, }}></Image>
                   </View>
                 </View>
-              </TouchableOpacity>
+              </Pressable>
             }
 
           </View>
         </ImageBackground>
       </View>
+      {isAssign &&
+        <Assign {...AssignProps} />
+      }
     </View>
   )
 }

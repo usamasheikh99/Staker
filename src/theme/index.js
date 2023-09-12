@@ -2,4 +2,5 @@
 // import Fonts from './Fonts'
 import Colors from './Colors'
 import Text from './Text'
-export { Colors, Text }
+import Metrics from './Metrics'
+export { Colors, Text, Metrics }

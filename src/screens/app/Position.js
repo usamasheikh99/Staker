@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, Pressable, } from 'react-native'
+import { View,  Image, StyleSheet, TouchableOpacity, ScrollView, Pressable } from 'react-native'
 import Header from '../../component/Header';
 import { Icons } from '../../constants';
-import { Colors } from '../../theme';
+import { Colors,Text } from '../../theme';
 import PositiveView from '../../component/PositiveView';
 // import useSelector from 'react-redux'
 
@@ -15,15 +15,15 @@ const Position = ({ navigation }) => {
     const handleButtonPress = (buttonName) => {
         setSelectPosition(buttonName);
     };
-
+  
     const HeaderProps = {
         navigation, navigation,
         ScreenName: 'Postion',
         goBack: 'Home',
-        isAcount: 'Kashan'
+        isAcount: 'Kashan',
     }
 
-
+    
     return (
 
         <View style={{ backgroundColor: Colors.background, flex: 1, paddingBottom: 100 }}>

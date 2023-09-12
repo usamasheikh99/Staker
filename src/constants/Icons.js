@@ -12,7 +12,6 @@ export default Icons = {
     eyes_hide: require('../assets/icons/eyes_hide.png'),
     back_arrow: require('../assets/icons/left.png'),
     logout: require('../assets/icons/PowerOff.png'),
-    Logo: require('../assets/icons/Logo.png'),
     face_lock: require('../assets/icons/face_lock.png'),
     indicator: require('../assets/icons/indicator.png'),
     Signal_Arrow: require('../assets/icons/signal.png'),
@@ -31,22 +30,20 @@ export default Icons = {
     Greenline_show: require ('../assets/icons/greenline.png'),
     Redline_show: require ('../assets/icons/redline.png'),
     Sale_show: require ('../assets/icons/Sale_icon.png'),
-    splash_bg: require('../assets/icons/splash_bg.png'),
     left: require('../assets/icons/left.png'),
     search: require('../assets/icons/search.png'),
     fav: require('../assets/icons/fav.png'),
     un_fav: require('../assets/icons/un_fav.png'),
     hideeye: require('../assets/icons/hideeye.png'),
     amc2: require('../assets/icons/amc2.png'),
-    getstarted : require('../assets/icons/getstarted.png'),
     PuseShow : require('../assets/icons/puse.svg'),
     downarrow : require('../assets/icons/downarrow.png'),
     recordbutton : require('../assets/icons/recordbutton.png'),
-
-
     warningShow : require('../assets/icons/warning.png'),
     pauseShow : require('../assets/icons/pause.png'),
     historyShow : require('../assets/icons/history.png'),
     crosShow : require('../assets/icons/cros.png'),
-
+    Splash : require('../assets/icons/Splash.png'),
+    Logo : require('../assets/icons/Logo.png'),
+    GetStarted : require('../assets/icons/GetStarted.png'),
 }
