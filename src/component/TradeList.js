@@ -1,10 +1,9 @@
 import React from 'react'
-import { Colors } from "../theme"
+import { Colors, Text } from "../theme"
 import { Icons } from '../constants'
 import {
     StyleSheet,
     View,
-    Text,
     Image,
     Pressable
 } from 'react-native'
@@ -14,7 +13,7 @@ const TradeList = ({ navigation }) => {
     return (
         <View>
             {/* Trade List  */}
-            <Pressable onPress={()=>navigation.navigate('Position')}>
+            <Pressable onPress={() => navigation.navigate('Position')}>
                 <View style={styles.tradeList} >
                     <View style={styles.logoContainer}>
                         <Image source={Icons.AMC_show} style={{ width: 30, height: 30 }} />
@@ -127,7 +126,7 @@ const styles = StyleSheet.create({
     logoContainer: {
         width: 39,
         height: 39,
-        marginRight: 15,
+        marginRight: 10,
         left: 6,
         marginTop: 8
     },
@@ -174,7 +173,7 @@ const styles = StyleSheet.create({
     thumupIcons: {
         width: 15,
         height: 15,
-        marginLeft: 10,
+        marginLeft: 7,
         opacity: 0.6,
         top: 2,
     },
@@ -197,8 +196,7 @@ const styles = StyleSheet.create({
     stockSymbol: {
         fontSize: 17,
         color: Colors.white,
-        fontWeight: '400',
-        bottom: 2
+        bottom: 2,
     },
     Dollar:
     {
@@ -218,6 +216,7 @@ const styles = StyleSheet.create({
     },
     task: {
         fontSize: 12,
-        opacity: 0.9
+        opacity: 0.9,
+        color: Colors.Textgray
     }
 })

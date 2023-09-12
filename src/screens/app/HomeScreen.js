@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Colors,Text } from '../../theme';
+import { Colors, Text } from '../../theme';
 import { Icons } from '../../constants';
 import Chat from '../../component/Chat';
 import TradeList from '../../component/TradeList';
@@ -19,24 +19,25 @@ import {
 export default function HomeScreen({ navigation }) {
     return (
         <View style={styles.container}>
-            <View style={styles.Header}>
-                <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 25, paddingTop: 25, paddingBottom: 21 }}>
-                    <View style={styles.Item}>
-                        <Text fontWeight={'light'} style={styles.total}>Total Capital</Text>
-                        <TouchableOpacity activeOpacity={1} >
-                            <Image source={Icons.eyes_show} style={styles.eyeIcon} />
-                        </TouchableOpacity>
-                    </View>
-                    <View style={styles.topHeaderLeft}>
-                        <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('HomeScreen')}>
-                            <Image source={Icons.logout} style={styles.IconSize} />
-                        </TouchableOpacity>
-                    </View>
-                    <Text fontWeight={'bold'} style={styles.rating}><Text style={{ fontSize: 16 }}>$</Text>32,149.80</Text>
-                </ImageBackground>
-            </View>
             <ScrollView style={styles.scroll}
                 showsVerticalScrollIndicator={false}>
+                <View style={styles.Header}>
+                    <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 25, paddingTop: 15, paddingBottom: 35 }}>
+                        <View style={styles.Item}>
+                            <Text fontWeight={'light'} style={styles.total}>Total Capital</Text>
+                            <TouchableOpacity activeOpacity={1} >
+                                <Image source={Icons.eyes_show} style={styles.eyeIcon} />
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.topHeaderLeft}>
+                            <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('HomeScreen')}>
+                                <Image source={Icons.logout} style={styles.IconSize} />
+                            </TouchableOpacity>
+                        </View>
+                        <Text fontWeight={'normal'} style={styles.rating}><Text style={{ fontSize: 16 }}>$</Text>32,149.80</Text>
+                    </ImageBackground>
+                </View>
+
                 <View>
                     <Chat />
                 </View>
@@ -82,16 +83,17 @@ const styles = StyleSheet.create({
     eyeIcon: {
         width: 19,
         height: 19,
-        left: 10,
-        top: 22
+        left: 8,
+        top: 38
     },
     Item: {
         flexDirection: 'row',
     },
     IconSize: {
-        width: 19,
-        height: 20,
+        width: 17,
+        height: 18,
         right: 7,
+        top: 15
     },
     topHeaderLeft: {
         alignItems: 'flex-end',
@@ -99,12 +101,13 @@ const styles = StyleSheet.create({
     total: {
         fontSize: 15,
         color: Colors.white,
-        top: 22,
+        top: 38,
         fontFamily: 'MyriadPro-Light'
     },
     rating: {
         fontSize: 34,
         color: Colors.white,
+        top: 15
     },
     EarningText: {
         flexDirection: 'row',
@@ -143,6 +146,7 @@ const styles = StyleSheet.create({
     },
     scroll: {
         backgroundColor: Colors.background,
-        flex: 1, color: "#fff"
+        flex: 1,
+        color: "#fff"
     },
 })

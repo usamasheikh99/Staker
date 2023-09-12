@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 import Button from './Button';
 
-const TargetModal = ({ IsTargetModel, targetModelHandle }) => {
+const TargetModal = ({ IsTargetModel, targetModelHandle , props}) => {
     return (
         <Modal
             animationType="none" // You can change the animation type as needed
@@ -25,27 +25,27 @@ const TargetModal = ({ IsTargetModel, targetModelHandle }) => {
                 <View style={styles.modalContainer}>
                     <View style={styles.modalContent}>
                         <Pressable onPress={targetModelHandle} style={styles.closeButton}>
-                            <Image source={Icons.crosShow} style={{ height: 12, width: 12 }} />
+                            <Image source={Icons.crosShow} style={{ height: 11, width: 11, top: 15, right: 20 }} />
                         </Pressable>
-                        <Text style={{ fontSize: 22, bottom: 10 }}>Target</Text>
+                        <Text style={{ fontSize: 20,color: Colors.white, left: 160, opacity: 0.8 }}>Target</Text>
                         <ProgressiveBar />
-                        <View style={{ top: 60, left: 30 }}>
-                        <View style={{top:60,left:30}}>
-                <View style={{flexDirection:'row'}}>
-                    <Text style={styles.person}>-4.69</Text>
-                    <Text style={styles.person}>-4.69</Text>
-                    <Text style={styles.person}>-4.69</Text>
-                </View>
-                <View style={{flexDirection:'row'}}>
-                    <Text style={styles.person}>-4.69</Text>
-                    <Text style={styles.person}>-4.69</Text>
-                    <Text style={styles.person}>-4.69</Text>
-                </View>
-                </View>
+                        <View style={{ top: 40, left: 20 }}>
+                            <View style={styles.targetText}>
+                                <Text style={styles.person}>-4.69</Text>
+                                <Text style={styles.person}>-4.69</Text>
+                                <Text style={styles.person}>-4.69</Text>
+                            </View>
+                            <View style={styles.targetText}>
+                                <Text style={styles.person}>-4.69</Text>
+                                <Text style={styles.person}>-4.69</Text>
+                                <Text style={styles.person}>-4.69</Text>
+                            </View>
                         </View>
-                        <View style={{ top: 60 }}>
-                            <Button />
-                            <Button />
+                        <View style={{ top: 35 }}>
+                            <Button 
+                            tittle='9.0 Target Update'/>
+                            <Button 
+                            tittle='Exit for Today'/>
                         </View>
                     </View>
                 </View>
@@ -65,12 +65,11 @@ const styles = StyleSheet.create({
     },
     modalContent: {
         backgroundColor: Colors.lightDark,
-        paddingVertical: 30,
-        marginVertical: 85,
-        borderRadius: 20,
+        paddingVertical: 20,
+        borderRadius: 25,
         width: 370,
-        left: 20,
-        paddingBottom: 120,
+        paddingBottom: 80,
+        top: 20
     },
     closeButton: {
         position: 'absolute',
@@ -79,14 +78,17 @@ const styles = StyleSheet.create({
     },
     person: {
         backgroundColor: Colors.background,
-        width: 90,
-        height: 60,
-        paddingTop: 15,
-        borderRadius: 8,
-        paddingHorizontal: 18,
+        borderRadius: 9,
         fontSize: 22,
         color: Colors.Textgray,
-        marginRight: 20,
+        marginRight: 18,
         marginBottom: 10,
+        // paddingRight:50,
+        paddingHorizontal: 24,
+        paddingTop: 15,
+        paddingBottom: 13,
     },
+    targetText: {
+        flexDirection: 'row'
+    }
 });

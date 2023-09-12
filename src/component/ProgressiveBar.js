@@ -6,29 +6,29 @@ const ProgressiveBar = () => {
   return (
     <View>
             <View style={{flexDirection:'row',}}>
-            <View style={{top:20,left:70}}>
+            <View style={{top:20,left:75}}>
                 <ProgressCircle
-                    percent={90}
-                    radius={120}
-                    borderWidth={2}
+                    percent={100}
+                    radius={110}
+                    borderWidth={3}
                     color={Colors.Card2}
                     shadowColor={Colors.MediumDark}
                     bgColor={Colors.lightDark}
                 >
                 </ProgressCircle>
             </View>
-            <View style={{top:30,right:160}}>
+            <View style={{top:30,right:135}}>
                 <ProgressCircle
-                    percent={80}
-                    radius={110}
+                    percent={100}
+                    radius={100}
                     borderWidth={2}
                     color={Colors.Card}
                     shadowColor={Colors.MediumDark}
                     bgColor={Colors.lightDark}
                 >
-                    <Text style={{ fontSize: 13, color:Colors.Textgray ,top:9}}>{"Today"}</Text>
-                    <Text style={{ fontSize: 40 }}>{'2.50'}</Text>
-                    <Text style={{ fontSize: 18, color:Colors.green,bottom:8 }}><Text style={{ fontSize: 13 }}>$</Text>{'1300.15'}</Text>
+                    <Text style={{ fontSize: 17, color:Colors.Textgray ,top:9}}>{"Today"}</Text>
+                    <Text style={{ fontSize: 48 ,color:Colors.white,opacity:0.8}}>{'2.50'}</Text>
+                    <Text style={{ fontSize: 24, color:Colors.green,bottom:8 }}><Text style={{ fontSize: 13 }}>$</Text>{'1300.15'}</Text>
                 </ProgressCircle>
             </View>
             </View>
