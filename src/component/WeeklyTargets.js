@@ -20,7 +20,7 @@ const WeeklyTargets = () => {
                             color="gray"
                             shadowColor="#D60354"
                             bgColor='#26262B' >
-                            <Text style={{ fontSize: 15, fontWeight: '500' }}>{'75%'}</Text>
+                            <Text style={{ fontSize: 15, fontWeight: '500' ,color:Colors.white}}>{'75%'}</Text>
                         </ProgressCircle></View>
                 </View>
                 <Text style={styles.winrate}>Trader 80 Winrate 56%</Text>
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     },
     Dates: {
         color: Colors.Textgray,
-        fontSize: 15,
+        fontSize: 14,
         left: 12,
         top:4
     },
@@ -52,13 +52,13 @@ const styles = StyleSheet.create({
         color: Colors.white
     },
     price: {
-        fontSize: 25,
+        fontSize: 24,
         color: Colors.white,
         paddingHorizontal: 10,
     },
     winrate: {
         color: Colors.Textgray,
-        fontSize: 13,
+        fontSize: 12,
         bottom: 25,
         left: 8
     }

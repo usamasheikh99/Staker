@@ -11,6 +11,7 @@ import {
   ScrollView,
   Pressable
 } from 'react-native'
+import Button from '../../component/Button'
 
 
 export default function ControlScreen() {
@@ -21,14 +22,14 @@ export default function ControlScreen() {
   const [slider, setSilder] = useState(0)
   const HeaderProps = {
     ScreenName: 'Trading Control',
-    Type: true
+    Type: false
   }
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.scroll}>
+      <View style={{paddingBottom:105}}>
       <View>
         <Header {...HeaderProps} />
       </View>
-      <ScrollView style={styles.scroll}>
         <Text style={styles.carefullText}>Please select carefully</Text>
         <Pressable
           style={[
@@ -39,7 +40,7 @@ export default function ControlScreen() {
           underlayColor="transparent"
         >
           <Text style={styles.today}>today's Exit</Text>
-          <Text>initiate the sale process and pause all scalping positions for the for the
+          <Text style={styles.ScalpingText}>initiate the sale process and pause all scalping positions for the for the
             rest ot that trading day
           </Text>
         </Pressable>
@@ -78,8 +79,12 @@ export default function ControlScreen() {
             <Text style={styles.Scalping}>Profitable Sale</Text>
             <Text style={styles.ScalpingText}>initiate the sale process and pause all </Text>
           </View>
+          <View style={styles.todaylist}>
+            <Text style={styles.Scalping}>Profitable Loss Sale</Text>
+            <Text style={styles.ScalpingText}>initiate the sale process and pause all </Text>
+          </View>
           <View style={styles.todaylists}>
-            <Text style={styles.Scalping}>Potenial Loss Sale</Text>
+            <Text style={styles.Scalping}>Trade Limits</Text>
             <View style={{ width: '70%' }}>
               <Text style={{ color: 'white', paddingHorizontal: 90, fontSize: 11 }}>{slider}</Text>
               <Slider
@@ -95,9 +100,13 @@ export default function ControlScreen() {
 
             </View>
           </View>
+          <View>
+            <Button
+            tittle='Procced'/>
+          </View>
+        </View>
         </View>
       </ScrollView>
-    </View>
   )
 }
 
@@ -108,15 +117,15 @@ const styles = StyleSheet.create({
     color: Colors.white,
     left: 25
   },
-  container: {
+  Scroll: {
     flex: 1,
     backgroundColor: Colors.lightDark,
-    paddingBottom: 60
+    paddingBottom: 90
   },
   scroll: {
     backgroundColor: Colors.background,
     flex: 1,
-    color: "#fff"
+    color: "#fff",
   },
   todaylist: {
     backgroundColor: Colors.lightDark,
@@ -134,7 +143,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 19,
     marginVertical: 4,
     paddingTop: 18,
-    paddingBottom: 22,
+    paddingBottom: 18,
     flexDirection: 'row',
     alignItems: 'center'
   },
@@ -144,7 +153,6 @@ const styles = StyleSheet.create({
     paddingVertical: 2
   },
   ScalpingText: {
-    // fontSize:15,
     color: Colors.Textgray
   },
   today: {

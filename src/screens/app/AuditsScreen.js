@@ -10,7 +10,7 @@ import {
 export default function AuditsScreen() {
   const HeaderProps = {
     ScreenName: 'Log',
-    Type: '2e'
+    Type: true
   }
   return (
     <View style={styles.container}>
@@ -20,39 +20,33 @@ export default function AuditsScreen() {
       <View style={styles.innerbox}>
         <View style={styles.Information}>
           <Text style={styles.text}>Information</Text>
-          <Text style={styles.textcolors}>Indicator</Text></View>
+          <Text style={styles.indicator}>Indicator</Text></View>
         <View>
-          <Text style={{ color: Colors.white, fontSize: 17, opacity: 0.7 }}>It is a long established fact that a reader.</Text>
-          <Text style={styles.textcolor}>Lorem ipsum dolor sit amet consectetur adipisicing
-            Sint totam vero culpa odio impedit, unde doloremque magnam.
-            Delectus sed rem vel quibusdam facilis  sunt ullam
-            beatae alias obcaecati! Ratione.</Text>
+          <Text style={styles.reder}>It is a long established fact that a reader.</Text>
+          <Text style={styles.textcolor}>There are many sit amet consectetur adipisicing Sint totam vero culpa odio impedit unde doloremque magnam.
+            Delectus sed rem vel quibusdam facilis  sunt ullam beatae alias obcaecati! Ratione.</Text>
           <Text style={styles.textdate}>02/10/22 02:00PM</Text>
         </View>
       </View>
       <View style={styles.innerbox}>
         <View style={styles.Information}>
           <Text style={styles.text}>Information</Text>
-          <Text style={styles.textcolors}>Indicator</Text></View>
+          <Text style={styles.indicator}>Indicator</Text></View>
         <View>
-          <Text style={{ color: Colors.white, fontSize: 17, opacity: 0.7 }}>It is a long established fact that a reader.</Text>
-          <Text style={styles.textcolor}>Lorem ipsum dolor sit amet consectetur adipisicing
-            Sint totam vero culpa odio impedit, unde doloremque magnam.
-            Delectus sed rem vel quibusdam facilis  sunt ullam
-            beatae alias obcaecati! Ratione.</Text>
+          <Text style={styles.reder}>It is a long established fact that a reader.</Text>
+          <Text style={styles.textcolor}>There are many sit amet consectetur adipisicing Sint totam vero culpa odio impedit unde doloremque magnam.
+            Delectus sed rem vel quibusdam facilis  sunt ullam beatae alias obcaecati! Ratione.</Text>
           <Text style={styles.textdate}>02/10/22 02:00PM</Text>
         </View>
       </View>
       <View style={styles.innerbox}>
         <View style={styles.Information}>
           <Text style={styles.text}>Information</Text>
-          <Text style={styles.textcolors}>Indicator</Text></View>
+          <Text style={styles.indicator}>Indicator</Text></View>
         <View>
-          <Text style={{ color: Colors.white, fontSize: 17, opacity: 0.7 }}>It is a long established fact that a reader.</Text>
-          <Text style={styles.textcolor}>Lorem ipsum dolor sit amet consectetur adipisicing
-            Sint totam vero culpa odio impedit, unde doloremque magnam.
-            Delectus sed rem vel quibusdam facilis  sunt ullam
-            beatae alias obcaecati! Ratione.</Text>
+          <Text style={styles.reder}>It is a long established fact that a reader.</Text>
+          <Text style={styles.textcolor}>There are many sit amet consectetur adipisicing Sint totam vero culpa odio impedit unde doloremque magnam.
+            Delectus sed rem vel quibusdam facilis sunt ullam beatae alias obcaecati! Ratione.</Text>
           <Text style={styles.textdate}>02/10/22 02:00PM</Text>
         </View>
       </View>
@@ -79,10 +73,10 @@ const styles = StyleSheet.create({
     paddingVertical: 19,
     top: 15,
   },
-  textcolors: {
-    fontSize: 15,
+  indicator: {
+    fontSize: 13,
     color: Colors.indicatorColor,
-    opacity: 0.7
+    opacity: 0.8
   },
   textcolor: {
     color: Colors.Textgray,
@@ -92,9 +86,14 @@ const styles = StyleSheet.create({
   textdate: {
     color: Colors.Textgray,
     top: 15,
-    marginBottom: 10
+    marginBottom: 10,
+    fontSize:13
   },
   text: {
     color: Colors.Textgray
-  }
+  },
+  reder:{ 
+    color: Colors.white, 
+    fontSize: 16, 
+    opacity: 0.7 }
 })

@@ -2,15 +2,11 @@ import React, { useState } from 'react'
 import { Colors } from '../theme'
 import { Icons } from '../constants'
 import { View, Text, ImageBackground, StyleSheet, Image, Pressable } from 'react-native'
+import LogType from './LogType'
 import Assign from './Assign'
 
 const Header = ({ navigation, Type = false, ScreenName = "", isAcount = false, goBack = 'Home' }) => {
-  const [isAssign, setIsAssign] = useState(false);
 
-  const AssignProps = {
-    isAssign: isAssign,
-    setIsAssign: setIsAssign
-  }
   return (
     <View style={{ backgroundColor: Colors.background, color: "#fff" }}>
 
@@ -21,14 +17,14 @@ const Header = ({ navigation, Type = false, ScreenName = "", isAcount = false, g
             <Pressable activeOpacity={1} onPress={() => navigation.navigate(goBack)}>
               <Image source={Icons.left} resizeMode="cover" style={{ width: 30, height: 30, marginLeft: 8 }} />
             </Pressable >
-
             <View style={styles.Item}>
               <Text style={styles.reporttxt}>{ScreenName}</Text>
             </View>
             {Type &&
-              <View style={styles.typebox}>
+              <Pressable style={styles.typebox} activeOpacity={1}
+              onPress={() => settypebyPopup(!typebyPopup)}>
                 <Text style={styles.type}>Type</Text>
-              </View>
+              </Pressable>
             }
 
 
@@ -46,9 +42,6 @@ const Header = ({ navigation, Type = false, ScreenName = "", isAcount = false, g
           </View>
         </ImageBackground>
       </View>
-      {isAssign &&
-        <Assign {...AssignProps} />
-      }
     </View>
   )
 }
@@ -75,13 +68,19 @@ const styles = StyleSheet.create({
   },
 
   typebox: {
-    borderWidth: 1,
-    backgroundColor: Colors.Textgray,
+    backgroundColor: Colors.MediumDark,
     borderRadius: 8,
-    borderColor: '#191a1f',
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingBottom: 5,
+    paddingTop: 5,
+    borderRadius: 12,
+    backgroundColor: Colors.MediumDark,
+    opacity: 0.6
   },
   type: {
-    color: Colors.white
+    color: Colors.white,
+    fontSize: 13
   },
 
   assignbox: {

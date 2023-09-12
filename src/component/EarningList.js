@@ -103,8 +103,8 @@ const styles = StyleSheet.create({
         left: 3
     },
     EarningList: {
-        width: 124,
-        height: 148,
+        width: 130,
+        height: 150,
         padding: 10,
         marginRight: 10,
         borderRadius: 10,
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
         width: 11,
         height: 11,
         marginRight: 5,
-        opacity: 0.5,
+        opacity: 0.8,
         top: 7
     },
     tradeline: {
@@ -140,7 +140,8 @@ const styles = StyleSheet.create({
     },
     price: {
         fontSize: 24,
-        top: 7
+        top: 7,
+        color:Colors.white
     }
 })
 export default EarningList;

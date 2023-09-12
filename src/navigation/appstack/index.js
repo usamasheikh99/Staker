@@ -20,7 +20,6 @@ const auditsName = "Audit";
 const Tab = createBottomTabNavigator();
 function AppStack() {
   return (
-    // <NavigationContainer>
     <Tab.Navigator
       initialRouteName={homeName}
       screenOptions={({ route }) => ({
@@ -41,7 +40,7 @@ function AppStack() {
           borderTopColor: '#121319',
           paddingHorizontal: 13
         },
-        tabBarIcon: ({ focused, color, size }) => {
+        tabBarIcon: ({ focused, color}) => {
           let iconName;
           let rn = route.name;
           let iconsize = 22;
@@ -49,8 +48,8 @@ function AppStack() {
 
           if (rn === homeName) {
             iconName = focused ? Icons.HomeIcon : Icons.HomeIcon;
-          iconsize = 50;
-            style = { bottom: 15 , height:65 ,width:58}
+            iconsize = 50;
+            style = { bottom: 15, height: 65, width: 58 }
           }
           if (rn === controlsName) {
             iconName = focused ? Icons.TargetDeactive : Icons.TargetDeactive;
@@ -72,16 +71,15 @@ function AppStack() {
     >
       <Tab.Screen name={controlsName} component={Control} />
       <Tab.Screen name={reportsName} component={Report} />
-      <Tab.Screen name={homeName} component={Home}/>
+      <Tab.Screen name={homeName} component={Home} />
       <Tab.Screen name={auditsName} component={Audit} />
       <Tab.Screen name={settingsName} component={Setting} />
-      <Tab.Screen name={'Position'} component={Position}  options={{ tabBarButton: () => null }}/>
-      <Tab.Screen name={'Order'} component={Order}  options={{ tabBarButton: () => null }}/>
+      <Tab.Screen name={'Position'} component={Position} options={{ tabBarButton: () => null }} />
+      <Tab.Screen name={'Order'} component={Order} options={{ tabBarButton: () => null }} />
       <Tab.Screen name={'Login'} component={Login}  options={{ tabBarButton: () => null }}/>
       <Tab.Screen name={'GetStarted'} component={GetStarted}  options={{ tabBarButton: () => null }}/>
     </Tab.Navigator>
 
-    
   );
 }
 

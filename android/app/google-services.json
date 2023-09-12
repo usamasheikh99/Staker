@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "281258762319",
+    "project_id": "pushnotificationdummy-5e379",
+    "storage_bucket": "pushnotificationdummy-5e379.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:281258762319:android:15be37c3f4bed9ebfa4a3a",
+        "android_client_info": {
+          "package_name": "com.staker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMPr3maEYQR9LKAXZ-EaBOGhHty7QS5i4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

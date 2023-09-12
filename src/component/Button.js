@@ -2,12 +2,12 @@ import React from 'react'
 import { Colors } from '../theme'
 import { View, Text,TouchableOpacity,StyleSheet } from 'react-native'
 
-const Button = () => {
+const Button = (props) => {
   return (
     <View>
-       <TouchableOpacity style={{ paddingHorizontal: 45 }}>
+       <TouchableOpacity style={{ paddingHorizontal: 55 }}>
                 <View style={styles.button}>
-                    <Text style={styles.Execute}>Execute Backtest</Text>
+                    <Text style={styles.Execute}>{props.tittle}</Text>
                 </View>
             </TouchableOpacity>
     </View>
@@ -21,8 +21,11 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.ButtonColor,
         paddingBottom: 15,
         paddingVertical: 15,
-        borderRadius: 15,
-        top: 20,marginBottom:15
+        borderRadius: 10,
+        top: 20,
+        marginBottom:15,
+        paddingRight:50,
+        paddingLeft:50
     },
     Execute: {
         textAlign: 'center',
