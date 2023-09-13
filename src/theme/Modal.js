@@ -1,6 +1,6 @@
 import React from 'react';
+import { Colors} from '../theme';
 import { Modal, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
-import { Colors, Metrics } from '../theme';
 
 const AppModal = ({ visible, onClose, children }) => {
     return (
@@ -23,7 +23,7 @@ const AppModal = ({ visible, onClose, children }) => {
                 <View style={styles.modalContent}>
 
                     <TouchableOpacity onPress={onClose} style={styles.closeIconContainer}>
-                        <Image source={Icons.Cross_show} style={{ height: 24, width: 24, opacity: 0.8 }} />
+                        <Image source={Icons.Cross_show} style={{ height: 22, width: 22, opacity: 0.8 ,top:8 }} />
                     </TouchableOpacity>
 
                     {children}
@@ -42,18 +42,16 @@ const styles = StyleSheet.create({
     },
     modalContent: {
         backgroundColor: Colors.lightDark,
-
         borderRadius: 20,
-        paddingVertical: 20,
-        paddingHorizontal: 20,
-        marginHorizontal: 28,
+        paddingVertical: 50,
         position: 'relative',
-
+        width:370,
+        paddingBottom:50
     },
     closeIconContainer: {
         position: 'absolute',
         top: 10, // Adjust the top position as needed
-        right: 10, // Adjust the right position as needed
+        right: 30, // Adjust the right position as needed
     },
 });
 

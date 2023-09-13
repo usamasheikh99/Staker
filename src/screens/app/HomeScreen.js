@@ -1,15 +1,15 @@
 import * as React from 'react';
-import { Colors, Text } from '../../theme';
-import { Icons } from '../../constants';
 import Chat from '../../component/Chat';
+import { Icons } from '../../constants';
+import { Colors, Text } from '../../theme';
 import TradeList from '../../component/TradeList';
 import EarningList from '../../component/EarningList';
 import WeeklyTargets from '../../component/WeeklyTargets';
 import MaketSentiment from '../../component/MaketSentiment';
 import {
     View,
-    StyleSheet,
     Image,
+    StyleSheet,
     ScrollView,
     TouchableOpacity,
     ImageBackground
@@ -31,7 +31,7 @@ export default function HomeScreen({ navigation }) {
                         </View>
                         <View style={styles.topHeaderLeft}>
                             <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('Login')}>
-                                <Image source={Icons.logout} style={styles.IconSize}/>
+                                <Image source={Icons.logout} style={styles.IconSize} />
                             </TouchableOpacity>
                         </View>
                         <Text fontWeight={'normal'} style={styles.rating}><Text style={{ fontSize: 16 }}>$</Text>32,149.80</Text>

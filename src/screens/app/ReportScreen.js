@@ -23,7 +23,7 @@ export default function ReportScreen({ navigation }) {
     const HeaderProps = {
         navigation: navigation,
         ScreenName: 'Report',
-        Type: true,
+        reportType: true,
 
     }
 

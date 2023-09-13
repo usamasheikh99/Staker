@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import { Colors } from '../theme'
 import { Icons } from '../constants'
 import { View, Text, ImageBackground, StyleSheet, Image, Pressable } from 'react-native'
-import LogType from './LogType'
-import Assign from './Assign'
+import LogtypeModal from './LogtypeModal'
 
-const Header = ({ navigation, Type = false, ScreenName = "", isAcount = false, goBack = 'Home' }) => {
 
+const Header = ({ navigation, auditType = false, reportType = false, ScreenName = "", isAcount = false, goBack = 'Home' }) => {
+  const [isTypePopup, setIsTypePopup] = useState(false)
   return (
     <View style={{ backgroundColor: Colors.background, color: "#fff" }}>
 
@@ -20,13 +20,16 @@ const Header = ({ navigation, Type = false, ScreenName = "", isAcount = false, g
             <View style={styles.Item}>
               <Text style={styles.reporttxt}>{ScreenName}</Text>
             </View>
-            {Type &&
-              <Pressable style={styles.typebox} activeOpacity={1}
-              onPress={() => settypebyPopup(!typebyPopup)}>
+            {auditType &&
+              <Pressable style={styles.typebox} onPress={() => setIsTypePopup(!isTypePopup)} activeOpacity={1}>
                 <Text style={styles.type}>Type</Text>
               </Pressable>
             }
-
+            {reportType &&
+              <Pressable style={styles.typebox} onPress={() => setIsTypePopup(!isTypePopup)} activeOpacity={1}>
+                <Text style={styles.type}>Type Report</Text>
+              </Pressable>
+            }
 
             {isAcount &&
               <Pressable onPress={() => setIsAssign(!isAssign)}>
@@ -42,6 +45,9 @@ const Header = ({ navigation, Type = false, ScreenName = "", isAcount = false, g
           </View>
         </ImageBackground>
       </View>
+      {isTypePopup &&
+        <LogtypeModal visible={isTypePopup} onClose={() => setIsTypePopup(false)} />
+      }
     </View>
   )
 }
@@ -64,7 +70,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: Colors.white,
     textAlign: 'center',
-
   },
 
   typebox: {
