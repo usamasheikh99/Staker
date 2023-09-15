@@ -34,6 +34,24 @@ export default function ReportScreen({ navigation }) {
                 <Header {...HeaderProps} />
             </View>
             <ScrollView>
+
+                <View style={styles.calenderbox}>
+                    <Text style={styles.calendertxt}>Wen 1 Jan - Sat 18 Jan (18 days)</Text>
+                </View>
+
+                <View style={styles.profitbox}>
+                    <View style={styles.profittxt}>
+                        <Text style={styles.PLtxt}>P&L</Text>
+                        <Text style={styles.totaltxt}>-1481.32 USD</Text>
+                        <Text style={styles.percentagetxt}>-6.18%</Text>
+
+                        <TouchableOpacity onPress={toggleCollapse} style={styles.iconContainer}>
+                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: isCollapsed ? '265deg' : '0deg' }] }}></Image>
+                        </TouchableOpacity>
+
+                    </View>
+                </View>
+
                 <View style={styles.mainbox}>
 
                     <View style={styles.firstline}>
@@ -290,6 +308,61 @@ export default function ReportScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
+
+    calenderbox: {
+        borderRadius: 5,
+        borderColor: Colors.lightDark,
+        backgroundColor: Colors.lightDark,
+        marginHorizontal: 8,
+        marginTop: 10,
+        paddingVertical: 8
+    },
+
+    calendertxt: {
+        color: Colors.white,
+        fontSize: 15,
+        marginHorizontal: 18,
+    },
+
+    profitbox: {
+        borderRadius: 10,
+        borderColor: Colors.lightDark,
+        backgroundColor: Colors.lightDark,
+        marginHorizontal: 8,
+        marginTop: 10,
+        paddingVertical: 8
+    },
+
+    profittxt: {
+        marginHorizontal: 20,
+        flexDirection: "row",
+        alignItems: 'center',
+    },
+
+    PLtxt: {
+        color: Colors.indicatorColor,
+        fontSize: 21,
+        fontStyle: 'italic'
+    },
+
+    totaltxt: {
+        color: Colors.white,
+        fontSize: 21,
+        fontWeight: '500',
+        marginLeft: 10
+    },
+
+    percentagetxt: {
+        color: Colors.red,
+        fontSize: 21,
+        fontWeight: '500',
+        marginLeft: 10
+    },
+
+    iconContainer: {
+        position: 'absolute',
+        right: 1,
+    },
 
     mainbox: {
         borderWidth: 1,

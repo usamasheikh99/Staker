@@ -32,7 +32,7 @@ const Header = ({ navigation, auditType = false, reportType = false, ScreenName 
             }
 
             {isAcount &&
-              <Pressable onPress={() => setIsAssign(!isAssign)}>
+              <Pressable onPress={() => setIsAssign(!Assign)}>
                 <View style={styles.assignbox}>
                   <View style={styles.txtalign}>
                     <Text style={styles.assigntxt}>Kashan</Text>
@@ -63,7 +63,8 @@ const styles = StyleSheet.create({
   },
   Item: {
     textAlign: 'center',
-    flex: 1
+    flex: 1,
+    marginLeft: 30
   },
 
   reporttxt: {
