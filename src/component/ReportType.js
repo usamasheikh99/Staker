@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
 import { Colors } from '../theme';
 import AppModal from '../theme/Modal';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity
+import { 
+  View, 
+  Text, 
+  StyleSheet, 
+  TouchableOpacity 
 } from 'react-native';
 
-function LogtypeModal({ visible, onClose }) {
+function ReportType({ visible, onClose }) {
   const [selectedOption, setSelectedOption] = useState(null);
 
   const options = [
     { id: 1, label: 'Information' },
     { id: 2, label: 'Error' },
     { id: 3, label: 'Warining' },
+    { id: 4, label: 'Qurtulay' },
+
   ];
 
   const handleOptionSelect = (optionId) => {
@@ -81,4 +83,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default LogtypeModal;
+export default ReportType;
