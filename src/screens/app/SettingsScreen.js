@@ -1,13 +1,13 @@
 import * as React from 'react';
 import Header from '../../component/Header';
 import{ Colors} from "../../theme"
+import { Toast } from 'react-native-toast-message/lib/src/Toast'
 import {
     View,
     Text,
     StyleSheet,
     TouchableOpacity
 } from 'react-native';
-
 
 export default function SettingsScreen({ navigation }) {
     const handleItemPress = (itemText) => {
@@ -16,15 +16,29 @@ export default function SettingsScreen({ navigation }) {
     const HeaderProps = {
         ScreenName: 'Backtest',
         Type:false,
+        
+    }
+    const ShowToast = () => {
+        Toast.show({
+            type: 'success', // error, info
+            text1: 'Toast Notification',
+            text2: 'This is the secondary text',
+            autoHide: true,
+            visibilityTime: 5000,
+            onShow: () => console.log('Toast Visible!!'),
+            onHide: () => console.log('Toast Hidden'),
+            onPress: () => console.log('Toast clicked!!p'),
+        })
     }
     return (
         <View style={styles.container}>
             <View>
                 <Header {...HeaderProps}/>
             </View>
-            <TouchableOpacity style={{ paddingHorizontal: 45 }}>
+            <TouchableOpacity style={{ paddingHorizontal: 45 }} onPress={ShowToast}>
                 <View style={styles.button}>
                     <Text style={styles.Execute}>Execute Backtest</Text>
+                    <Toast/>
                 </View>
             </TouchableOpacity>
             <Text style={{ top: 55, fontSize: 18, color: Colors.white, marginLeft: 25 }}>Results</Text>

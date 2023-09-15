@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { Colors } from '../theme';
 import AppModal from '../theme/Modal';
+import { 
+  View, 
+  Text, 
+  StyleSheet, 
+  TouchableOpacity 
+} from 'react-native';
 
 function LogtypeModal({ visible, onClose }) {
   const [selectedOption, setSelectedOption] = useState(null);
 
   const options = [
-    { id: 1, label: 'Enformation' },
+    { id: 1, label: 'Information' },
     { id: 2, label: 'Error' },
     { id: 3, label: 'Warining' },
   ];
@@ -18,6 +24,9 @@ function LogtypeModal({ visible, onClose }) {
   return (
     <AppModal visible={visible} onClose={onClose}>
       <View>
+        <Text style={styles.logtext}>LogType</Text>
+      </View>
+      <View style={{ marginHorizontal: 35 }}>
         {options.map((option) => (
           <TouchableOpacity
             key={option.id}
@@ -33,34 +42,43 @@ function LogtypeModal({ visible, onClose }) {
       </View>
     </AppModal>
   );
-}  
+}
 
 const styles = StyleSheet.create({
+
   radioButton: {
     flexDirection: 'row',
     alignItems: 'center',
     marginVertical: 8,
   },
   radioButtonCircle: {
-    width: 24,
-    height: 24,
+    width: 20,
+    height: 20,
     borderRadius: 12,
-    borderWidth: 2,
-    borderColor: '#007AFF',
+    borderWidth: 1,
+    borderColor: Colors.white,
     alignItems: 'center',
     justifyContent: 'center',
-    marginRight: 12,
+    marginRight: 10,
+    opacity: 0.7
   },
   radioButtonChecked: {
-    width: 12,
-    height: 12,
+    width: 11,
+    height: 11,
     borderRadius: 6,
-    backgroundColor: '#007AFF',
+    backgroundColor: Colors.ButtonColor,
   },
   radioButtonText: {
     fontSize: 16,
-    color: '#000',
+    color: Colors.white,
+    fontSize: 20
   },
+  logtext: {
+    color: Colors.white,
+    fontSize: 20,
+    textAlign: 'center',
+    bottom: 30
+  }
 });
 
 export default LogtypeModal;

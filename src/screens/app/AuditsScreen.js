@@ -24,7 +24,7 @@ export default function AuditsScreen() {
         <View>
           <Text style={styles.reder}>It is a long established fact that a reader.</Text>
           <Text style={styles.textcolor}>There are many sit amet consectetur adipisicing Sint totam vero culpa odio impedit unde doloremque magnam.
-            Delectus sed rem vel quibusdam facilis  sunt ullam beatae alias obcaecati! Ratione.</Text>
+            Delectus sed rem vel quibusdam facilis  sunt ullam beatae .</Text>
           <Text style={styles.textdate}>02/10/22 02:00PM</Text>
         </View>
       </View>
@@ -35,7 +35,7 @@ export default function AuditsScreen() {
         <View>
           <Text style={styles.reder}>It is a long established fact that a reader.</Text>
           <Text style={styles.textcolor}>There are many sit amet consectetur adipisicing Sint totam vero culpa odio impedit unde doloremque magnam.
-            Delectus sed rem vel quibusdam facilis  sunt ullam beatae alias obcaecati! Ratione.</Text>
+            Delectus sed rem vel quibusdam facilis  sunt ullam beatae .</Text>
           <Text style={styles.textdate}>02/10/22 02:00PM</Text>
         </View>
       </View>
@@ -46,7 +46,7 @@ export default function AuditsScreen() {
         <View>
           <Text style={styles.reder}>It is a long established fact that a reader.</Text>
           <Text style={styles.textcolor}>There are many sit amet consectetur adipisicing Sint totam vero culpa odio impedit unde doloremque magnam.
-            Delectus sed rem vel quibusdam facilis sunt ullam beatae alias obcaecati! Ratione.</Text>
+            Delectus sed rem vel quibusdam facilis sunt ullam beatae .</Text>
           <Text style={styles.textdate}>02/10/22 02:00PM</Text>
         </View>
       </View>
@@ -87,13 +87,14 @@ const styles = StyleSheet.create({
     color: Colors.Textgray,
     top: 15,
     marginBottom: 10,
-    fontSize:13
+    fontSize: 13
   },
   text: {
     color: Colors.Textgray
   },
-  reder:{ 
-    color: Colors.white, 
-    fontSize: 16, 
-    opacity: 0.7 }
+  reder: {
+    color: Colors.white,
+    fontSize: 16,
+    opacity: 0.7
+  }
 })

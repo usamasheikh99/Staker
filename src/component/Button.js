@@ -1,15 +1,22 @@
 import React from 'react'
 import { Colors } from '../theme'
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+import {
+    View,
+    Text,
+    StyleSheet,
+    TouchableOpacity
+} from 'react-native'
 
 const Button = (props) => {
+
     return (
         <View>
-            <TouchableOpacity style={{ paddingHorizontal: 55 }}>
+            <TouchableOpacity style={{ paddingHorizontal: 55 }} >
                 <View style={styles.button}>
                     <Text style={[styles.Execute]}>{props.tittle}</Text>
                 </View>
             </TouchableOpacity>
+
         </View>
     )
 }

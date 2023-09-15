@@ -37,13 +37,19 @@ export default function HomeScreen({ navigation }) {
                         <Text fontWeight={'normal'} style={styles.rating}><Text style={{ fontSize: 16 }}>$</Text>32,149.80</Text>
                     </ImageBackground>
                 </View>
-
+                {/* CHAT */}
                 <View>
                     <Chat />
                 </View>
+                {/* CHAT END */}
+
+                {/* Trad List  */}
                 <View>
                     <TradeList navigation={navigation} />
                 </View>
+                {/* Trad List END */}
+
+                {/* EarningList */}
                 <View style={styles.EarningText}>
                     <Text style={styles.earning}>Earnings</Text>
                     <Text style={styles.more}>More</Text>
@@ -52,20 +58,27 @@ export default function HomeScreen({ navigation }) {
                     horizontal={true}>
                     <EarningList />
                 </ScrollView>
+                {/* EarningList END */}
+
+                {/* WeeklyTargets */}
                 <View style={styles.WeeklyText}>
                     <Text style={styles.Weekly}>Weekly targets</Text>
-                    <Text style={styles.more}>More</Text>
-                </View>
+                    <Text style={styles.more}>More</Text></View>
+
                 <ScrollView horizontal={true}>
                     <View style={{ flexDirection: 'row' }}>
                         <WeeklyTargets />
                         <WeeklyTargets />
                     </View>
                 </ScrollView>
+                {/* WeeklyTargets END */}
+
+                {/* MaketSentiment */}
                 <View style={styles.MarketView}>
                     <Text style={styles.MarketText}>Market Sentiment</Text>
                 </View>
                 <MaketSentiment />
+                {/* MaketSentiment END */}
             </ScrollView>
         </View>
 

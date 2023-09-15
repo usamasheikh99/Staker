@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { Colors } from "../../theme"
 import Header from '../../component/Header'
-import ControlList from '../../component/ControlList'
-import Breakup from '../../component/Breakup'
 import Slider from '@react-native-community/slider';
 import {
   View,
@@ -26,10 +24,10 @@ export default function ControlScreen() {
   }
   return (
     <ScrollView style={styles.scroll}>
-      <View style={{paddingBottom:105}}>
-      <View>
-        <Header {...HeaderProps} />
-      </View>
+      <View style={{ paddingBottom: 105 }}>
+        <View>
+          <Header {...HeaderProps} />
+        </View>
         <Text style={styles.carefullText}>Please select carefully</Text>
         <Pressable
           style={[
@@ -85,8 +83,8 @@ export default function ControlScreen() {
           </View>
           <View style={styles.todaylists}>
             <Text style={styles.Scalping}>Trade Limits</Text>
-            <View style={{ width: '70%' }}>
-              <Text style={{ color: 'white', paddingHorizontal: 90, fontSize: 11 }}>{slider}</Text>
+            <View style={{ width: '80%' }}>
+              <Text style={{ color: 'white', paddingHorizontal: 80, fontSize: 11 }}>{slider}</Text>
               <Slider
                 value={slider}
                 onValueChange={(newValue) => setSilder(newValue)}
@@ -95,18 +93,18 @@ export default function ControlScreen() {
                 step={1}
                 thumbTintColor="red"
                 minimumTrackTintColor="red"
-                style={{ transform: [{ scaleY:1.7 }] }}
+              // style={{ transform: [{ 0 }] }}
               />
 
             </View>
           </View>
           <View>
             <Button
-            tittle='Procced'/>
+              tittle='Procced' />
           </View>
         </View>
-        </View>
-      </ScrollView>
+      </View>
+    </ScrollView>
   )
 }
 
@@ -145,7 +143,7 @@ const styles = StyleSheet.create({
     paddingTop: 18,
     paddingBottom: 18,
     flexDirection: 'row',
-    alignItems: 'center'
+    // alignItems: 'center'
   },
   Scalping: {
     fontSize: 15,
