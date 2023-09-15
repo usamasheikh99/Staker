@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { View,  Image, StyleSheet, TouchableOpacity, ScrollView, Pressable } from 'react-native'
+import { View, Image, StyleSheet, TouchableOpacity, ScrollView, Pressable } from 'react-native'
 import Header from '../../component/Header';
 import { Icons } from '../../constants';
-import { Colors,Text } from '../../theme';
+import { Colors, Text } from '../../theme';
 import PositiveView from '../../component/PositiveView';
 // import useSelector from 'react-redux'
 
@@ -15,7 +15,7 @@ const Position = ({ navigation }) => {
     const handleButtonPress = (buttonName) => {
         setSelectPosition(buttonName);
     };
-  
+
     const HeaderProps = {
         navigation, navigation,
         ScreenName: 'Postion',
@@ -23,7 +23,7 @@ const Position = ({ navigation }) => {
         isAcount: 'Kashan',
     }
 
-    
+
     return (
 
         <View style={{ backgroundColor: Colors.background, flex: 1, paddingBottom: 100 }}>
@@ -52,6 +52,10 @@ const Position = ({ navigation }) => {
 
                     <View style={styles.secondline}>
 
+                        <TouchableOpacity>
+                            <Image source={Icons.Shuttle} style={{ height: 22, width: 22, }} />
+                        </TouchableOpacity>
+
                         <TouchableOpacity
                             style={[styles.btn, selectPosition === 'Scalping' && { backgroundColor: Colors.lightDark }]}
                             onPress={() => handleButtonPress('Scalping')}
@@ -60,14 +64,14 @@ const Position = ({ navigation }) => {
                         </TouchableOpacity>
 
                         <TouchableOpacity
-                            style={[styles.btn, selectPosition === 'Swing' && { backgroundColor: Colors.lightDark }]}
+                            style={[styles.btn2, selectPosition === 'Swing' && { backgroundColor: Colors.lightDark }]}
                             onPress={() => handleButtonPress('Swing')}
                         >
                             <Text style={styles.btntxt2}>Swing</Text>
                         </TouchableOpacity>
 
                         <TouchableOpacity
-                            style={[styles.btn, selectPosition === 'Holding' && { backgroundColor: Colors.lightDark }]}
+                            style={[styles.btn2, selectPosition === 'Holding' && { backgroundColor: Colors.lightDark }]}
                             onPress={() => handleButtonPress('Holding')}
                         >
                             <Text style={styles.btntxt2}>Holding</Text>
@@ -236,8 +240,9 @@ const Position = ({ navigation }) => {
                     </View>
 
                 </View>
+
+                <PositiveView modalVisible={typebyPopup} setModalVisible={settypebyPopup} />
             </ScrollView>
-            <PositiveView modalVisible={typebyPopup} setModalVisible={settypebyPopup} />
         </View>
 
     )
@@ -310,33 +315,32 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         borderColor: Colors.MediumDark,
         backgroundColor: Colors.MediumDark,
-        height: 40,
-        width: 71,
+        height: 37,
+        width: 65,
         alignItems: 'center',
         marginTop: 6,
-        marginRight: 7
+        marginLeft: 10
     },
 
     btn2: {
         borderRadius: 5,
         borderColor: Colors.MediumDark,
         backgroundColor: Colors.MediumDark,
-        height: 40,
-        width: 71,
-        marginLeft: 10,
+        height: 37,
+        width: 65,
         alignItems: 'center',
-        marginTop: 6
+        marginTop: 6,
+        marginLeft: 5
     },
 
     btntxt2: {
-        color: Colors.white,
         paddingVertical: 10,
-        paddingHorizontal: 10,
-        fontSize: 13
+        fontSize: 12,
+        color: Colors.white,
     },
 
     usd: {
-        marginLeft: 32
+        marginLeft: 30
     },
 
     usdtxt: {

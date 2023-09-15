@@ -19,7 +19,7 @@ const PositiveView = ({ modalVisible, setModalVisible }) => {
                         <Image source={Icons.Cross_show} style={{ height: 24, width: 24, opacity: 0.8 }} />
                     </Pressable>
                 </View>
-
+ 
                 <View style={styles.secondline}>
                     <Text style={styles.positivetxt}>Postive</Text>
                     <Text style={styles.heading}>BioCryst upgraded to buy at jefferies on undervaluation</Text>

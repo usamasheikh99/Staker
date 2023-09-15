@@ -42,7 +42,6 @@ const styles = StyleSheet.create({
     },
     modalContent: {
         backgroundColor: Colors.lightDark,
-
         borderRadius: 20,
         paddingVertical: 20,
         paddingHorizontal: 20,
