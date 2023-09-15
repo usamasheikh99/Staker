@@ -15,7 +15,7 @@ export default function SettingsScreen({ navigation }) {
     };
     const HeaderProps = {
         ScreenName: 'Backtest',
-        Type:true,
+        Type:false,
     }
     return (
         <View style={styles.container}>

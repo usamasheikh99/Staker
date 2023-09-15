@@ -10,7 +10,7 @@ import {
 export default function AuditsScreen() {
   const HeaderProps = {
     ScreenName: 'Log',
-    Type: true
+    auditType: true
   }
   return (
     <View style={styles.container}>
