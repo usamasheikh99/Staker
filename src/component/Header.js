@@ -10,7 +10,6 @@ import {
   StyleSheet, 
   ImageBackground 
 } from 'react-native'
-import ReportType from './ReportType'
 
 
 const Header = ({ navigation, auditType = false, OnOpenPopup, ScreenName = "", isAcount = false, goBack = 'Home', isReportPopup = false }) => {
@@ -33,8 +32,8 @@ const Header = ({ navigation, auditType = false, OnOpenPopup, ScreenName = "", i
                 <Text style={styles.type}>Type</Text>
               </Pressable>
             }
-            {reportType &&
-              <Pressable style={styles.typebox} onPress={() => setIsReportPopup(!isReportPopup)} activeOpacity={1}>
+            {isReportPopup &&
+              <Pressable style={styles.typebox} onPress={OnOpenPopup} activeOpacity={1}>
                 <Text style={styles.type}>Type Report</Text>
               </Pressable>
             }
