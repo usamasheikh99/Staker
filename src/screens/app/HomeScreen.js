@@ -1,3 +1,4 @@
+
 import * as React from 'react';
 import Chat from '../../component/Chat';
 import { Icons } from '../../constants';
@@ -22,7 +23,7 @@ export default function HomeScreen({ navigation }) {
             <ScrollView style={styles.scroll}
                 showsVerticalScrollIndicator={false}>
                 <View style={styles.Header}>
-                    <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 25, paddingTop: 15, paddingBottom: 35 }}>
+                    <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 25, paddingTop: 5, paddingBottom: 30 }}>
                         <View style={styles.Item}>
                             <Text fontWeight={'light'} style={styles.total}>Total Capital</Text>
                             <TouchableOpacity activeOpacity={1} >
@@ -54,7 +55,7 @@ export default function HomeScreen({ navigation }) {
                     <Text style={styles.earning}>Earnings</Text>
                     <Text style={styles.more}>More</Text>
                 </View>
-                <ScrollView style={{ flex: 1, height: 200 }}
+                <ScrollView style={{ flex: 1, height: 210 }}
                     horizontal={true}>
                     <EarningList />
                 </ScrollView>
@@ -77,7 +78,10 @@ export default function HomeScreen({ navigation }) {
                 <View style={styles.MarketView}>
                     <Text style={styles.MarketText}>Market Sentiment</Text>
                 </View>
-                <MaketSentiment />
+                <MaketSentiment
+                    tittle='Positive' />
+                <MaketSentiment
+                    tittle='Negitive' />
                 {/* MaketSentiment END */}
             </ScrollView>
         </View>
@@ -97,7 +101,7 @@ const styles = StyleSheet.create({
         width: 19,
         height: 19,
         left: 8,
-        top: 38
+        top: 35
     },
     Item: {
         flexDirection: 'row',
@@ -106,7 +110,7 @@ const styles = StyleSheet.create({
         width: 17,
         height: 18,
         right: 7,
-        top: 15
+        top: 20
     },
     topHeaderLeft: {
         alignItems: 'flex-end',
@@ -114,13 +118,13 @@ const styles = StyleSheet.create({
     total: {
         fontSize: 15,
         color: Colors.white,
-        top: 38,
+        top: 35,
         fontFamily: 'MyriadPro-Light'
     },
     rating: {
         fontSize: 34,
         color: Colors.white,
-        top: 15
+        top: 12
     },
     EarningText: {
         flexDirection: 'row',
@@ -134,7 +138,7 @@ const styles = StyleSheet.create({
 
     },
     more: {
-        fontSize: 16,
+        fontSize: 15,
         paddingHorizontal: 10,
         color: Colors.Textgray
     },
@@ -150,12 +154,11 @@ const styles = StyleSheet.create({
     MarketView: {
         justifyContent: 'space-between',
         paddingHorizontal: 19,
-        top: 3
+        paddingVertical: 15
     },
     MarketText: {
         fontSize: 20,
         color: Colors.white,
-        top: 10,
     },
     scroll: {
         backgroundColor: Colors.background,

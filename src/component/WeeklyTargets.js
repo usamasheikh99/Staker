@@ -10,11 +10,11 @@ const WeeklyTargets = () => {
                 <Text style={styles.Dates}>
                     21 jun - 28 jun
                 </Text>
-                <View style={{ flexDirection: 'row', alignItems: 'center', bottom: 10, }}>
+                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                     <Text style={styles.price}><Text style={{ fontSize: 15 }}>$</Text>130,232</Text>
-                    <View style={{ paddingHorizontal: 40, left: 30 }}>
+                    <View style={{ paddingHorizontal: 50, left: 30,bottom:8}}>
                         <ProgressCircle
-                            percent={30}
+                            percent={45}
                             radius={35}
                             borderWidth={4}
                             color="gray"
@@ -38,14 +38,13 @@ const styles = StyleSheet.create({
     },
     Dates: {
         color: Colors.Textgray,
-        fontSize: 14,
         left: 12,
-        top:4
+        top:9
     },
     EarningList: {
-        padding: 10,
+        padding: 5,
         borderRadius: 10,
-        height: 105,
+        height:102,
     },
     stockSymbol: {
         fontSize: 18,
@@ -55,11 +54,12 @@ const styles = StyleSheet.create({
         fontSize: 24,
         color: Colors.white,
         paddingHorizontal: 10,
+        bottom:5
     },
     winrate: {
         color: Colors.Textgray,
         fontSize: 12,
-        bottom: 25,
-        left: 8
+        left: 10,
+        bottom:20
     }
 })

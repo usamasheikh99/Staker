@@ -140,24 +140,24 @@ const styles = StyleSheet.create({
         marginRight: 15
     },
     flucP: {
-        fontSize: 18,
+        fontSize: 17,
         color: Colors.white,
         textAlign: 'right',
     },
     tradeline: {
         width: 60,
-        height: 23,
+        height: 24,
         opacity: 0.4
     },
     tradelines: {
         width: 60,
-        height: 23,
+        height: 24,
         opacity: 0.4,
         left: 18
     },
     tradelinee: {
         width: 60,
-        height: 23,
+        height: 24,
         opacity: 0.4,
         left: 22
     },
@@ -189,7 +189,7 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.lightDark,
         flexDirection: 'row',
         padding: 9,
-        borderRadius: 10,
+        borderRadius: 15,
         marginHorizontal: 10,
         marginVertical: 5,
         paddingTop: 12,
@@ -204,7 +204,8 @@ const styles = StyleSheet.create({
     {
         color: Colors.green,
         textAlign: 'right',
-        fontSize: 20,
+        fontSize: 19,
+        opacity: 0.8,
     },
     Indicator: {
         color: Colors.textBlue,
@@ -212,9 +213,9 @@ const styles = StyleSheet.create({
         opacity: 0.9
     },
     Dollars: {
-        color: Colors.btnRed,
+        color: Colors.red,
         textAlign: 'right',
-        fontSize: 20,
+        fontSize: 19,
     },
     task: {
         fontSize: 12,

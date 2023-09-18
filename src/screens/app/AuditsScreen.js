@@ -7,8 +7,9 @@ import {
   StyleSheet
 } from 'react-native'
 
-export default function AuditsScreen() {
+export default function AuditsScreen({navigation}) {
   const HeaderProps = {
+    navigation: navigation,
     ScreenName: 'Log',
     auditType: true
   }

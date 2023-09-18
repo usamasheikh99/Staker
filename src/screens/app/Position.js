@@ -26,7 +26,7 @@ const Position = ({ navigation }) => {
 
     return (
 
-        <View style={{ backgroundColor: Colors.background, flex: 1, paddingBottom: 100 }}>
+        <View style={{ backgroundColor: Colors.background, flex: 1, paddingBottom: 80 }}>
             <View>
                 <Header {...HeaderProps} />
             </View>

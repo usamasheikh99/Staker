@@ -7,7 +7,7 @@ import {
     StyleSheet,
 } from 'react-native';
 import Button from './Button';
-import AppModal from '../theme/Modal';
+import AppModal from '../theme/AppModal';
 
 const TargetModal = ({ IsTargetModel, targetModelHandle, props }) => {
     return (
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     targetMaine: {
         alignItems: 'center',
         top: 20,
-        left:8,
+        left: 8,
     },
     header: {
     },
@@ -69,6 +69,6 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 20,
         opacity: 0.8,
-        bottom:30
+        bottom: 30
     }
 });

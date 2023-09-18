@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Colors } from '../theme';
-import AppModal from '../theme/Modal';
-import { 
-  View, 
-  Text, 
-  StyleSheet, 
-  TouchableOpacity 
+import AppModal from '../theme/AppModal';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity
 } from 'react-native';
 
 function LogtypeModal({ visible, onClose }) {
@@ -24,7 +24,7 @@ function LogtypeModal({ visible, onClose }) {
   return (
     <AppModal visible={visible} onClose={onClose}>
       <View>
-        <Text style={styles.logtext}>LogType</Text>
+        <Text style={styles.logtext}>Log Type</Text>
       </View>
       <View style={{ marginHorizontal: 35 }}>
         {options.map((option) => (
@@ -52,8 +52,8 @@ const styles = StyleSheet.create({
     marginVertical: 8,
   },
   radioButtonCircle: {
-    width: 20,
-    height: 20,
+    width: 18,
+    height: 18,
     borderRadius: 12,
     borderWidth: 1,
     borderColor: Colors.white,
@@ -69,7 +69,6 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.ButtonColor,
   },
   radioButtonText: {
-    fontSize: 16,
     color: Colors.white,
     fontSize: 20
   },

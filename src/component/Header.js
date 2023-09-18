@@ -1,8 +1,15 @@
 import React, { useState } from 'react'
 import { Colors } from '../theme'
 import { Icons } from '../constants'
-import { View, Text, ImageBackground, StyleSheet, Image, Pressable } from 'react-native'
 import LogtypeModal from './LogtypeModal'
+import { 
+  View, 
+  Text, 
+  Image, 
+  Pressable, 
+  StyleSheet, 
+  ImageBackground 
+} from 'react-native'
 
 
 const Header = ({ navigation, auditType = false, reportType = false, ScreenName = "", isAcount = false, goBack = 'Home' }) => {
@@ -15,7 +22,7 @@ const Header = ({ navigation, auditType = false, reportType = false, ScreenName 
 
           <View style={styles.headertxt}>
             <Pressable activeOpacity={1} onPress={() => navigation.navigate(goBack)}>
-              <Image source={Icons.left} resizeMode="cover" style={{ width: 30, height: 30, marginLeft: 8 }} />
+              <Image source={Icons.left} resizeMode="cover" style={{ width: 30, height: 30 }} />
             </Pressable >
             <View style={styles.Item}>
               <Text style={styles.reporttxt}>{ScreenName}</Text>
@@ -27,7 +34,7 @@ const Header = ({ navigation, auditType = false, reportType = false, ScreenName 
             }
             {reportType &&
               <Pressable style={styles.typebox} onPress={() => setIsTypePopup(!isTypePopup)} activeOpacity={1}>
-                <Text style={styles.type}>Type Report</Text>
+                <Text style={styles.type}>Type</Text>
               </Pressable>
             }
 
@@ -62,9 +69,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between'
   },
   Item: {
-    textAlign: 'center',
     flex: 1,
-    marginLeft: 30
   },
 
   reporttxt: {

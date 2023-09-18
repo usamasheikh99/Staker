@@ -41,7 +41,7 @@ export default function SettingsScreen({ navigation }) {
                     <Toast/>
                 </View>
             </TouchableOpacity>
-            <Text style={{ top: 55, fontSize: 18, color: Colors.white, marginLeft: 25 }}>Results</Text>
+            <Text style={{ top: 45, fontSize: 18, color: Colors.white, marginLeft: 25 }}>Results</Text>
                 <View style={styles.todaylist}>
                     <Text style={styles.Bnchmark}>Benchmark Profile</Text>
                     <Text style={styles.parcentage}>4.5%</Text>
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         marginHorizontal: 19,
         marginVertical: 5,
-        top: 60,
+        top: 50,
         flexDirection: 'row',
         justifyContent: 'space-between'
     },

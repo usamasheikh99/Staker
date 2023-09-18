@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, ImageBackground, TouchableOpacity, Pressable, Image, Animated, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Pressable, Image, Animated, ScrollView } from 'react-native';
 import { Icons } from '../../constants';
 import { Colors } from '../../theme';
 import Header from '../../component/Header';
