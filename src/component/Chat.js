@@ -42,7 +42,7 @@ const Chat = () => {
                             bgColor={Colors.lightDark}
                         >
 
-                            <Text style={{ fontSize: 13, color: Colors.Textgray, top: 9 }}>{"Today"}</Text>
+                            <Text style={{ fontSize: 14, color: Colors.Textgray, top: 9 }}>{"Today"}</Text>
                             <Text style={{ fontSize: 35, color: Colors.white, }}>{'2.50'}</Text>
                             <Text style={{ fontSize: 18, color: Colors.green, bottom: 8, opacity: 0.8 }}><Text style={{ fontSize: 13 }}>$</Text>{'1300.15'}</Text>
                         </ProgressCircle>

@@ -14,6 +14,7 @@ import {
 
 const Header = ({ navigation, auditType = false, reportType = false, ScreenName = "", isAcount = false, goBack = 'Home' }) => {
   const [isTypePopup, setIsTypePopup] = useState(false)
+  const [isReportPopup, setIsReportPopup] = useState(false)
   return (
     <View style={{ backgroundColor: Colors.background, color: "#fff" }}>
 
@@ -34,7 +35,7 @@ const Header = ({ navigation, auditType = false, reportType = false, ScreenName 
             }
             {reportType &&
               <Pressable style={styles.typebox} onPress={() => setIsTypePopup(!isTypePopup)} activeOpacity={1}>
-                <Text style={styles.type}>Type</Text>
+                <Text style={styles.type}>Type Report</Text>
               </Pressable>
             }
 
