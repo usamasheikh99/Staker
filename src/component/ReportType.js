@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Colors } from '../theme';
 import AppModal from '../theme/Modal';
-import { 
-  View, 
-  Text, 
-  StyleSheet, 
-  TouchableOpacity 
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity
 } from 'react-native';
 
 function ReportType({ visible, onClose }) {

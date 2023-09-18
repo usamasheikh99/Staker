@@ -3,10 +3,11 @@ import StackContainer from './src/navigation';
 import messaging from '@react-native-firebase/messaging';
 import { requestUserPermission } from '../Staker/src/utils/pushnotification_helper'
 import LogType from './src/component/LogtypeModal';
+import SplashScreen from 'react-native-splash-screen';
 
 function App() {
   useEffect(() => {
-    // Request permission for push notifications
+   SplashScreen.hide()
     messaging()
       .requestPermission()
       .then(() => {

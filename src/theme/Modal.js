@@ -52,6 +52,8 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: 10, // Adjust the top position as needed
         right: 30, // Adjust the right position as needed
+        height:30,
+        width:30
     },
 });
 

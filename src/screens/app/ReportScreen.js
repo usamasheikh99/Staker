@@ -3,30 +3,31 @@ import { View, Text, StyleSheet, ImageBackground, TouchableOpacity, Pressable, I
 import { Icons } from '../../constants';
 import { Colors } from '../../theme';
 import Header from '../../component/Header';
+import ReportType from '../../component/ReportType';
 
 
 
 export default function ReportScreen({ navigation }) {
-    const [isCollapsed, setIsCollapsed] = useState(true);
-    const animatedHeight = new Animated.Value(isCollapsed ? 0 : 130); // Adjust initial height as needed
-    function toggleCollapse() {
-        const targetHeight = isCollapsed ? 130 : 0; // Adjust target height for collapse/expand
-        setIsCollapsed(!isCollapsed);
-
-        Animated.timing(animatedHeight, {
-            toValue: targetHeight,
-            duration: 300, // Adjust animation duration as needed
-            useNativeDriver: false, // Make sure to set this to false for height animations
-        }).start();
-    }
+    const [isReportPopup, setIsReportPopup] = useState(false);
+    const [collapsedIds, setCollapsedIds] = useState([]);
+    const toggleCollapse = (id) => {
+        if (collapsedIds.includes(id)) {
+            setCollapsedIds(collapsedIds.filter((collapsedId) => collapsedId !== id));
+        } else {
+            setCollapsedIds([...collapsedIds, id]);
+        }
+    };
 
     const HeaderProps = {
         navigation: navigation,
         ScreenName: 'Report',
-        reportType: true
-
+        OnOpenPopup: () => setIsReportPopup(true),
+        isReportPopup: true
     }
-
+    const ReportTypeProps = {
+        visible: isReportPopup,
+        onClose: () => setIsReportPopup(false)
+    }
     return (
         <View style={{ backgroundColor: Colors.background, flex: 1, }}>
 
@@ -45,19 +46,65 @@ export default function ReportScreen({ navigation }) {
                         <Text style={styles.totaltxt}>-1481.32 USD</Text>
                         <Text style={styles.percentagetxt}>-6.18%</Text>
 
-                        <TouchableOpacity onPress={toggleCollapse} style={styles.iconContainer}>
-                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: isCollapsed ? '265deg' : '0deg' }] }}></Image>
+                        <TouchableOpacity onPress={() => toggleCollapse('Pnl')} style={styles.iconContainer}>
+                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: collapsedIds.includes('Pnl') ? '265deg' : '0deg' }] }}></Image>
                         </TouchableOpacity>
 
                     </View>
                 </View>
 
+                {collapsedIds.includes('Pnl') && (
+                    <View style={{ backgroundColor: Colors.background, margin: 10 }}>
+                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                            <View style={{ backgroundColor: Colors.lightDark, width: '46%', margin: 3 }}>
+                                <Text style={styles.Portfoliotxt}>Portfolio States</Text>
+
+                                <Text>Capital</Text>
+                                <Text>25000 USD</Text>
+
+                                <Text>Balance</Text>
+                                <Text>24100.17 USD</Text>
+
+                                <Text>Start From  </Text>
+                                <Text>23970.43 USD</Text>
+
+
+                                <Text>PnL</Text>
+                                <Text>-1481.32 USD -6.18%</Text>
+
+                                <Text>Realized PnL</Text>
+                                <Text>-1545.32 USD -6.45%</Text>
+
+                                <Text>WinRate</Text>
+                                <Text>34% 33%</Text>
+
+                                <Text>Trades</Text>
+                                <Text>58</Text>
+
+                            </View>
+                            <View style={{ backgroundColor: Colors.lightDark, width: '46%', margin: 3 }}>
+                                <Text>hi</Text>
+                            </View>
+                        </View>
+                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 10 }}>
+                            <View style={{ backgroundColor: Colors.lightDark, width: '46%', margin: 3 }}>
+                                <Text>hi</Text>
+                            </View>
+                            <View style={{ backgroundColor: Colors.lightDark, width: '46%', margin: 3 }}>
+                                <Text>hi</Text>
+                            </View>
+                        </View>
+
+
+                    </View>
+                )}
+
                 <View style={styles.mainbox}>
 
                     <View style={styles.firstline}>
                         <Text style={styles.todaytxt}>Today</Text>
-                        <TouchableOpacity onPress={toggleCollapse}>
-                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: isCollapsed ? '265deg' : '0deg' }] }}></Image>
+                        <TouchableOpacity onPress={() => toggleCollapse('Today')}>
+                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: collapsedIds.includes('Today') ? '265deg' : '0deg' }] }}></Image>
                         </TouchableOpacity>
                     </View>
 
@@ -67,41 +114,42 @@ export default function ReportScreen({ navigation }) {
                         <Text style={styles.txt}>Trades 80 Winrate 56%</Text>
                     </View>
 
-                    <Animated.View style={{ height: animatedHeight, overflow: 'hidden' }}>
+                    {collapsedIds.includes('Today') && (
+                        <View>
+                            <View style={styles.thirdline}>
+                                <Pressable onPress={() => navigation.navigate('Position')}>
+                                    <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
+                                </Pressable>
+                                <View style={styles.amctext}>
+                                    <Text style={styles.amctxt}>AMC</Text>
+                                    <Text style={styles.longtxt}>Long  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
+                                </View>
 
-                        <View style={styles.thirdline}>
-                            <Pressable onPress={() => navigation.navigate('Position')}>
+
+                                <View>
+                                    <Text style={styles.USD2txt}>32,078 USD</Text>
+                                    <Text style={styles.perctxt2}>14.89%</Text>
+                                </View>
+                            </View>
+
+                            <View style={styles.borderbottom}></View>
+
+                            <View style={styles.thirdline}>
                                 <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
-                            </Pressable>
-                            <View style={styles.amctext}>
-                                <Text style={styles.amctxt}>AMC</Text>
-                                <Text style={styles.longtxt}>Long  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
-                            </View>
+                                <View style={styles.amctext}>
+                                    <Text style={styles.amctxt}>AMC</Text>
+                                    <Text style={styles.longtxt}>Short  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
+                                </View>
 
 
-                            <View>
-                                <Text style={styles.USD2txt}>32,078 USD</Text>
-                                <Text style={styles.perctxt2}>14.89%</Text>
-                            </View>
-                        </View>
-
-                        <View style={styles.borderbottom}></View>
-
-                        <View style={styles.thirdline}>
-                            <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
-                            <View style={styles.amctext}>
-                                <Text style={styles.amctxt}>AMC</Text>
-                                <Text style={styles.longtxt}>Short  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
-                            </View>
-
-
-                            <View>
-                                <Text style={styles.USD2txt}>32,078 USD</Text>
-                                <Text style={styles.perctxt2}>14.89%</Text>
+                                <View>
+                                    <Text style={styles.USD2txt}>32,078 USD</Text>
+                                    <Text style={styles.perctxt2}>14.89%</Text>
+                                </View>
                             </View>
                         </View>
 
-                    </Animated.View>
+                    )}
 
                 </View>
 
@@ -109,8 +157,8 @@ export default function ReportScreen({ navigation }) {
 
                     <View style={styles.firstline}>
                         <Text style={styles.todaytxt}>Today</Text>
-                        <TouchableOpacity onPress={toggleCollapse}>
-                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: isCollapsed ? '265deg' : '0deg' }] }}></Image>
+                        <TouchableOpacity onPress={() => toggleCollapse('Today')}>
+                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: true ? '265deg' : '0deg' }] }}></Image>
                         </TouchableOpacity>
                     </View>
 
@@ -120,39 +168,40 @@ export default function ReportScreen({ navigation }) {
                         <Text style={styles.txt}>Trades 80 Winrate 56%</Text>
                     </View>
 
-                    <Animated.View style={{ height: animatedHeight, overflow: 'hidden' }}>
+                    {collapsedIds.includes('Today') && (
+                        <View>
+                            <View style={styles.thirdline}>
+                                <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
+                                <View style={styles.amctext}>
+                                    <Text style={styles.amctxt}>AMC</Text>
+                                    <Text style={styles.longtxt}>Long  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
+                                </View>
 
-                        <View style={styles.thirdline}>
-                            <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
-                            <View style={styles.amctext}>
-                                <Text style={styles.amctxt}>AMC</Text>
-                                <Text style={styles.longtxt}>Long  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
+
+                                <View>
+                                    <Text style={styles.USD2txt}>32,078 USD</Text>
+                                    <Text style={styles.perctxt2}>14.89%</Text>
+                                </View>
                             </View>
 
+                            <View style={styles.borderbottom}></View>
 
-                            <View>
-                                <Text style={styles.USD2txt}>32,078 USD</Text>
-                                <Text style={styles.perctxt2}>14.89%</Text>
+                            <View style={styles.thirdline}>
+                                <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
+                                <View style={styles.amctext}>
+                                    <Text style={styles.amctxt}>AMC</Text>
+                                    <Text style={styles.longtxt}>Short  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
+                                </View>
+
+
+                                <View>
+                                    <Text style={styles.USD2txt}>32,078 USD</Text>
+                                    <Text style={styles.perctxt2}>14.89%</Text>
+                                </View>
                             </View>
                         </View>
 
-                        <View style={styles.borderbottom}></View>
-
-                        <View style={styles.thirdline}>
-                            <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
-                            <View style={styles.amctext}>
-                                <Text style={styles.amctxt}>AMC</Text>
-                                <Text style={styles.longtxt}>Short  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
-                            </View>
-
-
-                            <View>
-                                <Text style={styles.USD2txt}>32,078 USD</Text>
-                                <Text style={styles.perctxt2}>14.89%</Text>
-                            </View>
-                        </View>
-
-                    </Animated.View>
+                    )}
 
                 </View>
 
@@ -160,8 +209,8 @@ export default function ReportScreen({ navigation }) {
 
                     <View style={styles.firstline}>
                         <Text style={styles.todaytxt}>Today</Text>
-                        <TouchableOpacity onPress={toggleCollapse}>
-                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: isCollapsed ? '265deg' : '0deg' }] }}></Image>
+                        <TouchableOpacity onPress={() => toggleCollapse('Today')}>
+                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: true ? '265deg' : '0deg' }] }}></Image>
                         </TouchableOpacity>
                     </View>
 
@@ -171,37 +220,39 @@ export default function ReportScreen({ navigation }) {
                         <Text style={styles.txt}>Trades 80 Winrate 56%</Text>
                     </View>
 
-                    <Animated.View style={{ height: animatedHeight, overflow: 'hidden' }}>
+                    {collapsedIds.includes('Today') && (
 
-                        <View style={styles.thirdline}>
-                            <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
-                            <View style={styles.amctext}>
-                                <Text style={styles.amctxt}>AMC</Text>
-                                <Text style={styles.longtxt}>Long  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
+                        <View>
+                            <View style={styles.thirdline}>
+                                <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
+                                <View style={styles.amctext}>
+                                    <Text style={styles.amctxt}>AMC</Text>
+                                    <Text style={styles.longtxt}>Long  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
+                                </View>
+
+
+                                <View>
+                                    <Text style={styles.USD2txt}>32,078 USD</Text>
+                                    <Text style={styles.perctxt2}>14.89%</Text>
+                                </View>
                             </View>
 
+                            <View style={styles.thirdline}>
+                                <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
+                                <View style={styles.amctext}>
+                                    <Text style={styles.amctxt}>AMC</Text>
+                                    <Text style={styles.longtxt}>Short  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
+                                </View>
 
-                            <View>
-                                <Text style={styles.USD2txt}>32,078 USD</Text>
-                                <Text style={styles.perctxt2}>14.89%</Text>
+
+                                <View>
+                                    <Text style={styles.USD2txt}>32,078 USD</Text>
+                                    <Text style={styles.perctxt2}>14.89%</Text>
+                                </View>
                             </View>
                         </View>
 
-                        <View style={styles.thirdline}>
-                            <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
-                            <View style={styles.amctext}>
-                                <Text style={styles.amctxt}>AMC</Text>
-                                <Text style={styles.longtxt}>Short  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
-                            </View>
-
-
-                            <View>
-                                <Text style={styles.USD2txt}>32,078 USD</Text>
-                                <Text style={styles.perctxt2}>14.89%</Text>
-                            </View>
-                        </View>
-
-                    </Animated.View>
+                    )}
 
                 </View>
 
@@ -209,8 +260,8 @@ export default function ReportScreen({ navigation }) {
 
                     <View style={styles.firstline}>
                         <Text style={styles.todaytxt}>Today</Text>
-                        <TouchableOpacity onPress={toggleCollapse}>
-                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: isCollapsed ? '265deg' : '0deg' }] }}></Image>
+                        <TouchableOpacity onPress={() => toggleCollapse('Today')}>
+                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: true ? '265deg' : '0deg' }] }}></Image>
                         </TouchableOpacity>
                     </View>
 
@@ -220,37 +271,39 @@ export default function ReportScreen({ navigation }) {
                         <Text style={styles.txt}>Trades 80 Winrate 56%</Text>
                     </View>
 
-                    <Animated.View style={{ height: animatedHeight, overflow: 'hidden' }}>
+                    {collapsedIds.includes('Today') && (
 
-                        <View style={styles.thirdline}>
-                            <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
-                            <View style={styles.amctext}>
-                                <Text style={styles.amctxt}>AMC</Text>
-                                <Text style={styles.longtxt}>Long  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
+                        <View>
+                            <View style={styles.thirdline}>
+                                <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
+                                <View style={styles.amctext}>
+                                    <Text style={styles.amctxt}>AMC</Text>
+                                    <Text style={styles.longtxt}>Long  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
+                                </View>
+
+
+                                <View>
+                                    <Text style={styles.USD2txt}>32,078 USD</Text>
+                                    <Text style={styles.perctxt2}>14.89%</Text>
+                                </View>
                             </View>
 
+                            <View style={styles.thirdline}>
+                                <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
+                                <View style={styles.amctext}>
+                                    <Text style={styles.amctxt}>AMC</Text>
+                                    <Text style={styles.longtxt}>Short  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
+                                </View>
 
-                            <View>
-                                <Text style={styles.USD2txt}>32,078 USD</Text>
-                                <Text style={styles.perctxt2}>14.89%</Text>
+
+                                <View>
+                                    <Text style={styles.USD2txt}>32,078 USD</Text>
+                                    <Text style={styles.perctxt2}>14.89%</Text>
+                                </View>
                             </View>
                         </View>
 
-                        <View style={styles.thirdline}>
-                            <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
-                            <View style={styles.amctext}>
-                                <Text style={styles.amctxt}>AMC</Text>
-                                <Text style={styles.longtxt}>Short  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
-                            </View>
-
-
-                            <View>
-                                <Text style={styles.USD2txt}>32,078 USD</Text>
-                                <Text style={styles.perctxt2}>14.89%</Text>
-                            </View>
-                        </View>
-
-                    </Animated.View>
+                    )}
 
                 </View>
 
@@ -258,8 +311,8 @@ export default function ReportScreen({ navigation }) {
 
                     <View style={styles.firstline}>
                         <Text style={styles.todaytxt}>Today</Text>
-                        <TouchableOpacity onPress={toggleCollapse}>
-                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: isCollapsed ? '265deg' : '0deg' }] }}></Image>
+                        <TouchableOpacity onPress={() => toggleCollapse('Today')}>
+                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: true ? '265deg' : '0deg' }] }}></Image>
                         </TouchableOpacity>
                     </View>
 
@@ -269,39 +322,42 @@ export default function ReportScreen({ navigation }) {
                         <Text style={styles.txt}>Trades 80 Winrate 56%</Text>
                     </View>
 
-                    <Animated.View style={{ height: animatedHeight, overflow: 'hidden' }}>
+                    {collapsedIds.includes('Today') && (
 
-                        <View style={styles.thirdline}>
-                            <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
-                            <View style={styles.amctext}>
-                                <Text style={styles.amctxt}>AMC</Text>
-                                <Text style={styles.longtxt}>Long  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
+                        <View >
+                            <View style={styles.thirdline}>
+                                <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
+                                <View style={styles.amctext}>
+                                    <Text style={styles.amctxt}>AMC</Text>
+                                    <Text style={styles.longtxt}>Long  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
+                                </View>
+
+
+                                <View>
+                                    <Text style={styles.USD2txt}>32,078 USD</Text>
+                                    <Text style={styles.perctxt2}>14.89%</Text>
+                                </View>
                             </View>
 
+                            <View style={styles.thirdline}>
+                                <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
+                                <View style={styles.amctext}>
+                                    <Text style={styles.amctxt}>AMC</Text>
+                                    <Text style={styles.longtxt}>Short  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
+                                </View>
 
-                            <View>
-                                <Text style={styles.USD2txt}>32,078 USD</Text>
-                                <Text style={styles.perctxt2}>14.89%</Text>
+
+                                <View>
+                                    <Text style={styles.USD2txt}>32,078 USD</Text>
+                                    <Text style={styles.perctxt2}>14.89%</Text>
+                                </View>
                             </View>
                         </View>
 
-                        <View style={styles.thirdline}>
-                            <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
-                            <View style={styles.amctext}>
-                                <Text style={styles.amctxt}>AMC</Text>
-                                <Text style={styles.longtxt}>Short  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
-                            </View>
-
-
-                            <View>
-                                <Text style={styles.USD2txt}>32,078 USD</Text>
-                                <Text style={styles.perctxt2}>14.89%</Text>
-                            </View>
-                        </View>
-
-                    </Animated.View>
+                    )}
 
                 </View>
+                <ReportType {...ReportTypeProps} />
             </ScrollView>
         </View>
     );
@@ -452,6 +508,10 @@ const styles = StyleSheet.create({
         marginLeft: 65,
         marginTop: 12,
         opacity: 0.2
+    },
+
+    Portfoliotxt: {
+        color: Colors.Textgray
     }
 
 

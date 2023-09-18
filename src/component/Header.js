@@ -3,11 +3,11 @@ import { Colors } from '../theme'
 import { Icons } from '../constants'
 import LogtypeModal from './LogtypeModal'
 import { View, Text, ImageBackground, StyleSheet, Image, Pressable } from 'react-native'
+import ReportType from './ReportType'
 
 
-const Header = ({ navigation, auditType = false, reportType = false, ScreenName = "", isAcount = false, goBack = 'Home' }) => {
+const Header = ({ navigation, auditType = false, OnOpenPopup, ScreenName = "", isAcount = false, goBack = 'Home', isReportPopup = false }) => {
   const [isTypePopup, setIsTypePopup] = useState(false)
-  const [isReportPopup, setIsReportPopup] = useState(false)
   return (
     <View style={{ backgroundColor: Colors.background, color: "#fff" }}>
 
@@ -26,12 +26,11 @@ const Header = ({ navigation, auditType = false, reportType = false, ScreenName 
                 <Text style={styles.type}>Type</Text>
               </Pressable>
             }
-            {reportType &&
-              <Pressable style={styles.typebox} onPress={() => setIsReportPopup(!isReportPopup)} activeOpacity={1}>
+            {isReportPopup &&
+              <Pressable style={styles.typebox} onPress={OnOpenPopup} activeOpacity={1}>
                 <Text style={styles.type}>Type Report</Text>
               </Pressable>
             }
-
             {isAcount &&
               <Pressable onPress={() => setIsAssign(!Assign)}>
                 <View style={styles.assignbox}>
@@ -49,6 +48,7 @@ const Header = ({ navigation, auditType = false, reportType = false, ScreenName 
       {isTypePopup &&
         <LogtypeModal visible={isTypePopup} onClose={() => setIsTypePopup(false)} />
       }
+
     </View>
   )
 }
