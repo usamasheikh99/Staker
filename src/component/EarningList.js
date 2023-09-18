@@ -6,7 +6,6 @@ import {
     Text,
     StyleSheet,
     Image,
-    ScrollView
 } from 'react-native'
 
 const EarningList = () => {
@@ -22,7 +21,7 @@ const EarningList = () => {
                 </View>
                 <View>
                     <Image source={Icons.Greenline_show} style={styles.tradeline} />
-                    <Text style={styles.price}><Text style={{ fontSize: 13 }}>$</Text>43,00</Text></View>
+                    <Text style={styles.price}><Text style={{ fontSize: 15 }}>$</Text>43,00</Text></View>
 
                 <View style={styles.flexRow}>
                     <View style={[styles.flexRow, { flex: 1 }]}>
@@ -49,7 +48,7 @@ const EarningList = () => {
                 <View style={styles.flexRow}>
                     <View style={[styles.flexRow, { flex: 1 }]}>
                         <Image source={Icons.DownTrend} style={styles.trend} />
-                        <Text style={{ color: Colors.red, opacity: 0.7, top: 7 ,fontSize:13 }}>3.15%</Text>
+                        <Text style={{ color: Colors.red, opacity: 0.8, top: 7 ,fontSize:13 }}>3.15%</Text>
                     </View>
                     <Image source={Icons.DotR} style={styles.trends} />
                 </View>
@@ -103,7 +102,7 @@ const styles = StyleSheet.create({
         left: 3
     },
     EarningList: {
-        width: 130,
+        width: 125,
         height: 150,
         padding: 10,
         marginRight: 10,
@@ -121,7 +120,7 @@ const styles = StyleSheet.create({
         height: 5,
         marginRight: 5,
         opacity: 0.5,
-        top: 7
+        top: 6
     },
     trends: {
         width: 11,
@@ -136,10 +135,10 @@ const styles = StyleSheet.create({
         marginVertical: 10,
         left: 5,
         top: 10,
-        opacity: 0.5
+        opacity: 0.4
     },
     price: {
-        fontSize: 24,
+        fontSize: 25,
         top: 7,
         color:Colors.white
     }

@@ -14,9 +14,8 @@ const Chat = () => {
         setIsTargetModel(!IsTargetModel);
     };
     return (
-        <View style={{ backgroundColor: Colors.background, height: 200,left:20 }}>
+        <View style={{ backgroundColor: Colors.background, height: 195, left: 20 }}>
             <TargetModal IsTargetModel={IsTargetModel} targetModelHandle={targetModelHandle} />
-
 
             <View style={{ flexDirection: 'row' }}>
                 <View style={{ top: 20, left: 10 }}>
@@ -45,7 +44,7 @@ const Chat = () => {
 
                             <Text style={{ fontSize: 14, color: Colors.Textgray, top: 9 }}>{"Today"}</Text>
                             <Text style={{ fontSize: 35, color: Colors.white, }}>{'2.50'}</Text>
-                            <Text style={{ fontSize: 18, color: Colors.green, bottom: 8 }}><Text style={{ fontSize: 10 }}>$</Text>{'1300.15'}</Text>
+                            <Text style={{ fontSize: 18, color: Colors.green, bottom: 8, opacity: 0.8 }}><Text style={{ fontSize: 13 }}>$</Text>{'1300.15'}</Text>
                         </ProgressCircle>
                     </Pressable>
 
@@ -62,18 +61,20 @@ const Chat = () => {
                     </ProgressCircle>
                 </View>
                 <View style={{ top: 30, right: 260 }}>
-                    <ProgressCircle
-                        percent={50}
-                        radius={70}
-                        borderWidth={2}
-                        color={Colors.Card}
-                        shadowColor={Colors.MediumDark}
-                        bgColor={Colors.lightDark}
-                    >
-                        <Text style={{ fontSize: 14, color: Colors.Textgray, top: 9 }}>{"floating"}</Text>
-                        <Text style={{ fontSize: 35 , color: Colors.white}}>{'30.50'}</Text>
-                        <Text style={{ fontSize: 18, color: Colors.green, bottom: 8 }}><Text style={{ fontSize: 10 }}>$</Text>{'30000.15'}</Text>
-                    </ProgressCircle>
+                    <Pressable onPress={targetModelHandle}>
+                        <ProgressCircle
+                            percent={50}
+                            radius={70}
+                            borderWidth={2}
+                            color={Colors.Card}
+                            shadowColor={Colors.MediumDark}
+                            bgColor={Colors.lightDark}
+                        >
+                            <Text style={{ fontSize: 14, color: Colors.Textgray, top: 9 }}>{"floating"}</Text>
+                            <Text style={{ fontSize: 35, color: Colors.white }}>{'30.50'}</Text>
+                            <Text style={{ fontSize: 18, color: Colors.green, bottom: 8, opacity: 0.8, }}><Text style={{ fontSize: 10 }}>$</Text>{'30000.15'}</Text>
+                        </ProgressCircle>
+                    </Pressable>
                 </View>
             </View>
         </View>

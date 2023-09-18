@@ -1,5 +1,5 @@
 import React from 'react';
-import { Colors} from '../theme';
+import { Colors} from '.';
 import { Modal, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
 
 const AppModal = ({ visible, onClose, children }) => {

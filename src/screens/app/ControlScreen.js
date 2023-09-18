@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { Colors } from "../../theme"
 import Header from '../../component/Header'
-import Slider from '@react-native-community/slider';
+import Slider from '@react-native-community/slider'
+import Button from '../../component/Button';
 import {
   View,
   Text,
@@ -9,16 +10,16 @@ import {
   ScrollView,
   Pressable
 } from 'react-native'
-import Button from '../../component/Button'
 
 
-export default function ControlScreen() {
+export default function ControlScreen({ navigation }) {
   const [selectedItem, setSelectedItem] = useState(null);
   const handleItemPress = (itemText) => {
     setSelectedItem(itemText);
   };
   const [slider, setSilder] = useState(0)
   const HeaderProps = {
+    navigation: navigation,
     ScreenName: 'Trading Control',
     Type: false
   }
@@ -32,7 +33,7 @@ export default function ControlScreen() {
         <Pressable
           style={[
             styles.todaylist,
-            selectedItem === '1' && { backgroundColor: Colors.Textgray, opacity: 0.5 },
+            selectedItem === '1' && { backgroundColor: '#414247', opacity: 0.7 },
           ]}
           onPress={() => handleItemPress('1')}
           underlayColor="transparent"
@@ -46,7 +47,7 @@ export default function ControlScreen() {
           <Pressable
             style={[
               styles.todaylist,
-              selectedItem === '2' && { backgroundColor: Colors.Textgray, opacity: 0.5 },
+              selectedItem === '2' && { backgroundColor: '#414247', opacity: 0.7 },
             ]}
             onPress={() => handleItemPress('2')}
             underlayColor="transparent"
@@ -57,7 +58,7 @@ export default function ControlScreen() {
           <Pressable
             style={[
               styles.todaylist,
-              selectedItem === '3' && { backgroundColor: Colors.Textgray, opacity: 0.5 },
+              selectedItem === '3' && { backgroundColor: '#414247', opacity: 0.7 },
             ]}
             onPress={() => handleItemPress('3')}
             underlayColor="transparent"
@@ -65,10 +66,17 @@ export default function ControlScreen() {
             <Text style={styles.Scalping}>Swing Signal halt</Text>
             <Text style={styles.ScalpingText}>initiate the sale process and pause all </Text>
           </Pressable>
-          <View style={styles.todaylist}>
+          <Pressable
+            style={[
+              styles.todaylist,
+              selectedItem === '4' && { backgroundColor: '#414247', opacity: 0.7 },
+            ]}
+            onPress={() => handleItemPress('4')}
+            underlayColor="transparent"
+          >
             <Text style={styles.Scalping}>Short Signal pause</Text>
             <Text style={styles.ScalpingText}>Do not place new  short orders from signal</Text>
-          </View>
+          </Pressable>
           <View style={styles.todaylist}>
             <Text style={styles.Scalping}>Long Signal pause</Text>
             <Text style={styles.ScalpingText}>Avoid placing new ong orders from signal</Text>
@@ -83,8 +91,8 @@ export default function ControlScreen() {
           </View>
           <View style={styles.todaylists}>
             <Text style={styles.Scalping}>Trade Limits</Text>
-            <View style={{ width: '80%' }}>
-              <Text style={{ color: 'white', paddingHorizontal: 80, fontSize: 11 }}>{slider}</Text>
+            <View style={{ width: '80%', bottom: 10 }}>
+              <Text style={{ color: 'white', fontSize: 11, left: 70 }}>{slider}</Text>
               <Slider
                 value={slider}
                 onValueChange={(newValue) => setSilder(newValue)}
