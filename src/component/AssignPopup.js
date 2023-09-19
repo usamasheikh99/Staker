@@ -1,34 +1,29 @@
-import React, { useState } from 'react';
+import { View, Text, Image, Pressable, StyleSheet, TouchableOpacity } from 'react-native'
+import React, {useState}from 'react'
+import { Icons } from '../constants';
 import { Colors } from '../theme';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity
-} from 'react-native';
 import AppModal from '../theme/AppModal';
 
-function ReportType({ visible, onClose }) {
+
+const AssignPopup = ({ Assign, setIsAssign, }) => {
   const [selectedOption, setSelectedOption] = useState(null);
-
   const options = [
-    { id: 1, label: 'Daily' },
-    { id: 2, label: 'Weekly' },
-    { id: 3, label: 'Monthly' },
-    { id: 4, label: 'Quarterly' },
-
+    { id: 1, label: 'Kashan' },
+    { id: 2, label: 'Faizan' },
+    { id: 3, label: 'Rehman' },
   ];
 
   const handleOptionSelect = (optionId) => {
     setSelectedOption(optionId);
   };
-
   return (
-    <AppModal visible={visible} onClose={onClose}>
-      <View>
-        <Text style={styles.logtext}>Report Type</Text>
+
+    <AppModal visible={Assign} onClose={() => setIsAssign(false)}>
+       <View>
+        <Text style={styles.logtext}>Assign</Text>
+        <Text style={styles.logtexts}></Text>
       </View>
-      <View style={{ marginHorizontal: 35 }}>
+       <View style={{ marginHorizontal: 35 }}>
         {options.map((option) => (
           <TouchableOpacity
             key={option.id}
@@ -43,49 +38,57 @@ function ReportType({ visible, onClose }) {
         ))}
       </View>
     </AppModal>
-  );
+  )
 }
 
-const styles = StyleSheet.create({
+export default AssignPopup
 
+
+const styles = StyleSheet.create({
   radioButton: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginVertical: 6,
+    marginVertical: 10,
   },
-
   radioButtonCircle: {
-    width: 20,
-    height: 20,
+    width: 18,
+    height: 18,
     borderRadius: 12,
     borderWidth: 1,
     borderColor: Colors.white,
     alignItems: 'center',
     justifyContent: 'center',
     marginRight: 10,
-    opacity: 0.7
+    opacity: 0.7,
   },
-
   radioButtonChecked: {
+    backgroundColor: Colors.ButtonColor,
     width: 11,
     height: 11,
     borderRadius: 6,
-    backgroundColor: Colors.ButtonColor,
     padding: 6
   },
-
   radioButtonText: {
     color: Colors.white,
-    fontSize: 20,
-    marginVertical: 2
+    fontSize: 20
   },
-
   logtext: {
     color: Colors.white,
     fontSize: 20,
     textAlign: 'center',
-    bottom: 30
+    bottom: 15,
+  },
+  logtexts: {
+    bottom: 15,
+    borderBottomWidth: 1,
+    width: 275,
+    borderColor: Colors.MediumDark,
+    opacity: 0.2,
+    marginLeft: 50,
   }
-});
+  
+})
 
-export default ReportType;
+
+
+

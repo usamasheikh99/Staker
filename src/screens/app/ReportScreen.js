@@ -47,55 +47,93 @@ export default function ReportScreen({ navigation }) {
                         <Text style={styles.percentagetxt}>-6.18%</Text>
 
                         <TouchableOpacity onPress={() => toggleCollapse('Pnl')} style={styles.iconContainer}>
-                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: collapsedIds.includes('Pnl') ? '265deg' : '0deg' }] }}></Image>
+                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: collapsedIds.includes('Pnl') ? '361deg' : '0deg' }] }}></Image>
                         </TouchableOpacity>
 
                     </View>
                 </View>
 
                 {collapsedIds.includes('Pnl') && (
-                    <View style={{ backgroundColor: Colors.background, margin: 10 }}>
+                    <View style={{ backgroundColor: Colors.background, margin: 10, }}>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                            <View style={{ backgroundColor: Colors.lightDark, width: '46%', margin: 3 }}>
+                            <View style={{ backgroundColor: Colors.lightDark, width: '48%', margin: 3, borderRadius: 16, paddingHorizontal: 18, paddingVertical: 15 }}>
                                 <Text style={styles.Portfoliotxt}>Portfolio States</Text>
 
-                                <Text>Capital</Text>
-                                <Text>25000 USD</Text>
+                                <Text style={styles.heading}>Capital</Text>
+                                <Text style={styles.text}>25000 <Text style={{ fontSize: 10, color: Colors.Textgray }}>USD</Text></Text>
 
-                                <Text>Balance</Text>
-                                <Text>24100.17 USD</Text>
+                                <Text style={styles.heading}>Balance</Text>
+                                <Text style={styles.text}>24100.17 <Text style={{ fontSize: 10, color: Colors.Textgray }}>USD</Text></Text>
 
-                                <Text>Start From  </Text>
-                                <Text>23970.43 USD</Text>
+                                <Text style={styles.heading}>Start From  </Text>
+                                <Text style={styles.text}>23970.43 <Text style={{ fontSize: 10, color: Colors.Textgray }}>USD</Text></Text>
 
 
-                                <Text>PnL</Text>
-                                <Text>-1481.32 USD -6.18%</Text>
+                                <Text style={styles.heading}>PnL</Text>
+                                <Text style={styles.text}>-1481.32 <Text style={{ fontSize: 10, color: Colors.Textgray }}>USD</Text> -6.18<Text style={{ fontSize: 13, color: Colors.Textgray, }}>%</Text></Text>
 
-                                <Text>Realized PnL</Text>
-                                <Text>-1545.32 USD -6.45%</Text>
+                                <Text style={styles.heading}>Realized PnL</Text>
+                                <Text style={styles.text}>-1545.32 <Text style={{ fontSize: 10, color: Colors.Textgray }}>USD</Text> -6.45<Text style={{ fontSize: 13, color: Colors.Textgray, }}>%</Text></Text>
 
-                                <Text>WinRate</Text>
-                                <Text>34% 33%</Text>
+                                <Text style={styles.heading}>WinRate</Text>
+                                <Text style={styles.text}>34<Text style={{ fontSize: 13, color: Colors.Textgray, }}>%</Text> 33<Text style={{ fontSize: 13, color: Colors.Textgray, }}>%</Text></Text>
 
-                                <Text>Trades</Text>
-                                <Text>58</Text>
+                                <Text style={styles.heading}>Trades</Text>
+                                <Text style={styles.text}>58</Text>
 
                             </View>
-                            <View style={{ backgroundColor: Colors.lightDark, width: '46%', margin: 3 }}>
-                                <Text>hi</Text>
+                            <View style={{ backgroundColor: Colors.lightDark, width: '48%', margin: 3, borderRadius: 16, paddingHorizontal: 18, paddingVertical: 15 }}>
+                                <Text style={styles.Portfoliotxt}>Long States</Text>
+
+                                <Text style={styles.heading}>Signals</Text>
+                                <Text style={styles.text}>36</Text>
+
+                                <Text style={styles.heading}>Trades</Text>
+                                <Text style={styles.text}>58</Text>
+
+                                <Text style={styles.heading}>PnL</Text>
+                                <Text style={styles.text}>-1481.32 <Text style={{ fontSize: 10, color: Colors.Textgray }}>USD</Text> -6.18<Text style={{ fontSize: 13, color: Colors.Textgray, }}>%</Text></Text>
+
+                                <Text style={styles.Shorttxt}>Short States</Text>
+
+                                <Text style={styles.heading}>Signals</Text>
+                                <Text style={styles.text}>36</Text>
+
+                                <Text style={styles.heading}>Trades</Text>
+                                <Text style={styles.text}>58</Text>
+
+                                <Text style={styles.heading}>PnL</Text>
+                                <Text style={styles.text}>-1481.32 <Text style={{ fontSize: 10, color: Colors.Textgray }}>USD</Text> -6.18<Text style={{ fontSize: 13, color: Colors.Textgray, }}>%</Text></Text>
+
                             </View>
                         </View>
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 10 }}>
-                            <View style={{ backgroundColor: Colors.lightDark, width: '46%', margin: 3 }}>
-                                <Text>hi</Text>
+                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 10, }}>
+                        <View style={{ backgroundColor: Colors.lightDark, width: '48%', margin: 3, borderRadius: 16, paddingHorizontal: 18, paddingVertical: 15 }}>
+                                <Text style={styles.Portfoliotxt}>Cost % Charges</Text>
+
+                                <Text style={styles.heading}>CloudServiceCost</Text>
+                                <Text style={styles.text}>27</Text>
+
+                                <Text style={styles.heading}>MarketDataCost</Text>
+                                <Text style={styles.text}>37</Text>
+
+                                <Text style={styles.heading}>TradeCost</Text>
+                                <Text style={styles.text}>348</Text>
+
+                                <Text style={styles.heading}>TotalCost</Text>
+                                <Text style={styles.text}>412</Text>
                             </View>
-                            <View style={{ backgroundColor: Colors.lightDark, width: '46%', margin: 3 }}>
-                                <Text>hi</Text>
+
+                            <View style={{ backgroundColor: Colors.lightDark, width: '48%', margin: 3, borderRadius: 16, paddingHorizontal: 18, paddingVertical: 15 }}>
+                                <Text style={styles.Portfoliotxt}>Performance</Text>
+
+                                <Text style={styles.heading}>CPUUtilization</Text>
+                                <Text style={styles.text}>12.41</Text>
+
+                                <Text style={styles.heading}>ErrorCount</Text>
+                                <Text style={styles.text}>49</Text>
                             </View>
                         </View>
-
-
                     </View>
                 )}
 
@@ -511,7 +549,23 @@ const styles = StyleSheet.create({
     },
 
     Portfoliotxt: {
-        color: Colors.Textgray
+        color: Colors.Textgray,
+        fontSize: 15
+    },
+
+    heading: {
+        color: Colors.Textgray,
+        marginTop: 12
+    },
+
+    text: {
+        color: Colors.white
+    },
+
+    Shorttxt: {
+        marginTop: 25,
+        color: Colors.Textgray,
+        fontSize: 15
     }
 
 
