@@ -4,6 +4,10 @@ import Header from '../../component/Header';
 import { Icons } from '../../constants';
 import { Colors, Text } from '../../theme';
 import PositiveView from '../../component/PositiveView';
+import AssignPopup from '../../component/AssignPopup';
+import SaleConfirmationPopup from '../../component/SaleConfirmationPopup';
+import BoostPopup from '../../component/BoostPopup';
+
 // import useSelector from 'react-redux'
 
 
@@ -11,7 +15,9 @@ import PositiveView from '../../component/PositiveView';
 const Position = ({ navigation }) => {
     const [selectPosition, setSelectPosition] = useState(null);
     const [typebyPopup, settypebyPopup] = useState(false);
-
+    const [Assign, setIsAssign] = useState(false);
+    const [isSale, setIsSale] = useState(false);
+    const [isBoost, setIsBoost] = useState(false)
     const handleButtonPress = (buttonName) => {
         setSelectPosition(buttonName);
     };
@@ -21,7 +27,9 @@ const Position = ({ navigation }) => {
         ScreenName: 'Postion',
         goBack: 'Home',
         isAcount: 'Kashan',
+        OnOpenPopup: () => setIsAssign(true)
     }
+
 
 
     return (
@@ -43,18 +51,18 @@ const Position = ({ navigation }) => {
                             </View>
                         </Pressable>
                         <View style={styles.button}>
-                            <TouchableOpacity>
+                            <Pressable onPress={() => setIsSale(true)}>
                                 <Text style={styles.btntxt}>Sale</Text>
-                            </TouchableOpacity>
+                            </Pressable>
                         </View>
 
                     </View>
 
                     <View style={styles.secondline}>
 
-                        <TouchableOpacity>
-                            <Image source={Icons.Shuttle} style={{ height: 22, width: 22, }} />
-                        </TouchableOpacity>
+                        <Pressable onPress={() => setIsBoost(true)}>
+                            <Image source={Icons.Shuttle} style={{ height: 23, width: 23, marginTop: 3 }} />
+                        </Pressable>
 
                         <TouchableOpacity
                             style={[styles.btn, selectPosition === 'Scalping' && { backgroundColor: Colors.lightDark }]}
@@ -242,6 +250,13 @@ const Position = ({ navigation }) => {
                 </View>
 
                 <PositiveView modalVisible={typebyPopup} setModalVisible={settypebyPopup} />
+
+                <AssignPopup Assign={Assign} setIsAssign={setIsAssign} />
+
+                <SaleConfirmationPopup isSale={isSale} setIsSale={setIsSale} />
+
+                <BoostPopup isBoost={isBoost} setIsBoost={setIsBoost} />
+
             </ScrollView>
         </View>
 

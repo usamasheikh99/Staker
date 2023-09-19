@@ -38,7 +38,7 @@ const Header = ({ navigation, auditType = false, OnOpenPopup, ScreenName = "", i
               </Pressable>
             }
             {isAcount &&
-              <Pressable onPress={() => setIsAssign(!Assign)}>
+              <Pressable onPress={OnOpenPopup}>
                 <View style={styles.assignbox}>
                   <View style={styles.txtalign}>
                     <Text style={styles.assigntxt}>Kashan</Text>

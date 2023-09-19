@@ -23,7 +23,7 @@ const AppModal = ({ visible, onClose, children }) => {
                 <View style={styles.modalContent}>
 
                     <TouchableOpacity onPress={onClose} style={styles.closeIconContainer}>
-                        <Image source={Icons.Cross_show} style={{ height: 22, width: 22, opacity: 0.8 ,top:14,left:8 }} />
+                        <Image source={Icons.Cross_show} style={{ height: 22, width: 22, opacity: 0.8 ,top:14,left:8,}} />
                     </TouchableOpacity>
 
                     {children}
