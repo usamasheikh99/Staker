@@ -1,6 +1,6 @@
 
 import * as React from 'react';
-import Chat from '../../component/Chat';
+import Chart from '../../component/Chart';
 import { Icons } from '../../constants';
 import { Colors, Text } from '../../theme';
 import TradeList from '../../component/TradeList';
@@ -20,12 +20,11 @@ import {
 export default function HomeScreen({ navigation }) {
     return (
         <View style={styles.container}>
-            <ScrollView style={styles.scroll}
-                showsVerticalScrollIndicator={false}>
-                <View style={styles.Header}>
+            <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false}>
+
                     <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 25, paddingTop: 5, paddingBottom: 30 }}>
                         <View style={styles.Item}>
-                            <Text fontWeight={'light'} style={styles.total}>Total Capital</Text>
+                            <Text style={styles.total}>Total Capital</Text>
                             <TouchableOpacity activeOpacity={1} >
                                 <Image source={Icons.eyes_show} style={styles.eyeIcon} />
                             </TouchableOpacity>
@@ -37,18 +36,16 @@ export default function HomeScreen({ navigation }) {
                         </View>
                         <Text fontWeight={'normal'} style={styles.rating}><Text style={{ fontSize: 16 }}>$</Text>32,149.80</Text>
                     </ImageBackground>
-                </View>
+
                 {/* CHAT */}
                 <View>
-                    <Chat />
+                    <Chart />
                 </View>
-                {/* CHAT END */}
 
                 {/* Trad List  */}
                 <View>
                     <TradeList navigation={navigation} />
                 </View>
-                {/* Trad List END */}
 
                 {/* EarningList */}
                 <View style={styles.EarningText}>
@@ -59,20 +56,17 @@ export default function HomeScreen({ navigation }) {
                     horizontal={true}>
                     <EarningList />
                 </ScrollView>
-                {/* EarningList END */}
 
                 {/* WeeklyTargets */}
                 <View style={styles.WeeklyText}>
                     <Text style={styles.Weekly}>Weekly targets</Text>
                     <Text style={styles.more}>More</Text></View>
-
                 <ScrollView horizontal={true}>
                     <View style={{ flexDirection: 'row' }}>
                         <WeeklyTargets />
                         <WeeklyTargets />
                     </View>
                 </ScrollView>
-                {/* WeeklyTargets END */}
 
                 {/* MaketSentiment */}
                 <View style={styles.MarketView}>
@@ -82,7 +76,6 @@ export default function HomeScreen({ navigation }) {
                     tittle='Positive' />
                 <MaketSentiment
                     tittle='Negitive' />
-                {/* MaketSentiment END */}
             </ScrollView>
         </View>
 

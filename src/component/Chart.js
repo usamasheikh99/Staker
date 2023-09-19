@@ -6,7 +6,7 @@ import TargetModal from './TargetModal'
 
 
 
-const Chat = () => {
+const Chart = () => {
 
     const [IsTargetModel, setIsTargetModel] = useState(false);
 
@@ -81,4 +81,4 @@ const Chat = () => {
     )
 }
 
-export default Chat
+export default Chart

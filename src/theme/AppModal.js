@@ -23,7 +23,7 @@ const AppModal = ({ visible, onClose, children }) => {
                 <View style={styles.modalContent}>
 
                     <TouchableOpacity onPress={onClose} style={styles.closeIconContainer}>
-                        <Image source={Icons.Cross_show} style={{ height: 22, width: 22, opacity: 0.8 ,top:8 }} />
+                        <Image source={Icons.Cross_show} style={{ height: 22, width: 22, opacity: 0.8 ,top:14,left:8 }} />
                     </TouchableOpacity>
 
                     {children}
@@ -43,17 +43,16 @@ const styles = StyleSheet.create({
     modalContent: {
         backgroundColor: Colors.lightDark,
         borderRadius: 20,
-        paddingVertical: 50,
+        paddingVertical: 30,
         position: 'relative',
         width:370,
-        paddingBottom:50
     },
     closeIconContainer: {
         position: 'absolute',
         top: 10, // Adjust the top position as needed
         right: 30, // Adjust the right position as needed
         height:30,
-        width:30
+        width:30,
     },
 });
 

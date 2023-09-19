@@ -28,7 +28,7 @@ const TargetModal = ({ IsTargetModel, targetModelHandle, props }) => {
                         <Text style={styles.person}>-4.69</Text>
                     </View>
                 </View>
-                <View style={{ top: 15 }}>
+                <View style={{ bottom: 15 }}>
                     <Button
                         tittle='9.0 Target Update' />
                     <Button
@@ -59,8 +59,8 @@ const styles = StyleSheet.create({
     },
     targetMaine: {
         alignItems: 'center',
-        top: 20,
         left: 8,
+        bottom:10
     },
     header: {
     },
@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 20,
         opacity: 0.8,
-        bottom: 30
+        bottom: 34,
+        paddingVertical:25
     }
 });

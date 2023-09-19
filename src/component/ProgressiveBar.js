@@ -6,7 +6,7 @@ const ProgressiveBar = () => {
     return (
         <View>
             <View style={{ flexDirection: 'row', }}>
-                <View style={{bottom:5,left: 65 }}>
+                <View style={{bottom:35,left: 65 }}>
                     <ProgressCircle
                         percent={100}
                         radius={120}
@@ -17,7 +17,7 @@ const ProgressiveBar = () => {
                     >
                     </ProgressCircle>
                 </View>
-                <View style={{ top: 5, right: 165 }}>
+                <View style={{ bottom:25, right: 165 }}>
                     <ProgressCircle
                         percent={70}
                         radius={110}

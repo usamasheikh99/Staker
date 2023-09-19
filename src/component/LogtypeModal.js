@@ -25,6 +25,7 @@ function LogtypeModal({ visible, onClose }) {
     <AppModal visible={visible} onClose={onClose}>
       <View>
         <Text style={styles.logtext}>Log Type</Text>
+        <Text style={styles.logtexts}></Text>
       </View>
       <View style={{ marginHorizontal: 35 }}>
         {options.map((option) => (
@@ -49,7 +50,7 @@ const styles = StyleSheet.create({
   radioButton: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginVertical: 8,
+    marginVertical: 10,
   },
   radioButtonCircle: {
     width: 18,
@@ -60,13 +61,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginRight: 10,
-    opacity: 0.7
+    opacity: 0.7,
   },
   radioButtonChecked: {
+    backgroundColor: Colors.ButtonColor,
     width: 11,
     height: 11,
     borderRadius: 6,
-    backgroundColor: Colors.ButtonColor,
   },
   radioButtonText: {
     color: Colors.white,
@@ -76,7 +77,12 @@ const styles = StyleSheet.create({
     color: Colors.white,
     fontSize: 20,
     textAlign: 'center',
-    bottom: 30
+    bottom: 15,
+  },
+  logtexts: {
+    bottom: 15,
+    borderBottomWidth: 0.3,
+    borderColor: Colors.MediumDark,
   }
 });
 

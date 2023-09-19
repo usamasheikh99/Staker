@@ -77,19 +77,47 @@ export default function ControlScreen({ navigation }) {
             <Text style={styles.Scalping}>Short Signal pause</Text>
             <Text style={styles.ScalpingText}>Do not place new  short orders from signal</Text>
           </Pressable>
-          <View style={styles.todaylist}>
+          <Pressable
+            style={[
+              styles.todaylist,
+              selectedItem === '5' && { backgroundColor: '#414247', opacity: 0.7 },
+            ]}
+            onPress={() => handleItemPress('5')}
+            underlayColor="transparent"
+          >
             <Text style={styles.Scalping}>Long Signal pause</Text>
             <Text style={styles.ScalpingText}>Avoid placing new ong orders from signal</Text>
-          </View>
-          <View style={styles.todaylist}>
+            </Pressable>
+            <Pressable
+            style={[
+              styles.todaylist,
+              selectedItem === '6' && { backgroundColor: '#414247', opacity: 0.7 },
+            ]}
+            onPress={() => handleItemPress('6')}
+            underlayColor="transparent"
+          >
             <Text style={styles.Scalping}>Profitable Sale</Text>
             <Text style={styles.ScalpingText}>initiate the sale process and pause all </Text>
-          </View>
-          <View style={styles.todaylist}>
+         </Pressable>
+         <Pressable
+            style={[
+              styles.todaylist,
+              selectedItem === '7' && { backgroundColor: '#414247', opacity: 0.7 },
+            ]}
+            onPress={() => handleItemPress('7')}
+            underlayColor="transparent"
+          >
             <Text style={styles.Scalping}>Profitable Loss Sale</Text>
             <Text style={styles.ScalpingText}>initiate the sale process and pause all </Text>
-          </View>
-          <View style={styles.todaylists}>
+            </Pressable>
+            <Pressable
+            style={[
+              styles.todaylists,
+              selectedItem === '8' && { backgroundColor: '#414247', opacity: 0.7 },
+            ]}
+            onPress={() => handleItemPress('8')}
+            underlayColor="transparent"
+          >
             <Text style={styles.Scalping}>Trade Limits</Text>
             <View style={{ width: '80%', bottom: 10 }}>
               <Text style={{ color: 'white', fontSize: 11, left: 70 }}>{slider}</Text>
@@ -105,7 +133,7 @@ export default function ControlScreen({ navigation }) {
               />
 
             </View>
-          </View>
+          </Pressable>
           <View>
             <Button
               tittle='Procced' />
