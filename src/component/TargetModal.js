@@ -1,13 +1,13 @@
 import React from 'react';
 import ProgressiveBar from './ProgressiveBar';
 import { Colors, Text } from '../theme';
+import AppModal from '../theme/AppModal';
+import Button from './Button';
 // import { Icons } from '../constants';
 import {
     View,
     StyleSheet,
 } from 'react-native';
-import Button from './Button';
-import AppModal from '../theme/AppModal';
 
 const TargetModal = ({ IsTargetModel, targetModelHandle, props }) => {
     return (

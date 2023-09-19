@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, Button, TextInput, Image, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native'
 import { Colors } from '../../theme';
 
-const Login = ({navigation}) => {
+const Login = ({navigation,props}) => {
   return (
     <View style={{ flex: 1 }}>
       <ImageBackground source={Icons.Splash} style={styles.container}>

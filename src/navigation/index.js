@@ -25,6 +25,9 @@ import React, { useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import AppStack from "./appstack";
+import HomeScreen from "../screens/app/HomeScreen";
+import { Login } from "../screens/auth";
+import GetStarted from "../screens/app/GetStarted";
 
 const Stack = createNativeStackNavigator();
 const index = () => {
