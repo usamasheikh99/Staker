@@ -1,6 +1,7 @@
 import React from 'react';
-import { Colors} from '.';
+import { Colors } from '.';
 import { Modal, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { Icons } from '../constants'
 
 const AppModal = ({ visible, onClose, children }) => {
     return (
@@ -23,7 +24,7 @@ const AppModal = ({ visible, onClose, children }) => {
                 <View style={styles.modalContent}>
 
                     <TouchableOpacity onPress={onClose} style={styles.closeIconContainer}>
-                        <Image source={Icons.Cross_show} style={{ height: 22, width: 22, opacity: 0.8 ,top:14,left:8,}} />
+                        <Image source={Icons.crosShow} style={styles.crosicon} />
                     </TouchableOpacity>
 
                     {children}
@@ -45,15 +46,22 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         paddingVertical: 30,
         position: 'relative',
-        width:370,
+        width: 370,
     },
     closeIconContainer: {
         position: 'absolute',
         top: 10, // Adjust the top position as needed
-        right: 30, // Adjust the right position as needed
-        height:30,
-        width:30,
+        right: 0, // Adjust the right position as needed
+        height: 50,
+        width: 70,
     },
+    crosicon: {
+        height: 13,
+        width: 13,
+        opacity: 0.8,
+        top: 17,
+        left: 35
+    }
 });
 
 export default AppModal;

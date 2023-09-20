@@ -23,10 +23,8 @@ function LogtypeModal({ visible, onClose }) {
 
   return (
     <AppModal visible={visible} onClose={onClose}>
-      <View>
         <Text style={styles.logtext}>Log Type</Text>
         <Text style={styles.logtexts}></Text>
-      </View>
       <View style={{ marginHorizontal: 35 }}>
         {options.map((option) => (
           <TouchableOpacity
@@ -77,7 +75,11 @@ const styles = StyleSheet.create({
     color: Colors.white,
     fontSize: 20,
     textAlign: 'center',
-    bottom: 15,
+    bottom: 10,
+    // backgroundColor:'red',
+    height:25,
+    width:150,
+    left:110
   },
   logtexts: {
     bottom: 15,
