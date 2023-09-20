@@ -87,8 +87,8 @@ export default function ControlScreen({ navigation }) {
           >
             <Text style={styles.Scalping}>Long Signal pause</Text>
             <Text style={styles.ScalpingText}>Avoid placing new ong orders from signal</Text>
-            </Pressable>
-            <Pressable
+          </Pressable>
+          <Pressable
             style={[
               styles.todaylist,
               selectedItem === '6' && { backgroundColor: '#414247', opacity: 0.7 },
@@ -98,8 +98,8 @@ export default function ControlScreen({ navigation }) {
           >
             <Text style={styles.Scalping}>Profitable Sale</Text>
             <Text style={styles.ScalpingText}>initiate the sale process and pause all </Text>
-         </Pressable>
-         <Pressable
+          </Pressable>
+          <Pressable
             style={[
               styles.todaylist,
               selectedItem === '7' && { backgroundColor: '#414247', opacity: 0.7 },
@@ -109,8 +109,8 @@ export default function ControlScreen({ navigation }) {
           >
             <Text style={styles.Scalping}>Profitable Loss Sale</Text>
             <Text style={styles.ScalpingText}>initiate the sale process and pause all </Text>
-            </Pressable>
-            <Pressable
+          </Pressable>
+          <Pressable
             style={[
               styles.todaylists,
               selectedItem === '8' && { backgroundColor: '#414247', opacity: 0.7 },

@@ -11,7 +11,6 @@ import BoostPopup from '../../component/BoostPopup';
 // import useSelector from 'react-redux'
 
 
-
 const Position = ({ navigation }) => {
     const [selectPosition, setSelectPosition] = useState(null);
     const [typebyPopup, settypebyPopup] = useState(false);

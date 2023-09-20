@@ -27,6 +27,7 @@ export default Icons = {
     coin_show: require ('../assets/icons/coin.png'),
     MARA_show: require ('../assets/icons/mara.png'),
     Cross_show: require ('../assets/icons/cross.png'),
+    Cross_show: require ('../assets/icons/cros.png'),
     Greenline_show: require ('../assets/icons/greenline.png'),
     Redline_show: require ('../assets/icons/redline.png'),
     Sale_show: require ('../assets/icons/Sale_icon.png'),
