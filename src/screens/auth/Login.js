@@ -1,8 +1,8 @@
 import React from 'react'
-import { View, Text, Button, TextInput, Image, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native'
+import { View, Text, TextInput, Image, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native'
 import { Colors } from '../../theme';
 
-const Login = ({navigation,props}) => {
+const Login = ({ navigation }) => {
   return (
     <View style={{ flex: 1 }}>
       <ImageBackground source={Icons.Splash} style={styles.container}>
@@ -10,12 +10,12 @@ const Login = ({navigation,props}) => {
         <Image source={Icons.Logo} style={styles.Logo}></Image>
 
         <View style={styles.Input}>
-          <TextInput style={styles.TextInput} placeholder='Username'placeholderTextColor={Colors.Textgray}></TextInput>
+          <TextInput style={styles.TextInput} placeholder='Username' placeholderTextColor={Colors.Textgray}></TextInput>
           <TextInput style={styles.TextInput} placeholder='*******' placeholderTextColor={Colors.Textgray}></TextInput>
         </View>
 
         <View style={styles.loginrow}>
-          <TouchableOpacity style={styles.btnLogin} onPress={() => navigation.navigate('GetStarted')}>
+          <TouchableOpacity style={styles.btnLogin} onPress={() => navigation.navigate('Home')}>
             <Text style={styles.text}>Log In</Text>
           </TouchableOpacity>
           <TouchableOpacity>
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginVertical: 8,
     paddingHorizontal: 30,
-    alignItems : 'center',
+    alignItems: 'center',
     color: Colors.white
   },
 
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     marginLeft: 13
   },
 
- 
+
 
   btnLogin: {
     width: 280,
@@ -96,8 +96,8 @@ const styles = StyleSheet.create({
   },
 
   loginrow: {
-    flexDirection :'row',
-    alignItems : 'center',
+    flexDirection: 'row',
+    alignItems: 'center',
     marginRight: 10
   }
 

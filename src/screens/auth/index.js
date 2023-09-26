@@ -1,5 +1,9 @@
 import Login from "./Login";
+import GetStarted from './GetStarted'
+import HomeScreen from "../app/HomeScreen";
 
 export {
-    Login
+    Login,
+    GetStarted,
+    HomeScreen
 }

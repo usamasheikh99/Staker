@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, TouchableOpacity, Pressable } from 'react-nativ
 import React, { useState } from 'react'
 import AppModal from '../theme/AppModal'
 import { Colors } from '../theme'
-import Button from './Button'
+
     
 
 const BoostPopup = ({ isBoost, setIsBoost }) => {

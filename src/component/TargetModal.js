@@ -69,7 +69,9 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 20,
         opacity: 0.8,
-        bottom: 34,
-        paddingVertical:25
+        bottom: 35,
+        paddingVertical:20,
+        width:90,
+        left:141
     }
 });

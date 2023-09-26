@@ -22,20 +22,20 @@ export default function HomeScreen({ navigation }) {
         <View style={styles.container}>
             <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false}>
 
-                    <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 25, paddingTop: 5, paddingBottom: 30 }}>
-                        <View style={styles.Item}>
-                            <Text style={styles.total}>Total Capital</Text>
-                            <TouchableOpacity activeOpacity={1} >
-                                <Image source={Icons.eyes_show} style={styles.eyeIcon} />
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.topHeaderLeft}>
-                            <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('Login')}>
-                                <Image source={Icons.logout} style={styles.IconSize} />
-                            </TouchableOpacity>
-                        </View>
-                        <Text fontWeight={'normal'} style={styles.rating}><Text style={{ fontSize: 16 }}>$</Text>32,149.80</Text>
-                    </ImageBackground>
+                <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 25, paddingTop: 5, paddingBottom: 30 }}>
+                    <View style={styles.Item}>
+                        <Text style={styles.total}>Total Capital</Text>
+                        <TouchableOpacity activeOpacity={1} >
+                            <Image source={Icons.eyes_show} style={styles.eyeIcon} />
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.topHeaderLeft}>
+                        <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('Login')}>
+                            <Image source={Icons.logout} style={styles.IconSize} />
+                        </TouchableOpacity>
+                    </View>
+                    <Text fontWeight={'normal'} style={styles.rating}><Text style={{ fontSize: 16 }}>$</Text>32,149.80</Text>
+                </ImageBackground>
 
                 {/* CHAT */}
                 <View>

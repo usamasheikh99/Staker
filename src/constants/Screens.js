@@ -1,5 +1,6 @@
 const Auth = {
-    Login: 'Login'
+    Login: 'Login',
+    GetStarted: 'GetStarted'
 }
 
 const App = {

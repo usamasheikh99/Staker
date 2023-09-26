@@ -4,7 +4,7 @@ import { Colors } from '../../theme';
 import { Icons } from '../../constants';
 
 
-const GetStarted = (navigation) => {
+const GetStarted = ({navigation}) => {
     return (
         <View style={{ backgroundColor: '#0a0b0fe6', flex: 1 }}>
             <ImageBackground source={Icons.Splash} style={styles.container}>
@@ -36,6 +36,7 @@ const GetStarted = (navigation) => {
     )
 }
 
+export default GetStarted
 
 const styles = StyleSheet.create({
 
@@ -99,5 +100,3 @@ const styles = StyleSheet.create({
     }
 
 })
-
-export default GetStarted

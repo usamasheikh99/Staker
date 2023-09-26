@@ -52,15 +52,15 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: 10, // Adjust the top position as needed
         right: 0, // Adjust the right position as needed
-        height: 50,
-        width: 70,
+        height: 80,
+        width: 90
     },
     crosicon: {
-        height: 13,
-        width: 13,
+        height: 12,
+        width: 12,
         opacity: 0.8,
         top: 17,
-        left: 35
+        left: 45,
     }
 });
 
