@@ -321,7 +321,7 @@ const styles = StyleSheet.create({
     btntxt: {
         fontSize: 15,
         color: Colors.white,
-        paddingHorizontal: 23,
+        left: 23,
         paddingVertical: 3
     },
 

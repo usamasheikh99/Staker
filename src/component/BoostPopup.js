@@ -2,8 +2,8 @@ import { View, Text, StyleSheet, TouchableOpacity, Pressable } from 'react-nativ
 import React, { useState } from 'react'
 import AppModal from '../theme/AppModal'
 import { Colors } from '../theme'
+import Button from './Button'
 
-    
 
 const BoostPopup = ({ isBoost, setIsBoost }) => {
   const [selectedItem, setSelectedItem] = useState(null);
@@ -21,7 +21,7 @@ const BoostPopup = ({ isBoost, setIsBoost }) => {
       </View>
       <View>
         <Text style={styles.BalanceText}>Current Balance 24003.03</Text>
-        <Text style={styles.BalanceText}>Limited Balance 2400</Text>
+        <Text style={styles.BalanceText2}>Limited Balance 2400</Text>
       </View>
       <View style={{ flexDirection: 'row' }}>
         <Pressable
@@ -89,7 +89,7 @@ export default BoostPopup
 const styles = StyleSheet.create({
   BoostText: {
     color: Colors.white,
-    fontSize: 17,
+    fontSize: 18,
     textAlign: 'center',
     bottom: 10,
   },
@@ -105,16 +105,16 @@ const styles = StyleSheet.create({
     width: 300,
     left: 27,
     borderRadius: 8,
-    margin: 5
+    margin: 5,
   },
   textbox: {
     backgroundColor: Colors.background,
     paddingBottom: 10,
     paddingTop: 10,
-    paddingHorizontal: 15,
+    paddingHorizontal: 17,
     marginRight: 10,
     borderRadius: 4,
-    left: 50,
+    left: 40,
     top: 10
   },
   BalanceText: {
@@ -124,13 +124,21 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: Colors.Textgray
   },
+
+  BalanceText2: {
+    color: 'white',
+    textAlign: 'center',
+    left: 81,
+    fontSize: 12,
+    color: Colors.Textgray
+  },
   btnLogin2: {
-    width: 230,
+    width: 243,
     height: 45,
     borderRadius: 8,
     justifyContent: 'center',
     backgroundColor: Colors.ButtonColor,
-    marginLeft: 65,
+    marginLeft: 62,
     top: 30,
   },
 

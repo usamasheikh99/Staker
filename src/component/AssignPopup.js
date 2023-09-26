@@ -76,15 +76,15 @@ const styles = StyleSheet.create({
     color: Colors.white,
     fontSize: 20,
     textAlign: 'center',
-    bottom: 15,
+    bottom: 11,
   },
   logtexts: {
     bottom: 15,
     borderBottomWidth: 1,
-    width: 275,
+    width: 310,
     borderColor: Colors.MediumDark,
-    opacity: 0.2,
-    marginLeft: 50,
+    opacity: 0.4,
+    marginLeft: 30,
   }
   
 })

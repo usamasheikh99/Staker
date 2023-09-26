@@ -27,6 +27,7 @@ function ReportType({ visible, onClose }) {
     <AppModal visible={visible} onClose={onClose}>
       <View>
         <Text style={styles.logtext}>Report Type</Text>
+        <Text style={styles.logtexts}></Text>
       </View>
       <View style={{ marginHorizontal: 35 }}>
         {options.map((option) => (
@@ -84,7 +85,16 @@ const styles = StyleSheet.create({
     color: Colors.white,
     fontSize: 20,
     textAlign: 'center',
-    bottom: 30
+    bottom: 10
+  },
+
+  logtexts: {
+    bottom: 15,
+    borderBottomWidth: 1,
+    width: 310,
+    borderColor: Colors.MediumDark,
+    opacity: 0.4,
+    marginLeft: 30,
   }
 });
 
