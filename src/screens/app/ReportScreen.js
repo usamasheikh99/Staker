@@ -30,11 +30,11 @@ export default function ReportScreen({ navigation }) {
     }
     return (
         <View style={{ backgroundColor: Colors.background, flex: 1, }}>
-
-            <View>
-                <Header {...HeaderProps} />
-            </View>
             <ScrollView>
+                <View>
+                    <Header {...HeaderProps}/>
+                </View>
+
 
                 <View style={styles.calenderbox}>
                     <Text style={styles.calendertxt}>Wen 1 Jan - Sat 18 Jan (18 days)</Text>
@@ -108,7 +108,7 @@ export default function ReportScreen({ navigation }) {
                             </View>
                         </View>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 10, }}>
-                        <View style={{ backgroundColor: Colors.lightDark, width: '48%', margin: 3, borderRadius: 16, paddingHorizontal: 18, paddingVertical: 15 }}>
+                            <View style={{ backgroundColor: Colors.lightDark, width: '48%', margin: 3, borderRadius: 16, paddingHorizontal: 18, paddingVertical: 15 }}>
                                 <Text style={styles.Portfoliotxt}>Cost % Charges</Text>
 
                                 <Text style={styles.heading}>CloudServiceCost</Text>
@@ -155,7 +155,7 @@ export default function ReportScreen({ navigation }) {
                     {collapsedIds.includes('Today') && (
                         <View>
                             <View style={styles.thirdline}>
-                                <Pressable onPress={() => navigation.navigate('Position')}>
+                                <Pressable onPress={() => navigation.navigate('Order')}>
                                     <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
                                 </Pressable>
                                 <View style={styles.amctext}>

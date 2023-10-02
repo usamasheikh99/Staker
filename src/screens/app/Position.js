@@ -16,7 +16,8 @@ const Position = ({ navigation }) => {
     const [typebyPopup, settypebyPopup] = useState(false);
     const [Assign, setIsAssign] = useState(false);
     const [isSale, setIsSale] = useState(false);
-    const [isBoost, setIsBoost] = useState(false)
+    const [isBoost, setIsBoost] = useState(false);
+    const [isPostive, setIsPostive] = useState(false)
     const handleButtonPress = (buttonName) => {
         setSelectPosition(buttonName);
     };
@@ -34,16 +35,18 @@ const Position = ({ navigation }) => {
     return (
 
         <View style={{ backgroundColor: Colors.background, flex: 1, paddingBottom: 80 }}>
-            <View>
-                <Header {...HeaderProps} />
-            </View>
+
             <ScrollView>
+                <View>
+                    <Header {...HeaderProps} />
+                </View>
+
                 <View style={styles.container}>
 
                     <View style={styles.firstline}>
 
                         <Image source={Icons.AMC_show} style={{ height: 43, width: 43 }}></Image>
-                        <Pressable onPress={() => navigation.navigate('Order')}>
+                        <Pressable>
                             <View style={styles.bathline}>
                                 <Text style={styles.bedtxt}>Bed Bath & Beyound Inc.</Text>
                                 <Text style={styles.BBBYtxt}>BBBY</Text>
@@ -60,7 +63,7 @@ const Position = ({ navigation }) => {
                     <View style={styles.secondline}>
 
                         <Pressable onPress={() => setIsBoost(true)}>
-                            <Image source={Icons.Shuttle} style={{ height: 23, width: 23, marginTop: 3 }} />
+                            <Image source={Icons.Shuttle} style={{ height: 23, width: 23, marginTop: 3, opacity: 0.8 }} />
                         </Pressable>
 
                         <TouchableOpacity
@@ -211,11 +214,11 @@ const Position = ({ navigation }) => {
                         <Text style={styles.newstxt}>Latest news</Text>
                     </View>
 
-                    <Pressable onPress={() => settypebyPopup(!typebyPopup)}>
+                    <Pressable onPress={() => setIsPostive(true)}>
                         <View style={styles.Positivebox}>
                             <View style={styles.positiveline}>
                                 <Text style={styles.positivetxt}>Positive</Text>
-                                <Text style={styles.datetime}>02/10/22 02:00PM</Text>
+                                <Text style={styles.datetime}>27 Sep, 8:09 PM</Text>
                             </View>
 
                             <View>
@@ -227,7 +230,7 @@ const Position = ({ navigation }) => {
                     <View style={styles.Positivebox}>
                         <View style={styles.positiveline}>
                             <Text style={styles.negativetxt}>Negative</Text>
-                            <Text style={styles.datetime}>02/10/22 02:00PM</Text>
+                            <Text style={styles.datetime}>27 Sep, 8:09 PM</Text>
                         </View>
 
                         <View>
@@ -238,7 +241,7 @@ const Position = ({ navigation }) => {
                     <View style={styles.Positivebox}>
                         <View style={styles.positiveline}>
                             <Text style={styles.nuetraltxt}>Neutral</Text>
-                            <Text style={styles.datetime}>02/10/22 02:00PM</Text>
+                            <Text style={styles.datetime}>27 Sep, 8:09 PM</Text>
                         </View>
 
                         <View>
@@ -248,13 +251,13 @@ const Position = ({ navigation }) => {
 
                 </View>
 
-                <PositiveView modalVisible={typebyPopup} setModalVisible={settypebyPopup} />
-
                 <AssignPopup Assign={Assign} setIsAssign={setIsAssign} />
 
                 <SaleConfirmationPopup isSale={isSale} setIsSale={setIsSale} />
 
                 <BoostPopup isBoost={isBoost} setIsBoost={setIsBoost} />
+
+                <PositiveView isPostive={isPostive} setIsPostive={setIsPostive} />
 
             </ScrollView>
         </View>
@@ -364,8 +367,8 @@ const styles = StyleSheet.create({
 
     perctxt: {
         color: Colors.green,
-        marginLeft: 35,
-        fontSize: 17
+        marginLeft: 28,
+        fontSize: 19
     },
 
     metricstxt: {

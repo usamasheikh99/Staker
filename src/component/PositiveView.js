@@ -1,25 +1,15 @@
-import { View, Text, Image, Pressable, Modal, StyleSheet, } from 'react-native'
+import { View, Text, StyleSheet, } from 'react-native'
 import React from 'react'
-import { Icons } from '../constants';
-import { Colors } from '../theme';
+import AppModal from '../theme/AppModal'
 
-const PositiveView = ({ modalVisible, setModalVisible }) => {
+const PositiveView = ({ isPostive, setIsPostive }) => {
     return (
-        <Modal
-            animationType="none"
-            transparent={true}
-            visible={modalVisible}
-            onRequestClose={() => {
-            }}>
-            <View style={styles.modal}>
-
+        <AppModal visible={isPostive} onClose={() => setIsPostive(false)}>
+            <View style={{marginLeft: 20}}>
                 <View style={styles.firstline}>
-                    <Text style={styles.datetime}>02/10/22 02:00PM</Text>
-                    <Pressable onPress={() => { setModalVisible(false) }}>
-                        <Image source={Icons.Cross_show} style={{ height: 24, width: 24, opacity: 0.8 }} />
-                    </Pressable>
+                    <Text style={styles.datetime}>27 Sep, 8:09 PM</Text>
                 </View>
- 
+
                 <View style={styles.secondline}>
                     <Text style={styles.positivetxt}>Postive</Text>
                     <Text style={styles.heading}>BioCryst upgraded to buy at jefferies on undervaluation</Text>
@@ -30,28 +20,15 @@ const PositiveView = ({ modalVisible, setModalVisible }) => {
                         jefferies upgraded BioCryst Pharmaceuticals to buy from hold saying that the stock is undervalued given the company's commercial performance. Analyst Maury Raycroft sees peak sales of the drug of Orladeyo (berotralstat) by 2027. Jefferies lifted its price target to $11 from $9.50 (~55% upside based on Thursday's close)
                     </Text>
                 </View>
-
-
-
             </View>
-        </Modal>
+        </AppModal>
     )
 }
 
 export default PositiveView
 
-
 const styles = StyleSheet.create({
 
-    modal: {
-        backgroundColor: Colors.lightDark,
-        height: 320,
-        top: 250,
-        borderRadius: 20,
-        paddingVertical: 20,
-        paddingHorizontal: 20,
-        marginHorizontal: 28
-    },
 
     firstline: {
         flexDirection: 'row',
@@ -87,12 +64,6 @@ const styles = StyleSheet.create({
         fontSize: 15,
         marginTop: 10
     }
-
-
-
-
-
-
 
 
 })
