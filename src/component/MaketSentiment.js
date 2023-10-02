@@ -6,7 +6,7 @@ const MaketSentiment = (props) => {
         <View style={styles.container}>
             <View style={styles.header}>
                 <Text style={styles.PositiveText}>{props.tittle}</Text>
-                <Text style={styles.PositiveDate}>02/01/22 02:00PM</Text>
+                <Text style={styles.PositiveDate}>6 jun 2:50</Text>
             </View>
             <View>
                 <Text style={styles.oncourse}>Oncourse could file for bankruptcy as most.

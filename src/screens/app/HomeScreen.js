@@ -50,19 +50,25 @@ export default function HomeScreen({ navigation }) {
                 {/* EarningList */}
                 <View style={styles.EarningText}>
                     <Text style={styles.earning}>Earnings</Text>
-                    <Text style={styles.more}>More</Text>
+                    <TouchableOpacity style={styles.moreClick}
+                        onPress={() => navigation.navigate('Report')}>
+                        <Text style={styles.more}>More</Text></TouchableOpacity>
                 </View>
-                <ScrollView style={{ flex: 1, height: 210 }}
+                <ScrollView style={{ height: 210 }}
                     horizontal={true}>
+                    <EarningList />
                     <EarningList />
                 </ScrollView>
 
                 {/* WeeklyTargets */}
                 <View style={styles.WeeklyText}>
                     <Text style={styles.Weekly}>Weekly targets</Text>
-                    <Text style={styles.more}>More</Text></View>
+                    <TouchableOpacity style={styles.moreClick}
+                        onPress={() => navigation.navigate('Report')}>
+                        <Text style={styles.more}>More</Text></TouchableOpacity></View>
                 <ScrollView horizontal={true}>
                     <View style={{ flexDirection: 'row' }}>
+                        <WeeklyTargets />
                         <WeeklyTargets />
                         <WeeklyTargets />
                     </View>
@@ -87,7 +93,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: Colors.background,
-        paddingBottom: 80,
+        paddingBottom: 78,
         paddingHorizontal: 2
     },
     eyeIcon: {
@@ -158,4 +164,11 @@ const styles = StyleSheet.create({
         flex: 1,
         color: "#fff"
     },
+    moreClick: {
+        paddingLeft: 10,
+        paddingRight: 10,
+        paddingTop: 5,
+        bottom: 5,
+        left: 5,
+    }
 })

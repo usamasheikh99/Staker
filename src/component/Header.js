@@ -22,7 +22,7 @@ const Header = ({ navigation, auditType = false, OnOpenPopup, ScreenName = "", i
 
           <View style={styles.headertxt}>
             <Pressable activeOpacity={1} onPress={() => navigation.navigate(goBack)}>
-              <Image source={Icons.left} resizeMode="cover" style={{ width: 30, height: 30 }} />
+              <Image source={Icons.left} resizeMode="cover" style={{ width: 30, height: 30,opacity:0.8 }} />
             </Pressable >
             <View style={styles.Item}>
               <Text style={styles.reporttxt}>{ScreenName}</Text>

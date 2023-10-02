@@ -3,6 +3,7 @@ import StackContainer from './src/navigation';
 import messaging from '@react-native-firebase/messaging';
 import { requestUserPermission } from '../Staker/src/utils/pushnotification_helper'
 import SplashScreen from 'react-native-splash-screen';
+import { StatusBar } from 'react-native';
 
 function App() {
   useEffect(() => {
@@ -24,6 +25,10 @@ function App() {
   return (
     <>
       <StackContainer />
+      <StatusBar 
+      backgroundColor='#0A0B0F'
+      barStyle='light-content'
+      hidden={false}/>
     </>
   );
 }

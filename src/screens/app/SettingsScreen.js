@@ -14,6 +14,7 @@ export default function SettingsScreen({ navigation }) {
         setSelectedItem(itemText);
     };
     const HeaderProps = {
+        navigation:navigation,
         ScreenName: 'Backtest',
         Type:false,
         
