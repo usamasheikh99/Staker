@@ -26,7 +26,8 @@ export default function HomeScreen({ navigation }) {
                 <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 25, paddingTop: 5, paddingBottom: 30 }}>
                     <View style={styles.Item}>
                         <Text style={styles.total}>Total Capital</Text>
-                        <TouchableOpacity activeOpacity={1} >
+                        <TouchableOpacity activeOpacity={1}
+                            onPress={() => navigation.navigate('Calender')}>
                             <Image source={Icons.eyes_show} style={styles.eyeIcon} />
                         </TouchableOpacity>
                     </View>
@@ -101,7 +102,7 @@ const styles = StyleSheet.create({
         width: 19,
         height: 19,
         left: 8,
-        top: 35
+        top: 35,
     },
     Item: {
         flexDirection: 'row',

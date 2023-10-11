@@ -6,6 +6,7 @@ import { Icons } from '../../constants';
 import { Image } from 'react-native'
 import Position from '../../screens/app/Position';
 import Order from '../../screens/app/Order';
+import Calender from '../../component/Calender';
 // import { Login } from '../../screens/auth';
 // import GetStarted from '../../screens/app/GetStarted';
 
@@ -76,6 +77,7 @@ function AppStack() {
       <Tab.Screen name={settingsName} component={Setting} />
       <Tab.Screen name={'Position'} component={Position} options={{ tabBarButton: () => null }} />
       <Tab.Screen name={'Order'} component={Order} options={{ tabBarButton: () => null }} />
+      <Tab.Screen name={'Calender'} component={Calender} options={{ tabBarButton: () => null }} />
     </Tab.Navigator>
 
   );
