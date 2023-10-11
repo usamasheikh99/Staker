@@ -2,8 +2,8 @@
 import * as React from 'react';
 import Chart from '../../component/Chart';
 import { Icons } from '../../constants';
-import { Colors, Text } from '../../theme';
 import TradeList from '../../component/TradeList';
+import { Colors, Metrics, Text } from '../../theme';
 import EarningList from '../../component/EarningList';
 import WeeklyTargets from '../../component/WeeklyTargets';
 import MaketSentiment from '../../component/MaketSentiment';
@@ -17,6 +17,7 @@ import {
 } from 'react-native';
 
 //publish dev branchs
+const { fontSize } = Metrics
 export default function HomeScreen({ navigation }) {
     return (
         <View style={styles.container}>
@@ -35,7 +36,7 @@ export default function HomeScreen({ navigation }) {
                             <Image source={Icons.logout} style={styles.IconSize} />
                         </TouchableOpacity>
                     </View>
-                    <Text fontWeight={'normal'} style={styles.rating}><Text style={{ fontSize: 16 }}>$</Text>32,149.80</Text>
+                    <Text fontWeight={'normal'} style={styles.rating}><Text style={{ fontSize: fontSize(13), }}>$</Text>32,149.80</Text>
                 </ImageBackground>
 
                 {/* CHAT */}
@@ -51,19 +52,25 @@ export default function HomeScreen({ navigation }) {
                 {/* EarningList */}
                 <View style={styles.EarningText}>
                     <Text style={styles.earning}>Earnings</Text>
-                    <Text style={styles.more}>More</Text>
+                    <TouchableOpacity style={styles.moreClick}
+                        onPress={() => navigation.navigate('Report')}>
+                        <Text style={styles.more}>More</Text></TouchableOpacity>
                 </View>
-                <ScrollView style={{ flex: 1, height: 210 }}
+                <ScrollView style={{ height: 210 }}
                     horizontal={true}>
+                    <EarningList />
                     <EarningList />
                 </ScrollView>
 
                 {/* WeeklyTargets */}
                 <View style={styles.WeeklyText}>
                     <Text style={styles.Weekly}>Weekly targets</Text>
-                    <Text style={styles.more}>More</Text></View>
+                    <TouchableOpacity style={styles.moreClick}
+                        onPress={() => navigation.navigate('Report')}>
+                        <Text style={styles.more}>More</Text></TouchableOpacity></View>
                 <ScrollView horizontal={true}>
                     <View style={{ flexDirection: 'row' }}>
+                        <WeeklyTargets />
                         <WeeklyTargets />
                         <WeeklyTargets />
                     </View>
@@ -88,7 +95,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: Colors.background,
-        paddingBottom: 80,
+        paddingBottom: 78,
         paddingHorizontal: 2
     },
     eyeIcon: {
@@ -110,13 +117,13 @@ const styles = StyleSheet.create({
         alignItems: 'flex-end',
     },
     total: {
-        fontSize: 15,
+        fontSize: fontSize(12),
         color: Colors.white,
         top: 35,
         fontFamily: 'MyriadPro-Light'
     },
     rating: {
-        fontSize: 34,
+        fontSize: fontSize(25),
         color: Colors.white,
         top: 12
     },
@@ -127,14 +134,15 @@ const styles = StyleSheet.create({
         top: 20,
     },
     earning: {
-        fontSize: 20,
+        fontSize: fontSize(16),
         color: Colors.white,
-
     },
     more: {
-        fontSize: 15,
+        fontSize: fontSize(12),
         paddingHorizontal: 10,
-        color: Colors.Textgray
+        color: Colors.Textgray,
+        paddingBottom: 0,
+        // backgroundColor:'red'
     },
     WeeklyText: {
         flexDirection: 'row',
@@ -142,7 +150,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 13,
     },
     Weekly: {
-        fontSize: 20,
+        fontSize: fontSize(16),
         color: Colors.white,
     },
     MarketView: {
@@ -151,7 +159,7 @@ const styles = StyleSheet.create({
         paddingVertical: 15
     },
     MarketText: {
-        fontSize: 20,
+        fontSize: fontSize(16),
         color: Colors.white,
     },
     scroll: {
@@ -159,4 +167,13 @@ const styles = StyleSheet.create({
         flex: 1,
         color: "#fff"
     },
+    moreClick: {
+        paddingLeft: 40,
+        paddingRight: 10,
+        paddingTop: 5,
+        bottom: 5,
+        left: 5,
+        // backgroundColor:"red",
+        borderRadius: 15
+    }
 })

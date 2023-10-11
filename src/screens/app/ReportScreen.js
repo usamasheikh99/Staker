@@ -32,11 +32,12 @@ export default function ReportScreen({ navigation }) {
     }
     return (
         <View style={{ backgroundColor: Colors.background, flex: 1, }}>
-
-            <View>
-                <Header {...HeaderProps} />
-            </View>
             <ScrollView>
+                <View>
+                    <Header {...HeaderProps}/>
+                </View>
+
+
                 <View style={styles.calenderbox}>
                     <Pressable onPress={() => setIsCalendar(true)}>
                         <Text style={styles.calendertxt}>Wen 1 Jan - Sat 18 Jan (18 days)</Text>
@@ -157,7 +158,7 @@ export default function ReportScreen({ navigation }) {
                     {collapsedIds.includes('Today') && (
                         <View>
                             <View style={styles.thirdline}>
-                                <Pressable onPress={() => navigation.navigate('Position')}>
+                                <Pressable onPress={() => navigation.navigate('Order')}>
                                     <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
                                 </Pressable>
                                 <View style={styles.amctext}>

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Header from '../../component/Header';
-import{ Colors} from "../../theme"
+import{ Colors, Metrics} from "../../theme"
 import { Toast } from 'react-native-toast-message/lib/src/Toast'
 import {
     View,
@@ -9,11 +9,13 @@ import {
     TouchableOpacity
 } from 'react-native';
 
+const {fontSize} = Metrics
 export default function SettingsScreen({ navigation }) {
     const handleItemPress = (itemText) => {
         setSelectedItem(itemText);
     };
     const HeaderProps = {
+        navigation:navigation,
         ScreenName: 'Backtest',
         Type:false,
         
@@ -41,7 +43,7 @@ export default function SettingsScreen({ navigation }) {
                     <Toast/>
                 </View>
             </TouchableOpacity>
-            <Text style={{ top: 45, fontSize: 18, color: Colors.white, marginLeft: 25 }}>Results</Text>
+            <Text style={{ top: 45, fontSize:fontSize(15), color: Colors.white, marginLeft: 25 }}>Results</Text>
                 <View style={styles.todaylist}>
                     <Text style={styles.Bnchmark}>Benchmark Profile</Text>
                     <Text style={styles.parcentage}>4.5%</Text>
@@ -78,7 +80,7 @@ const styles = StyleSheet.create({
     Execute: {
         textAlign: 'center',
         alignItems: 'center',
-        fontSize: 18,
+        fontSize:fontSize(15),
         color: Colors.white
     },
     todaylist: {
@@ -92,11 +94,11 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between'
     },
     Bnchmark: {
-        fontSize: 15,
+        fontSize:fontSize(12),
         color: Colors.white,
     },
     parcentage: {
         color: Colors.white,
-        fontSize: 16
+        fontSize:fontSize(13),
     },
 })

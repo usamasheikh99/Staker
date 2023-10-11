@@ -1,8 +1,9 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import { Colors } from '../theme'
+import { Colors, Metrics } from '../theme'
 import ProgressCircle from 'react-native-progress-circle'
 
+const {fontSize} = Metrics
 const WeeklyTargets = () => {
     return (
         <View style={styles.container}>
@@ -11,7 +12,7 @@ const WeeklyTargets = () => {
                     21 jun - 28 jun
                 </Text>
                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                    <Text style={styles.price}><Text style={{ fontSize: 15 }}>$</Text>130,232</Text>
+                    <Text style={styles.price}><Text style={{ fontSize:fontSize(10) }}>$</Text>130,232</Text>
                     <View style={{ paddingHorizontal: 50, left: 30,bottom:8}}>
                         <ProgressCircle
                             percent={45}
@@ -20,7 +21,7 @@ const WeeklyTargets = () => {
                             color="gray"
                             shadowColor="#D60354"
                             bgColor='#26262B' >
-                            <Text style={{ fontSize: 15, fontWeight: '500' ,color:Colors.white}}>{'75%'}</Text>
+                            <Text style={{ fontSize:fontSize(12), fontWeight: '500' ,color:Colors.white}}>{'75%'}</Text>
                         </ProgressCircle></View>
                 </View>
                 <Text style={styles.winrate}>Trader 80 Winrate 56%</Text>
@@ -47,18 +48,18 @@ const styles = StyleSheet.create({
         height:102,
     },
     stockSymbol: {
-        fontSize: 18,
+        fontSize:fontSize(14),
         color: Colors.white
     },
     price: {
-        fontSize: 24,
+        fontSize:fontSize(19),
         color: Colors.white,
         paddingHorizontal: 10,
         bottom:5
     },
     winrate: {
         color: Colors.Textgray,
-        fontSize: 12,
+        fontSize:fontSize(10),
         left: 10,
         bottom:20
     }

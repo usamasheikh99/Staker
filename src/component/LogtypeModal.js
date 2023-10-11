@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Colors } from '../theme';
+import { Colors, Metrics } from '../theme';
 import AppModal from '../theme/AppModal';
 import {
   View,
@@ -8,6 +8,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 
+const {fontSize} = Metrics
 function LogtypeModal({ visible, onClose }) {
   const [selectedOption, setSelectedOption] = useState(null);
 
@@ -69,11 +70,11 @@ const styles = StyleSheet.create({
   },
   radioButtonText: {
     color: Colors.white,
-    fontSize: 20
+    fontSize:fontSize(17)
   },
   logtext: {
     color: Colors.white,
-    fontSize: 20,
+    fontSize:fontSize(16),
     textAlign: 'center',
     bottom: 10,
     // backgroundColor:'red',

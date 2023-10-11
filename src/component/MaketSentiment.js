@@ -1,17 +1,20 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
-import { Colors,Text } from "../theme"
+import { Colors,Metrics,Text } from "../theme"
+
+const { fontSize } = Metrics
 const MaketSentiment = (props) => {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
                 <Text style={styles.PositiveText}>{props.tittle}</Text>
-                <Text style={styles.PositiveDate}>02/01/22 02:00PM</Text>
+                <Text style={styles.PositiveDate}>6 jun 2:50</Text>
             </View>
             <View>
                 <Text style={styles.oncourse}>Oncourse could file for bankruptcy as most.
                  emloyees laid off;down 43%</Text>
             </View>
+            
         </View>
     )
 }
@@ -31,7 +34,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     PositiveText:{
-        fontSize:14,
+        fontSize:fontSize(11),
         color:Colors.green,
     },
     PositiveDate:{

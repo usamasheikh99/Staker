@@ -18,11 +18,12 @@ const Header = ({ navigation, auditType = false, OnOpenPopup, ScreenName = "", i
     <View style={{ backgroundColor: Colors.background, color: "#fff" }}>
 
       <View style={styles.Header}>
-        <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 20, paddingTop: 50, paddingBottom: 30 }}>
+        <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 15, paddingTop: 30, paddingBottom: 30 }}>
 
           <View style={styles.headertxt}>
-            <Pressable activeOpacity={1} onPress={() => navigation.navigate(goBack)}>
-              <Image source={Icons.left} resizeMode="cover" style={{ width: 30, height: 30 }} />
+            <Pressable style={{paddingLeft:10,paddingRight:10,paddingBottom:10,paddingTop:10}} 
+            activeOpacity={1} onPress={() => navigation.navigate(goBack)}>
+              <Image source={Icons.left} resizeMode="cover" style={{ width: 30, height: 30,opacity:0.8 }} />
             </Pressable >
             <View style={styles.Item}>
               <Text style={styles.reporttxt}>{ScreenName}</Text>
@@ -66,7 +67,8 @@ const styles = StyleSheet.create({
   headertxt: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    top:10
   },
   Item: {
     flex: 1,
