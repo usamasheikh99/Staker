@@ -4,12 +4,14 @@ import { Icons } from '../../constants';
 import { Colors } from '../../theme';
 import Header from '../../component/Header';
 import ReportType from '../../component/ReportType';
+import Calender from '../../component/Calender';
 
 
 
 export default function ReportScreen({ navigation }) {
     const [isReportPopup, setIsReportPopup] = useState(false);
     const [collapsedIds, setCollapsedIds] = useState([]);
+    const [isCalendar, setIsCalendar] = useState(false);
     const toggleCollapse = (id) => {
         if (collapsedIds.includes(id)) {
             setCollapsedIds(collapsedIds.filter((collapsedId) => collapsedId !== id));
@@ -35,11 +37,11 @@ export default function ReportScreen({ navigation }) {
                 <Header {...HeaderProps} />
             </View>
             <ScrollView>
-
                 <View style={styles.calenderbox}>
-                    <Text style={styles.calendertxt}>Wen 1 Jan - Sat 18 Jan (18 days)</Text>
+                    <Pressable onPress={() => setIsCalendar(true)}>
+                        <Text style={styles.calendertxt}>Wen 1 Jan - Sat 18 Jan (18 days)</Text>
+                    </Pressable>
                 </View>
-
                 <View style={styles.profitbox}>
                     <View style={styles.profittxt}>
                         <Text style={styles.PLtxt}>P&L</Text>
@@ -108,7 +110,7 @@ export default function ReportScreen({ navigation }) {
                             </View>
                         </View>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 10, }}>
-                        <View style={{ backgroundColor: Colors.lightDark, width: '48%', margin: 3, borderRadius: 16, paddingHorizontal: 18, paddingVertical: 15 }}>
+                            <View style={{ backgroundColor: Colors.lightDark, width: '48%', margin: 3, borderRadius: 16, paddingHorizontal: 18, paddingVertical: 15 }}>
                                 <Text style={styles.Portfoliotxt}>Cost % Charges</Text>
 
                                 <Text style={styles.heading}>CloudServiceCost</Text>
@@ -397,6 +399,8 @@ export default function ReportScreen({ navigation }) {
                 </View>
                 <ReportType {...ReportTypeProps} />
             </ScrollView>
+
+            <Calender isCalendar={isCalendar} setIsCalendar={setIsCalendar} />
         </View>
     );
 }
