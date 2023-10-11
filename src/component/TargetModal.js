@@ -1,6 +1,6 @@
 import React from 'react';
 import ProgressiveBar from './ProgressiveBar';
-import { Colors, Text } from '../theme';
+import { Colors, Metrics, Text } from '../theme';
 import AppModal from '../theme/AppModal';
 import Button from './Button';
 // import { Icons } from '../constants';
@@ -9,6 +9,7 @@ import {
     StyleSheet,
 } from 'react-native';
 
+const {fontSize,width} = Metrics
 const TargetModal = ({ IsTargetModel, targetModelHandle, props }) => {
     return (
 
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
     person: {
         backgroundColor: Colors.background,
         borderRadius: 9,
-        fontSize: 22,
+        fontSize:fontSize(17),
         color: Colors.Textgray,
         marginRight: 15,
         marginBottom: 10,
@@ -59,19 +60,17 @@ const styles = StyleSheet.create({
     },
     targetMaine: {
         alignItems: 'center',
-        left: 8,
-        bottom:10
+        marginLeft: 9,
+        bottom:10,
     },
     header: {
     },
     targetText: {
         color: Colors.white,
         textAlign: 'center',
-        fontSize: 20,
+        fontSize:fontSize(16),
         opacity: 0.8,
         bottom: 35,
-        paddingVertical:20,
-        width:90,
-        left:141
+        paddingVertical:20
     }
 });

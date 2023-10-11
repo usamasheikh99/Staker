@@ -1,4 +1,4 @@
-import {Dimensions, Platform, PixelRatio, StyleSheet} from 'react-native'
+import {Dimensions} from 'react-native'
 import {RFValue} from 'react-native-responsive-fontsize'
 
 const width = Dimensions.get('window').width

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Colors } from "../../theme"
+import { Colors, Metrics } from "../../theme"
 import Header from '../../component/Header'
 import Slider from '@react-native-community/slider'
 import Button from '../../component/Button';
@@ -12,6 +12,7 @@ import {
 } from 'react-native'
 
 
+const { fontSize } = Metrics
 export default function ControlScreen({ navigation }) {
   const [selectedItem, setSelectedItem] = useState(null);
   const handleItemPress = (itemText) => {
@@ -120,7 +121,7 @@ export default function ControlScreen({ navigation }) {
           >
             <Text style={styles.Scalping}>Trade Limits</Text>
             <View style={{ width: '80%', bottom: 10 }}>
-              <Text style={{ color: 'white', fontSize: 11, left: 70 }}>{slider}</Text>
+              <Text style={{ color: 'white', fontSize:fontSize(10), left: 70 }}>{slider}</Text>
               <Slider
                 value={slider}
                 onValueChange={(newValue) => setSilder(newValue)}
@@ -146,7 +147,7 @@ export default function ControlScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   carefullText: {
-    fontSize: 17,
+    fontSize:fontSize(14),
     paddingVertical: 15,
     color: Colors.white,
     left: 25
@@ -182,7 +183,7 @@ const styles = StyleSheet.create({
     // alignItems: 'center'
   },
   Scalping: {
-    fontSize: 15,
+    fontSize:fontSize(12),
     color: Colors.white,
     paddingVertical: 2
   },
@@ -191,6 +192,6 @@ const styles = StyleSheet.create({
   },
   today: {
     color: Colors.white,
-    fontSize: 15
+    fontSize:fontSize(12)
   }
 })

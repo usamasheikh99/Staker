@@ -1,5 +1,5 @@
 import React from 'react'
-import { Colors } from '../theme'
+import { Colors, Metrics } from '../theme'
 import { Icons } from "../constants"
 import {
     View,
@@ -8,6 +8,7 @@ import {
     Image,
 } from 'react-native'
 
+const { fontSize, width } = Metrics
 const EarningList = () => {
     return (
         <View style={styles.container}>
@@ -21,12 +22,12 @@ const EarningList = () => {
                 </View>
                 <View>
                     <Image source={Icons.Greenline_show} style={styles.tradeline} />
-                    <Text style={styles.price}><Text style={{ fontSize: 15 }}>$</Text>43,00</Text></View>
+                    <Text style={styles.price}><Text style={{ fontSize: fontSize(11), }}>$</Text>43,00</Text></View>
 
                 <View style={styles.flexRow}>
                     <View style={[styles.flexRow, { flex: 1 }]}>
                         <Image source={Icons.UpTrend} style={styles.trend} />
-                        <Text style={{ color: Colors.green, opacity: 0.8, top: 7 ,fontSize:13 }}>3.15%</Text>
+                        <Text style={{ color: Colors.green, opacity: 0.8, top: 7, fontSize: fontSize(10), }}>3.15%</Text>
                     </View>
                     <Image source={Icons.DotG} style={styles.trends} />
                 </View>
@@ -43,12 +44,12 @@ const EarningList = () => {
                 </View>
                 <View>
                     <Image source={Icons.Redline_show} style={styles.tradeline} />
-                    <Text style={styles.price}><Text style={{ fontSize: 13 }}>$</Text>19,45</Text></View>
+                    <Text style={styles.price}><Text style={{ fontSize: fontSize(11), }}>$</Text>19,45</Text></View>
 
                 <View style={styles.flexRow}>
                     <View style={[styles.flexRow, { flex: 1 }]}>
                         <Image source={Icons.DownTrend} style={styles.trend} />
-                        <Text style={{ color: Colors.red, opacity: 0.8, top: 7 ,fontSize:13 }}>3.15%</Text>
+                        <Text style={{ color: Colors.red, opacity: 0.8, top: 7, fontSize: fontSize(10), }}>3.15%</Text>
                     </View>
                     <Image source={Icons.DotR} style={styles.trends} />
                 </View>
@@ -65,12 +66,12 @@ const EarningList = () => {
                 </View>
                 <View>
                     <Image source={Icons.Greenline_show} style={styles.tradeline} />
-                    <Text style={styles.price}><Text style={{ fontSize: 13 }}>$</Text>89,45</Text></View>
+                    <Text style={styles.price}><Text style={{ fontSize: fontSize(11), }}>$</Text>89,45</Text></View>
 
                 <View style={styles.flexRow}>
                     <View style={[styles.flexRow, { flex: 1 }]}>
                         <Image source={Icons.UpTrend} style={styles.trend} />
-                        <Text style={{ color: Colors.green, opacity: 0.8, top: 7 ,fontSize:13 }}>3.15%</Text>
+                        <Text style={{ color: Colors.green, opacity: 0.8, top: 7, fontSize: fontSize(10), }}>3.15%</Text>
                     </View>
                     <Image source={Icons.DotG} style={styles.trends} />
                 </View>
@@ -84,7 +85,7 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         left: 10,
-        top: 30
+        top: 30,
     },
     flexRow: {
         flexDirection: 'row',
@@ -102,14 +103,14 @@ const styles = StyleSheet.create({
         left: 3
     },
     EarningList: {
-        width: 125,
-        height: 150,
+        width: width / 3.4,
+        height: 148,
         padding: 10,
         marginRight: 10,
-        borderRadius: 10,
+        borderRadius: 10
     },
     stockSymbol: {
-        fontSize: 17,
+        fontSize: fontSize(14),
         color: Colors.white,
         fontWeight: '400',
         left: 9,
@@ -138,9 +139,9 @@ const styles = StyleSheet.create({
         opacity: 0.4
     },
     price: {
-        fontSize: 25,
+        fontSize: fontSize(20),
         top: 7,
-        color:Colors.white
+        color: Colors.white
     }
 })
 export default EarningList;
