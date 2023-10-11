@@ -1,6 +1,8 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
-import { Colors,Text } from "../theme"
+import { Colors,Metrics,Text } from "../theme"
+
+const { fontSize } = Metrics
 const MaketSentiment = (props) => {
     return (
         <View style={styles.container}>
@@ -12,6 +14,7 @@ const MaketSentiment = (props) => {
                 <Text style={styles.oncourse}>Oncourse could file for bankruptcy as most.
                  emloyees laid off;down 43%</Text>
             </View>
+            
         </View>
     )
 }
@@ -31,7 +34,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     PositiveText:{
-        fontSize:14,
+        fontSize:fontSize(11),
         color:Colors.green,
     },
     PositiveDate:{

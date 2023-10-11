@@ -1,8 +1,9 @@
 import React from 'react';
-import { Colors } from '.';
+import { Colors, Metrics } from '.';
 import { Modal, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { Icons } from '../constants'
 
+const { fontsize, width } = Metrics
 const AppModal = ({ visible, onClose, children }) => {
     return (
         <Modal
@@ -46,21 +47,21 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         paddingVertical: 30,
         position: 'relative',
-        width: 370,
+        width: width / 1.1,
     },
     closeIconContainer: {
         position: 'absolute',
         top: 10, // Adjust the top position as needed
         right: 0, // Adjust the right position as needed
         height: 80,
-        width: 90
+        width: width / 4.0,
     },
     crosicon: {
         height: 12,
         width: 12,
         opacity: 0.8,
         top: 17,
-        left: 45,
+        marginLeft: 45,
     }
 });
 

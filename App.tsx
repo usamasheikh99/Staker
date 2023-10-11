@@ -7,7 +7,7 @@ import { StatusBar } from 'react-native';
 
 function App() {
   useEffect(() => {
-   SplashScreen.hide()
+    SplashScreen.hide()
     messaging()
       .requestPermission()
       .then(() => {
@@ -25,10 +25,10 @@ function App() {
   return (
     <>
       <StackContainer />
-      <StatusBar 
-      backgroundColor='#0A0B0F'
-      barStyle='light-content'
-      hidden={false}/>
+      <StatusBar
+        backgroundColor='#0A0B0F'
+        barStyle='light-content'
+        hidden={false} />
     </>
   );
 }

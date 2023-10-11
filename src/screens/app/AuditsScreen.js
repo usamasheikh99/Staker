@@ -1,12 +1,13 @@
-import React from 'react'
+ import React from 'react'
 import Header from '../../component/Header'
-import { Colors } from "../../theme"
+import { Colors, Metrics } from "../../theme"
 import {
   View,
   Text,
   StyleSheet
 } from 'react-native'
 
+const {fontSize} = Metrics
 export default function AuditsScreen({navigation}) {
   const HeaderProps = {
     navigation: navigation,
@@ -75,7 +76,7 @@ const styles = StyleSheet.create({
     top: 15,
   },
   indicator: {
-    fontSize: 13,
+    fontSize:fontSize(11),
     color: Colors.indicatorColor,
     opacity: 0.8
   },
@@ -88,14 +89,14 @@ const styles = StyleSheet.create({
     color: Colors.Textgray,
     top: 15,
     marginBottom: 10,
-    fontSize: 13
+    fontSize:fontSize(11),
   },
   text: {
     color: Colors.Textgray
   },
   reder: {
     color: Colors.white,
-    fontSize: 16,
+    fontSize:fontSize(14),
     opacity: 0.7
   }
 })

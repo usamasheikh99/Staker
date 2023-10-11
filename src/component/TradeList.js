@@ -1,5 +1,5 @@
 import React from 'react'
-import { Colors, Text } from "../theme"
+import { Colors, Metrics, Text } from "../theme"
 import { Icons } from '../constants'
 import {
     StyleSheet,
@@ -9,6 +9,7 @@ import {
 } from 'react-native'
 import Line from './Line'
 
+const { fontSize } = Metrics
 const TradeList = ({ navigation }) => {
 
     return (
@@ -34,7 +35,7 @@ const TradeList = ({ navigation }) => {
                         <Image source={Icons.Greenline_show} style={styles.tradeline} />
                         <View>
                             <Text style={styles.flucP}>3.90%</Text>
-                            <Text style={styles.Dollar}><Text style={{ fontSize: 13 }}>$</Text>1300.15</Text>
+                            <Text style={styles.Dollar}><Text style={{ fontSize: fontSize(10), }}>$</Text>1300.15</Text>
                         </View>
                     </View>
                 </View>
@@ -61,7 +62,7 @@ const TradeList = ({ navigation }) => {
                     <Image source={Icons.Redline_show} style={styles.tradeline} />
                     <View>
                         <Text style={styles.flucP}>3.90%</Text>
-                        <Text style={styles.Dollars}><Text style={{ fontSize: 13 }}>$</Text>1300.15</Text>
+                        <Text style={styles.Dollars}><Text style={{ fontSize: fontSize(10), }}>$</Text>1300.15</Text>
                     </View>
                 </View>
             </View>
@@ -85,7 +86,7 @@ const TradeList = ({ navigation }) => {
                     <Image source={Icons.Greenline_show} style={styles.tradelines} />
                     <View>
                         <Text style={styles.flucP}>3.90%</Text>
-                        <Text style={styles.Dollar}><Text style={{ fontSize: 13 }}>$</Text>1300.15</Text>
+                        <Text style={styles.Dollar}><Text style={{ fontSize: fontSize(10), }}>$</Text>1300.15</Text>
                     </View>
                 </View>
             </View>
@@ -108,7 +109,7 @@ const TradeList = ({ navigation }) => {
                     <Image source={Icons.Redline_show} style={styles.tradelinee} />
                     <View>
                         <Text style={styles.flucP}>3.90%</Text>
-                        <Text style={styles.Dollars}><Text style={{ fontSize: 13 }}>$</Text>1300.15</Text>
+                        <Text style={styles.Dollars}><Text style={{ fontSize: fontSize(10), }}>$</Text>1300.15</Text>
                     </View>
                 </View>
             </View>
@@ -140,7 +141,7 @@ const styles = StyleSheet.create({
         marginRight: 15
     },
     flucP: {
-        fontSize: 17,
+        fontSize: fontSize(14),
         color: Colors.white,
         textAlign: 'right',
     },
@@ -167,8 +168,8 @@ const styles = StyleSheet.create({
     thumupIcon: {
         width: 14,
         height: 14,
-        marginLeft: 10,
-        left: 5,
+        marginLeft: 8,
+        left: 3,
         opacity: 0.7,
         top: 3
     },
@@ -180,10 +181,10 @@ const styles = StyleSheet.create({
         top: 2,
     },
     Number: {
-        color: Colors.red,
-        textAlign: 'right',
-        fontSize: 10,
-        right: 5
+        // color: Colors.red,
+        // textAlign: 'right',
+        // fontSize:fontSize(20),
+        // right: 5
     },
     tradeList: {
         backgroundColor: Colors.lightDark,
@@ -196,7 +197,7 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
     },
     stockSymbol: {
-        fontSize: 17,
+        fontSize: fontSize(14),
         color: Colors.white,
         bottom: 2,
     },
@@ -204,21 +205,21 @@ const styles = StyleSheet.create({
     {
         color: Colors.green,
         textAlign: 'right',
-        fontSize: 19,
+        fontSize: fontSize(16),
         opacity: 0.8,
     },
     Indicator: {
         color: Colors.textBlue,
-        fontSize: 11,
+        fontSize: fontSize(10),
         opacity: 0.9
     },
     Dollars: {
         color: Colors.red,
         textAlign: 'right',
-        fontSize: 19,
+        fontSize: fontSize(16),
     },
     task: {
-        fontSize: 12,
+        fontSize: fontSize(10),
         opacity: 0.9,
         color: Colors.Textgray
     }
