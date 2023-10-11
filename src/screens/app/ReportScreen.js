@@ -5,6 +5,7 @@ import { Colors } from '../../theme';
 import Header from '../../component/Header';
 import ReportType from '../../component/ReportType';
 
+const { fontSize } = Metrics
 
 
 export default function ReportScreen({ navigation }) {
@@ -414,7 +415,7 @@ const styles = StyleSheet.create({
 
     calendertxt: {
         color: Colors.white,
-        fontSize: 15,
+        fontSize: fontSize(13),
         marginHorizontal: 18,
     },
 
