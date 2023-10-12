@@ -56,7 +56,8 @@ const styles = StyleSheet.create({
         paddingBottom: 13,
     },
     targetNumber: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        paddingHorizontal:10
     },
     targetMaine: {
         alignItems: 'center',

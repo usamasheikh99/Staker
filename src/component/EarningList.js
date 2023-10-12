@@ -8,7 +8,7 @@ import {
     Image,
 } from 'react-native'
 
-const { fontSize, width } = Metrics
+const { fontSize, width ,height} = Metrics
 const EarningList = () => {
     return (
         <View style={styles.container}>
@@ -104,10 +104,12 @@ const styles = StyleSheet.create({
     },
     EarningList: {
         width: width / 3.4,
-        height: 148,
+        // height: 190,
+        height:height / 2.0,
         padding: 10,
         marginRight: 10,
-        borderRadius: 10
+        borderRadius: 10,
+        backgroundColor:'red'
     },
     stockSymbol: {
         fontSize: fontSize(14),

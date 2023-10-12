@@ -1,4 +1,3 @@
-
 import * as React from 'react';
 import Chart from '../../component/Chart';
 import { Icons } from '../../constants';
@@ -13,11 +12,11 @@ import {
     StyleSheet,
     ScrollView,
     TouchableOpacity,
-    ImageBackground
+    ImageBackground,
 } from 'react-native';
 
 //publish dev branchs
-const { fontSize } = Metrics
+const { fontSize, height, width } = Metrics
 export default function HomeScreen({ navigation }) {
     return (
         <View style={styles.container}>
@@ -26,8 +25,7 @@ export default function HomeScreen({ navigation }) {
                 <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 25, paddingTop: 5, paddingBottom: 30 }}>
                     <View style={styles.Item}>
                         <Text style={styles.total}>Total Capital</Text>
-                        <TouchableOpacity activeOpacity={1}
-                            onPress={() => navigation.navigate('Calender')}>
+                        <TouchableOpacity activeOpacity={1}>
                             <Image source={Icons.eyes_show} style={styles.eyeIcon} />
                         </TouchableOpacity>
                     </View>
@@ -56,7 +54,7 @@ export default function HomeScreen({ navigation }) {
                         onPress={() => navigation.navigate('Report')}>
                         <Text style={styles.more}>More</Text></TouchableOpacity>
                 </View>
-                <ScrollView style={{ height: 210 }}
+                <ScrollView style={{ height: height / 4.2 }}
                     horizontal={true}>
                     <EarningList />
                     <EarningList />
@@ -96,7 +94,6 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: Colors.background,
         paddingBottom: 78,
-        paddingHorizontal: 2
     },
     eyeIcon: {
         width: 19,
@@ -141,8 +138,6 @@ const styles = StyleSheet.create({
         fontSize: fontSize(12),
         paddingHorizontal: 10,
         color: Colors.Textgray,
-        paddingBottom: 0,
-        // backgroundColor:'red'
     },
     WeeklyText: {
         flexDirection: 'row',

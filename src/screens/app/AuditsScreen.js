@@ -1,63 +1,70 @@
- import React from 'react'
+import React from 'react'
 import Header from '../../component/Header'
 import { Colors, Metrics } from "../../theme"
+import { ProgressChart } from "react-native-chart-kit";
 import {
   View,
   Text,
-  StyleSheet
+  StyleSheet,
+  Dimensions
 } from 'react-native'
 
-const {fontSize} = Metrics
-export default function AuditsScreen({navigation}) {
+
+const { fontSize } = Metrics
+export default function AuditsScreen({ navigation }) {
   const HeaderProps = {
     navigation: navigation,
     ScreenName: 'Log',
     auditType: true
   }
+  const data = {
+    labels: ["Swim", "Bike", "Run"], // optional
+    data: [0.4, 0.6],
+  };
   return (
     <View style={styles.container}>
+    <View>
+      <Header {...HeaderProps} />
+    </View>
+    <View style={styles.innerbox}>
+      <View style={styles.Information}>
+        <Text style={styles.text}>Information</Text>
+        <Text style={styles.indicator}>Indicator</Text></View>
       <View>
-        <Header {...HeaderProps} />
-      </View>
-      <View style={styles.innerbox}>
-        <View style={styles.Information}>
-          <Text style={styles.text}>Information</Text>
-          <Text style={styles.indicator}>Indicator</Text></View>
-        <View>
-          <Text style={styles.reder}>It is a long established fact that a reader.</Text>
-          <Text style={styles.textcolor}>There are many sit amet consectetur adipisicing Sint totam vero culpa odio impedit unde doloremque magnam.
-            Delectus sed rem vel quibusdam facilis  sunt ullam beatae .</Text>
-          <Text style={styles.textdate}>02/10/22 02:00PM</Text>
-        </View>
-      </View>
-      <View style={styles.innerbox}>
-        <View style={styles.Information}>
-          <Text style={styles.text}>Information</Text>
-          <Text style={styles.indicator}>Indicator</Text></View>
-        <View>
-          <Text style={styles.reder}>It is a long established fact that a reader.</Text>
-          <Text style={styles.textcolor}>There are many sit amet consectetur adipisicing Sint totam vero culpa odio impedit unde doloremque magnam.
-            Delectus sed rem vel quibusdam facilis  sunt ullam beatae .</Text>
-          <Text style={styles.textdate}>02/10/22 02:00PM</Text>
-        </View>
-      </View>
-      <View style={styles.innerbox}>
-        <View style={styles.Information}>
-          <Text style={styles.text}>Information</Text>
-          <Text style={styles.indicator}>Indicator</Text></View>
-        <View>
-          <Text style={styles.reder}>It is a long established fact that a reader.</Text>
-          <Text style={styles.textcolor}>There are many sit amet consectetur adipisicing Sint totam vero culpa odio impedit unde doloremque magnam.
-            Delectus sed rem vel quibusdam facilis sunt ullam beatae .</Text>
-          <Text style={styles.textdate}>02/10/22 02:00PM</Text>
-        </View>
+        <Text style={styles.reder}>It is a long established fact that a reader.</Text>
+        <Text style={styles.textcolor}>There are many sit amet consectetur adipisicing Sint totam vero culpa odio impedit unde doloremque magnam.
+          Delectus sed rem vel quibusdam facilis  sunt ullam beatae .</Text>
+        <Text style={styles.textdate}>02/10/22 02:00PM</Text>
       </View>
     </View>
+    <View style={styles.innerbox}>
+      <View style={styles.Information}>
+        <Text style={styles.text}>Information</Text>
+        <Text style={styles.indicator}>Indicator</Text></View>
+      <View>
+        <Text style={styles.reder}>It is a long established fact that a reader.</Text>
+        <Text style={styles.textcolor}>There are many sit amet consectetur adipisicing Sint totam vero culpa odio impedit unde doloremque magnam.
+          Delectus sed rem vel quibusdam facilis  sunt ullam beatae .</Text>
+        <Text style={styles.textdate}>02/10/22 02:00PM</Text>
+      </View>
+    </View>
+    <View style={styles.innerbox}>
+      <View style={styles.Information}>
+        <Text style={styles.text}>Information</Text>
+        <Text style={styles.indicator}>Indicator</Text></View>
+      <View>
+        <Text style={styles.reder}>It is a long established fact that a reader.</Text>
+        <Text style={styles.textcolor}>There are many sit amet consectetur adipisicing Sint totam vero culpa odio impedit unde doloremque magnam.
+          Delectus sed rem vel quibusdam facilis sunt ullam beatae .</Text>
+        <Text style={styles.textdate}>02/10/22 02:00PM</Text>
+      </View>
+    </View>
+  </View>
   )
 }
 
 const styles = StyleSheet.create({
-  container: {
+container: {
     flex: 1,
     backgroundColor: Colors.background,
   },
@@ -99,4 +106,5 @@ const styles = StyleSheet.create({
     fontSize:fontSize(14),
     opacity: 0.7
   }
+
 })

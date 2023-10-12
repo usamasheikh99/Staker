@@ -8,7 +8,7 @@ import {
   Image, 
   Pressable, 
   StyleSheet, 
-  ImageBackground 
+  ImageBackground,
 } from 'react-native'
 
 
