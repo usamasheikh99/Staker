@@ -3,6 +3,8 @@ import React from 'react'
 import AppModal from '../theme/AppModal'
 import { Colors } from '../theme'
 
+
+const { fontSize } = Metrics
 const SaleConfirmationPopup = ({ isSale, setIsSale }) => {
     return (
         <AppModal visible={isSale} onClose={() => setIsSale(false)}>
@@ -42,19 +44,19 @@ const styles = StyleSheet.create({
 
     confirmtxt: {
         color: Colors.white,
-        fontSize: 19,
+        fontSize: fontSize(16)
     },
 
     para: {
         color: Colors.Textgray,
-        fontSize: 18,
+        fontSize: fontSize(15),
         marginTop: 8,
         paddingHorizontal: 30
     },
 
     para2: {
         color: Colors.Textgray,
-        fontSize: 18,
+        fontSize: fontSize(15),
         paddingHorizontal: 39
     },
 
@@ -83,7 +85,7 @@ const styles = StyleSheet.create({
 
     text: {
         textAlign: 'center',
-        fontSize: 15,
+        fontSize: fontSize(13),
         color: Colors.white
     },
 

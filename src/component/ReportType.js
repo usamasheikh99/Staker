@@ -8,6 +8,8 @@ import {
 } from 'react-native';
 import AppModal from '../theme/AppModal';
 
+const { fontSize } = Metrics
+
 function ReportType({ visible, onClose }) {
   const [selectedOption, setSelectedOption] = useState(null);
 
@@ -77,13 +79,13 @@ const styles = StyleSheet.create({
 
   radioButtonText: {
     color: Colors.white,
-    fontSize: 20,
+    fontSize: fontSize(18),
     marginVertical: 2
   },
 
   logtext: {
     color: Colors.white,
-    fontSize: 20,
+    fontSize: fontSize(17),
     textAlign: 'center',
     bottom: 10
   },

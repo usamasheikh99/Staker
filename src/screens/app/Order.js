@@ -4,7 +4,7 @@ import Header from '../../component/Header';
 import { Icons } from '../../constants';
 import { Colors } from '../../theme';
 
-
+const { fontSize } = Metrics
 const Order = () => {
     const HeaderProps = {
         ScreenName: 'Order',
@@ -128,12 +128,12 @@ const styles = StyleSheet.create({
 
     bedtxt: {
         color: Colors.white,
-        fontSize: 18
+        fontSize: fontSize(15),
     },
 
     BBBYtxt: {
         color: Colors.Textgray,
-        fontSize: 16,
+        fontSize: fontSize(13),
         opacity: 0.8
     },
 
@@ -145,20 +145,20 @@ const styles = StyleSheet.create({
 
     usdtxt: {
         color: Colors.white,
-        fontSize: 21,
+        fontSize: fontSize(18),
         fontWeight: '500'
     },
 
     feetxt: {
         color: Colors.Textgray,
-        fontSize: 13,
+        fontSize: fontSize(11),
         marginLeft: 5,
         opacity: 0.8
     },
 
     pertxt: {
         color: Colors.btnGreen,
-        fontSize: 18
+        fontSize: fontSize(15),
     },
 
     righttxt: {
@@ -167,21 +167,21 @@ const styles = StyleSheet.create({
 
     hrstxt: {
         color: Colors.Textgray,
-        fontSize: 13,
+        fontSize: fontSize(11),
         opacity: 0.8,
         textAlign: 'right'
     },
 
     shorttxt: {
         color: Colors.white,
-        fontSize: 18,
+        fontSize: fontSize(15),
         textAlign: 'right',
         marginVertical: 2
     },
 
     assignedtxt: {
         color: Colors.Textgray,
-        fontSize: 13,
+        fontSize: fontSize(11),
         opacity: 0.8,
         textAlign: 'right'
     },
@@ -202,14 +202,14 @@ const styles = StyleSheet.create({
     },
 
     saletxt: {
-        fontSize: 16,
+        fontSize: fontSize(13),
         color: Colors.white,
         paddingHorizontal: 18,
         opacity: 0.9
     },
 
     saletxt2: {
-        fontSize: 16,
+        fontSize: fontSize(13),
         color: Colors.white,
         paddingHorizontal: 18,
         opacity: 0.9
@@ -227,7 +227,7 @@ const styles = StyleSheet.create({
         opacity: 0.9,
         paddingHorizontal: 18,
         paddingVertical: 15,
-        fontSize: 14,
+        fontSize: fontSize(12),
     }
 
 })

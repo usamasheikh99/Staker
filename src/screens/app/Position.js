@@ -10,6 +10,7 @@ import BoostPopup from '../../component/BoostPopup';
 
 // import useSelector from 'react-redux'
 
+const { fontSize ,width} = Metrics
 
 const Position = ({ navigation }) => {
     const [selectPosition, setSelectPosition] = useState(null);
@@ -99,7 +100,7 @@ const Position = ({ navigation }) => {
                         <Text style={styles.numtxt}>2.5, 3.5, 4.1, 7.5, 11.8, 12.98</Text>
                     </View>
 
-                    <View style={{ flexDirection: 'row', }}>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                         <View style={styles.Box}>
                             <View style={styles.boxtxt}>
                                 <Text style={styles.metricsheading}>Price</Text>
@@ -304,12 +305,12 @@ const styles = StyleSheet.create({
 
     bedtxt: {
         color: Colors.white,
-        fontSize: 18
+        fontSize: fontSize(15),
     },
 
     BBBYtxt: {
         color: Colors.Textgray,
-        fontSize: 16,
+        fontSize: fontSize(13),
         opacity: 0.6
     },
 
@@ -317,23 +318,21 @@ const styles = StyleSheet.create({
         borderRadius: 6,
         borderColor: Colors.red,
         backgroundColor: Colors.btnRed,
-        width: 75,
-        height: 30,
+        width: width/5.4,
     },
 
     btntxt: {
-        fontSize: 15,
+        fontSize: fontSize(13),
         color: Colors.white,
-        left: 23,
-        paddingVertical: 3
+        textAlign: 'center',
+        paddingVertical: 5
     },
 
     btn: {
         borderRadius: 5,
         borderColor: Colors.MediumDark,
         backgroundColor: Colors.MediumDark,
-        height: 37,
-        width: 65,
+        width:width/6.0,
         alignItems: 'center',
         marginTop: 6,
         marginLeft: 10
@@ -343,8 +342,8 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         borderColor: Colors.MediumDark,
         backgroundColor: Colors.MediumDark,
-        height: 37,
-        width: 65,
+        width:width/6.0,
+        // width: 65,
         alignItems: 'center',
         marginTop: 6,
         marginLeft: 5
@@ -352,41 +351,42 @@ const styles = StyleSheet.create({
 
     btntxt2: {
         paddingVertical: 10,
-        fontSize: 12,
+        // paddingHorizontal: 10,
+        fontSize: fontSize(10),
         color: Colors.white,
     },
 
     usd: {
-        marginLeft: 30
+        marginLeft: 18
     },
 
     usdtxt: {
         color: Colors.white,
-        fontSize: 19
+        fontSize: fontSize(17),
     },
 
     perctxt: {
         color: Colors.green,
-        marginLeft: 28,
-        fontSize: 19
+        marginLeft: 22,
+        fontSize: fontSize(17),
     },
 
     metricstxt: {
         color: Colors.white,
-        fontSize: 18
+        fontSize: fontSize(15),
     },
 
     numtxt: {
         color: Colors.Textgray,
         opacity: 0.8,
-        fontSize: 13
+        fontSize: fontSize(11),
     },
 
     Box: {
         borderRadius: 14,
         borderColor: Colors.MediumDark,
         backgroundColor: Colors.MediumDark,
-        width: 182,
+        width:width /2.27,
         padding: 1,
         marginTop: 8,
         paddingVertical: 7,
@@ -396,11 +396,11 @@ const styles = StyleSheet.create({
         borderRadius: 14,
         borderColor: Colors.MediumDark,
         backgroundColor: Colors.MediumDark,
-        width: 182,
+        width:width /2.27,
         padding: 1,
         marginTop: 8,
         paddingVertical: 7,
-        marginLeft: 6
+        // marginLeft: 6
     },
 
     boxtxt: {
@@ -414,31 +414,31 @@ const styles = StyleSheet.create({
     metricsheading: {
         color: Colors.Textgray,
         opacity: 1,
-        fontSize: 15
+        fontSize: fontSize(13)
     },
 
     metricvalue: {
         color: Colors.white,
-        fontSize: 16
+        fontSize: fontSize(13)
     },
 
     metricvaluered: {
         color: Colors.red,
-        fontSize: 16
+        fontSize: fontSize(13)
     },
 
     metricvaluebuy: {
         color: Colors.green,
-        fontSize: 16
+        fontSize: fontSize(13)
     },
 
     metricvaluesale: {
         color: Colors.red,
-        fontSize: 16
+        fontSize: fontSize(13)
     },
 
     newstxt: {
-        fontSize: 18,
+        fontSize: fontSize(15),
         color: Colors.white
     },
 
@@ -447,7 +447,7 @@ const styles = StyleSheet.create({
         borderColor: Colors.MediumDark,
         backgroundColor: Colors.MediumDark,
         padding: 8,
-        marginVertical: 12
+        marginVertical: 7
     },
 
     positiveline: {
@@ -459,30 +459,30 @@ const styles = StyleSheet.create({
     },
 
     positivetxt: {
-        fontSize: 15,
+        fontSize: fontSize(13),
         color: Colors.green
     },
 
     datetime: {
-        fontSize: 14,
+        fontSize: fontSize(12),
         color: Colors.Textgray,
         opacity: 0.6
     },
 
     headingline: {
         color: Colors.white,
-        fontSize: 16,
+        fontSize: fontSize(13),
         marginVertical: 4,
         paddingHorizontal: 8
     },
 
     negativetxt: {
-        fontSize: 15,
+        fontSize: fontSize(13),
         color: Colors.red
     },
 
     nuetraltxt: {
-        fontSize: 15,
+        fontSize: fontSize(13),
         color: Colors.indicatorColor
     }
 
