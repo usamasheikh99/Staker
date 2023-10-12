@@ -4,7 +4,7 @@ import AppModal from '../theme/AppModal'
 import { Colors } from '../theme'
 import Button from './Button'
 
-
+const { fontSize, width } = Metrics
 const BoostPopup = ({ isBoost, setIsBoost }) => {
   const [selectedItem, setSelectedItem] = useState(null);
   const handleItemPress = (itemText) => {
@@ -87,27 +87,33 @@ const BoostPopup = ({ isBoost, setIsBoost }) => {
 export default BoostPopup
 
 const styles = StyleSheet.create({
+
   BoostText: {
     color: Colors.white,
-    fontSize: 18,
+    fontSize: fontSize(15),
     textAlign: 'center',
     bottom: 10,
   },
+
   CvnText: {
     color: Colors.Textgray,
-    fontSize: 18
+    fontSize: fontSize(15)
   },
+
   CvnContainer: {
+
     backgroundColor: Colors.background,
     paddingBottom: 15,
     paddingVertical: 15,
     paddingHorizontal: 20,
-    width: 300,
+    width: width/1.35,
     left: 27,
     borderRadius: 8,
     margin: 5,
   },
+
   textbox: {
+
     backgroundColor: Colors.background,
     paddingBottom: 10,
     paddingTop: 10,
@@ -117,23 +123,28 @@ const styles = StyleSheet.create({
     left: 40,
     top: 10
   },
+
   BalanceText: {
+
     color: 'white',
     textAlign: 'center',
     left: 70,
-    fontSize: 12,
+    fontSize: fontSize(10),
     color: Colors.Textgray
   },
 
   BalanceText2: {
+
     color: 'white',
     textAlign: 'center',
     left: 81,
-    fontSize: 12,
+    fontSize: fontSize(10),
     color: Colors.Textgray
   },
+
   btnLogin2: {
-    width: 243,
+
+    width: width/1.7,
     height: 45,
     borderRadius: 8,
     justifyContent: 'center',
@@ -151,9 +162,10 @@ const styles = StyleSheet.create({
 
   text: {
     textAlign: 'center',
-    fontSize: 15,
+    fontSize: fontSize(13),
     color: Colors.white
   },
+
   crosstext: {
     color: Colors.white
   }

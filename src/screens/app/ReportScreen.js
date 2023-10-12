@@ -35,7 +35,7 @@ export default function ReportScreen({ navigation }) {
         <View style={{ backgroundColor: Colors.background, flex: 1, }}>
             <ScrollView>
                 <View>
-                    <Header {...HeaderProps}/>
+                    <Header {...HeaderProps} />
                 </View>
 
 
@@ -51,7 +51,7 @@ export default function ReportScreen({ navigation }) {
                         <Text style={styles.percentagetxt}>-6.18%</Text>
 
                         <TouchableOpacity onPress={() => toggleCollapse('Pnl')} style={styles.iconContainer}>
-                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: collapsedIds.includes('Pnl') ? '361deg' : '0deg' }] }}></Image>
+                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: collapsedIds.includes('Pnl') ? '0deg' : '268deg' }] }}></Image>
                         </TouchableOpacity>
 
                     </View>
@@ -146,7 +146,7 @@ export default function ReportScreen({ navigation }) {
                     <View style={styles.firstline}>
                         <Text style={styles.todaytxt}>Today</Text>
                         <TouchableOpacity onPress={() => toggleCollapse('Today')}>
-                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: collapsedIds.includes('Today') ? '265deg' : '0deg' }] }}></Image>
+                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: collapsedIds.includes('Today') ? '0deg' : '268deg' }] }}></Image>
                         </TouchableOpacity>
                     </View>
 
@@ -200,7 +200,7 @@ export default function ReportScreen({ navigation }) {
                     <View style={styles.firstline}>
                         <Text style={styles.todaytxt}>Today</Text>
                         <TouchableOpacity onPress={() => toggleCollapse('Today')}>
-                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: true ? '265deg' : '0deg' }] }}></Image>
+                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: collapsedIds.includes('Today') ? '0deg' : '268deg' }] }}></Image>
                         </TouchableOpacity>
                     </View>
 
@@ -252,7 +252,7 @@ export default function ReportScreen({ navigation }) {
                     <View style={styles.firstline}>
                         <Text style={styles.todaytxt}>Today</Text>
                         <TouchableOpacity onPress={() => toggleCollapse('Today')}>
-                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: true ? '265deg' : '0deg' }] }}></Image>
+                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: collapsedIds.includes('Today') ? '0deg' : '268deg' }] }}></Image>
                         </TouchableOpacity>
                     </View>
 
@@ -303,7 +303,7 @@ export default function ReportScreen({ navigation }) {
                     <View style={styles.firstline}>
                         <Text style={styles.todaytxt}>Today</Text>
                         <TouchableOpacity onPress={() => toggleCollapse('Today')}>
-                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: true ? '265deg' : '0deg' }] }}></Image>
+                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: collapsedIds.includes('Today') ? '0deg' : '268deg' }] }}></Image>
                         </TouchableOpacity>
                     </View>
 
@@ -354,7 +354,7 @@ export default function ReportScreen({ navigation }) {
                     <View style={styles.firstline}>
                         <Text style={styles.todaytxt}>Today</Text>
                         <TouchableOpacity onPress={() => toggleCollapse('Today')}>
-                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: true ? '265deg' : '0deg' }] }}></Image>
+                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: collapsedIds.includes('Today') ? '0deg' : '268deg' }] }}></Image>
                         </TouchableOpacity>
                     </View>
 
@@ -400,9 +400,10 @@ export default function ReportScreen({ navigation }) {
 
                 </View>
                 <ReportType {...ReportTypeProps} />
-            </ScrollView>
 
-            <Calender isCalendar={isCalendar} setIsCalendar={setIsCalendar} />
+
+                <Calender isCalendar={isCalendar} setIsCalendar={setIsCalendar} />
+            </ScrollView>
         </View>
     );
 }
@@ -441,20 +442,20 @@ const styles = StyleSheet.create({
 
     PLtxt: {
         color: Colors.indicatorColor,
-        fontSize: 21,
+        fontSize: fontSize(18),
         fontStyle: 'italic'
     },
 
     totaltxt: {
         color: Colors.white,
-        fontSize: 21,
+        fontSize: fontSize(18),
         fontWeight: '500',
         marginLeft: 10
     },
 
     percentagetxt: {
         color: Colors.red,
-        fontSize: 21,
+        fontSize: fontSize(18),
         fontWeight: '500',
         marginLeft: 10
     },
@@ -471,7 +472,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 8,
         borderRadius: 12,
         marginTop: 18,
-        paddingVertical: 14
+        paddingVertical: 12
     },
 
     firstline: {
@@ -483,7 +484,7 @@ const styles = StyleSheet.create({
 
     todaytxt: {
         color: Colors.Textgray,
-        fontSize: 16,
+        fontSize: fontSize(14),
         opacity: 0.8
     },
 
@@ -496,7 +497,7 @@ const styles = StyleSheet.create({
     },
 
     usdtxt: {
-        fontSize: 22,
+        fontSize: fontSize(19),
         color: Colors.white,
         fontWeight: '500'
     },
@@ -508,7 +509,7 @@ const styles = StyleSheet.create({
 
     txt: {
         color: Colors.Textgray,
-        fontSize: 13
+        fontSize: fontSize(11),
     },
 
     thirdline: {
@@ -524,23 +525,23 @@ const styles = StyleSheet.create({
     },
 
     amctxt: {
-        fontSize: 16,
+        fontSize: fontSize(14),
         color: Colors.white,
     },
 
     longtxt: {
-        fontSize: 16,
+        fontSize: fontSize(13),
         color: Colors.Textgray
     },
 
     USD2txt: {
-        fontSize: 20,
+        fontSize: fontSize(17),
         color: Colors.white,
         fontWeight: '500'
     },
 
     perctxt2: {
-        fontSize: 17,
+        fontSize: fontSize(14),
         color: Colors.btnGreen,
         marginLeft: 58
     },
@@ -556,7 +557,7 @@ const styles = StyleSheet.create({
 
     Portfoliotxt: {
         color: Colors.Textgray,
-        fontSize: 15
+        fontSize: fontSize(13),
     },
 
     heading: {
@@ -571,7 +572,7 @@ const styles = StyleSheet.create({
     Shorttxt: {
         marginTop: 25,
         color: Colors.Textgray,
-        fontSize: 15
+        fontSize: fontSize(13),
     }
 
 
