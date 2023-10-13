@@ -104,8 +104,7 @@ const styles = StyleSheet.create({
     },
     EarningList: {
         width: width / 3.4,
-        // height: 190,
-        height:height / 2.0,
+        height:height / 5.9,
         padding: 10,
         marginRight: 10,
         borderRadius: 10,
@@ -126,8 +125,8 @@ const styles = StyleSheet.create({
         top: 6
     },
     trends: {
-        width: 11,
-        height: 11,
+        width:width /40,
+        height:height / 85,
         marginRight: 5,
         opacity: 0.8,
         top: 7

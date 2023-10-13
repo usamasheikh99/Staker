@@ -22,7 +22,7 @@ export default function HomeScreen({ navigation }) {
         <View style={styles.container}>
             <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false}>
 
-                <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 25, paddingTop: 5, paddingBottom: 30 }}>
+                <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 25,height:height / 9.0}}>
                     <View style={styles.Item}>
                         <Text style={styles.total}>Total Capital</Text>
                         <TouchableOpacity activeOpacity={1}>
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
         width: 19,
         height: 19,
         left: 8,
-        top: 35,
+        top: 25,
     },
     Item: {
         flexDirection: 'row',
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
         width: 17,
         height: 18,
         right: 7,
-        top: 20
+        top: 11
     },
     topHeaderLeft: {
         alignItems: 'flex-end',
@@ -116,13 +116,13 @@ const styles = StyleSheet.create({
     total: {
         fontSize: fontSize(12),
         color: Colors.white,
-        top: 35,
+        top: 25,
         fontFamily: 'MyriadPro-Light'
     },
     rating: {
         fontSize: fontSize(25),
         color: Colors.white,
-        top: 12
+        top: 6
     },
     EarningText: {
         flexDirection: 'row',

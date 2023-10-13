@@ -2,28 +2,28 @@ import React, { useState } from 'react'
 import { Colors } from '../theme'
 import { Icons } from '../constants'
 import LogtypeModal from './LogtypeModal'
-import { 
-  View, 
-  Text, 
-  Image, 
-  Pressable, 
-  StyleSheet, 
+import {
+  View,
+  Text,
+  Image,
+  Pressable,
+  StyleSheet,
   ImageBackground,
 } from 'react-native'
 
-
+const { fontSize, height, width } = Metrics
 const Header = ({ navigation, auditType = false, OnOpenPopup, ScreenName = "", isAcount = false, goBack = 'Home', isReportPopup = false }) => {
   const [isTypePopup, setIsTypePopup] = useState(false)
   return (
     <View style={{ backgroundColor: Colors.background, color: "#fff" }}>
 
       <View style={styles.Header}>
-        <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 15, paddingTop: 30, paddingBottom: 30 }}>
+        <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 15, height: height / 9.0 }}>
 
           <View style={styles.headertxt}>
-            <Pressable style={{paddingLeft:10,paddingRight:10,paddingBottom:10,paddingTop:10}} 
-            activeOpacity={1} onPress={() => navigation.navigate(goBack)}>
-              <Image source={Icons.left} resizeMode="cover" style={{ width: 30, height: 30,opacity:0.8 }} />
+            <Pressable style={{}}
+              activeOpacity={1} onPress={() => navigation.navigate(goBack)}>
+              <Image source={Icons.left} resizeMode="cover" style={{ width: 30, height: 30, opacity: 0.8 }} />
             </Pressable >
             <View style={styles.Item}>
               <Text style={styles.reporttxt}>{ScreenName}</Text>
@@ -67,15 +67,15 @@ const styles = StyleSheet.create({
   headertxt: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
-    top:10
+    top: 30,
+    paddingHorizontal:10
   },
   Item: {
     flex: 1,
   },
 
   reporttxt: {
-    fontSize: 20,
+    fontSize: fontSize(16),
     color: Colors.white,
     textAlign: 'center',
   },
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
   },
   type: {
     color: Colors.white,
-    fontSize: 13
+    fontSize: fontSize(10),
   },
 
   assignbox: {
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
 
   assigntxt: {
     color: Colors.white,
-    fontSize: 12,
+    fontSize: fontSize(10),
     marginHorizontal: 5
   }
 })
