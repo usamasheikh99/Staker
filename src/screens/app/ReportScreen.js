@@ -38,372 +38,377 @@ export default function ReportScreen({ navigation }) {
                     <Header {...HeaderProps} />
                 </View>
 
-
-                <View style={styles.calenderbox}>
-                    <Pressable onPress={() => setIsCalendar(true)}>
-                        <Text style={styles.calendertxt}>Wen 1 Jan - Sat 18 Jan (18 days)</Text>
-                    </Pressable>
-                </View>
-                <View style={styles.profitbox}>
-                    <View style={styles.profittxt}>
-                        <Text style={styles.PLtxt}>P&L</Text>
-                        <Text style={styles.totaltxt}>-1481.32 USD</Text>
-                        <Text style={styles.percentagetxt}>-6.18%</Text>
-
-                        <TouchableOpacity onPress={() => toggleCollapse('Pnl')} style={styles.iconContainer}>
-                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: collapsedIds.includes('Pnl') ? '0deg' : '268deg' }] }}></Image>
-                        </TouchableOpacity>
-
+                <View style={{ paddingBottom: 100 }}>
+                    <View style={styles.calenderbox}>
+                        <Pressable onPress={() => setIsCalendar(true)}>
+                            <Text style={styles.calendertxt}>Wen 1 Jan - Sat 18 Jan (18 days)</Text>
+                        </Pressable>
                     </View>
-                </View>
+                    <TouchableOpacity onPress={() => toggleCollapse('Pnl')} style={styles.iconContainer}>
+                        <View style={styles.profitbox}>
+                            <View style={styles.profittxt}>
+                                <Text style={styles.PLtxt}>P&L</Text>
+                                <Text style={styles.totaltxt}>-1481.32 USD</Text>
+                                <Text style={styles.percentagetxt}>-6.18%</Text>
 
-                {collapsedIds.includes('Pnl') && (
-                    <View style={{ backgroundColor: Colors.background, margin: 10, }}>
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                            <View style={{ backgroundColor: Colors.lightDark, width: '48%', margin: 3, borderRadius: 16, paddingHorizontal: 18, paddingVertical: 15 }}>
-                                <Text style={styles.Portfoliotxt}>Portfolio States</Text>
-
-                                <Text style={styles.heading}>Capital</Text>
-                                <Text style={styles.text}>25000 <Text style={{ fontSize: 10, color: Colors.Textgray }}>USD</Text></Text>
-
-                                <Text style={styles.heading}>Balance</Text>
-                                <Text style={styles.text}>24100.17 <Text style={{ fontSize: 10, color: Colors.Textgray }}>USD</Text></Text>
-
-                                <Text style={styles.heading}>Start From  </Text>
-                                <Text style={styles.text}>23970.43 <Text style={{ fontSize: 10, color: Colors.Textgray }}>USD</Text></Text>
-
-
-                                <Text style={styles.heading}>PnL</Text>
-                                <Text style={styles.text}>-1481.32 <Text style={{ fontSize: 10, color: Colors.Textgray }}>USD</Text> -6.18<Text style={{ fontSize: 13, color: Colors.Textgray, }}>%</Text></Text>
-
-                                <Text style={styles.heading}>Realized PnL</Text>
-                                <Text style={styles.text}>-1545.32 <Text style={{ fontSize: 10, color: Colors.Textgray }}>USD</Text> -6.45<Text style={{ fontSize: 13, color: Colors.Textgray, }}>%</Text></Text>
-
-                                <Text style={styles.heading}>WinRate</Text>
-                                <Text style={styles.text}>34<Text style={{ fontSize: 13, color: Colors.Textgray, }}>%</Text> 33<Text style={{ fontSize: 13, color: Colors.Textgray, }}>%</Text></Text>
-
-                                <Text style={styles.heading}>Trades</Text>
-                                <Text style={styles.text}>58</Text>
-
-                            </View>
-                            <View style={{ backgroundColor: Colors.lightDark, width: '48%', margin: 3, borderRadius: 16, paddingHorizontal: 18, paddingVertical: 15 }}>
-                                <Text style={styles.Portfoliotxt}>Long States</Text>
-
-                                <Text style={styles.heading}>Signals</Text>
-                                <Text style={styles.text}>36</Text>
-
-                                <Text style={styles.heading}>Trades</Text>
-                                <Text style={styles.text}>58</Text>
-
-                                <Text style={styles.heading}>PnL</Text>
-                                <Text style={styles.text}>-1481.32 <Text style={{ fontSize: 10, color: Colors.Textgray }}>USD</Text> -6.18<Text style={{ fontSize: 13, color: Colors.Textgray, }}>%</Text></Text>
-
-                                <Text style={styles.Shorttxt}>Short States</Text>
-
-                                <Text style={styles.heading}>Signals</Text>
-                                <Text style={styles.text}>36</Text>
-
-                                <Text style={styles.heading}>Trades</Text>
-                                <Text style={styles.text}>58</Text>
-
-                                <Text style={styles.heading}>PnL</Text>
-                                <Text style={styles.text}>-1481.32 <Text style={{ fontSize: 10, color: Colors.Textgray }}>USD</Text> -6.18<Text style={{ fontSize: 13, color: Colors.Textgray, }}>%</Text></Text>
+                                <Image source={Icons.downarrow} style={{ height: 18, width: 18, left: 83, transform: [{ rotate: collapsedIds.includes('Pnl') ? '0deg' : '268deg' }] }}></Image>
 
                             </View>
                         </View>
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 10, }}>
-                            <View style={{ backgroundColor: Colors.lightDark, width: '48%', margin: 3, borderRadius: 16, paddingHorizontal: 18, paddingVertical: 15 }}>
-                                <Text style={styles.Portfoliotxt}>Cost % Charges</Text>
+                    </TouchableOpacity>
 
-                                <Text style={styles.heading}>CloudServiceCost</Text>
-                                <Text style={styles.text}>27</Text>
+                    {collapsedIds.includes('Pnl') && (
+                        <View style={{ backgroundColor: Colors.background, margin: 10, }}>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                <View style={{ backgroundColor: Colors.lightDark, width: '48%', margin: 3, borderRadius: 16, paddingHorizontal: 18, paddingVertical: 15 }}>
+                                    <Text style={styles.Portfoliotxt}>Portfolio States</Text>
 
-                                <Text style={styles.heading}>MarketDataCost</Text>
-                                <Text style={styles.text}>37</Text>
+                                    <Text style={styles.heading}>Capital</Text>
+                                    <Text style={styles.text}>25000 <Text style={{ fontSize: 10, color: Colors.Textgray }}>USD</Text></Text>
 
-                                <Text style={styles.heading}>TradeCost</Text>
-                                <Text style={styles.text}>348</Text>
+                                    <Text style={styles.heading}>Balance</Text>
+                                    <Text style={styles.text}>24100.17 <Text style={{ fontSize: 10, color: Colors.Textgray }}>USD</Text></Text>
 
-                                <Text style={styles.heading}>TotalCost</Text>
-                                <Text style={styles.text}>412</Text>
+                                    <Text style={styles.heading}>Start From  </Text>
+                                    <Text style={styles.text}>23970.43 <Text style={{ fontSize: 10, color: Colors.Textgray }}>USD</Text></Text>
+
+
+                                    <Text style={styles.heading}>PnL</Text>
+                                    <Text style={styles.text}>-1481.32 <Text style={{ fontSize: 10, color: Colors.Textgray }}>USD</Text> -6.18<Text style={{ fontSize: 13, color: Colors.Textgray, }}>%</Text></Text>
+
+                                    <Text style={styles.heading}>Realized PnL</Text>
+                                    <Text style={styles.text}>-1545.32 <Text style={{ fontSize: 10, color: Colors.Textgray }}>USD</Text> -6.45<Text style={{ fontSize: 13, color: Colors.Textgray, }}>%</Text></Text>
+
+                                    <Text style={styles.heading}>WinRate</Text>
+                                    <Text style={styles.text}>34<Text style={{ fontSize: 13, color: Colors.Textgray, }}>%</Text> 33<Text style={{ fontSize: 13, color: Colors.Textgray, }}>%</Text></Text>
+
+                                    <Text style={styles.heading}>Trades</Text>
+                                    <Text style={styles.text}>58</Text>
+
+                                </View>
+                                <View style={{ backgroundColor: Colors.lightDark, width: '48%', margin: 3, borderRadius: 16, paddingHorizontal: 18, paddingVertical: 15 }}>
+                                    <Text style={styles.Portfoliotxt}>Long States</Text>
+
+                                    <Text style={styles.heading}>Signals</Text>
+                                    <Text style={styles.text}>36</Text>
+
+                                    <Text style={styles.heading}>Trades</Text>
+                                    <Text style={styles.text}>58</Text>
+
+                                    <Text style={styles.heading}>PnL</Text>
+                                    <Text style={styles.text}>-1481.32 <Text style={{ fontSize: 10, color: Colors.Textgray }}>USD</Text> -6.18<Text style={{ fontSize: 13, color: Colors.Textgray, }}>%</Text></Text>
+
+                                    <Text style={styles.Shorttxt}>Short States</Text>
+
+                                    <Text style={styles.heading}>Signals</Text>
+                                    <Text style={styles.text}>36</Text>
+
+                                    <Text style={styles.heading}>Trades</Text>
+                                    <Text style={styles.text}>58</Text>
+
+                                    <Text style={styles.heading}>PnL</Text>
+                                    <Text style={styles.text}>-1481.32 <Text style={{ fontSize: 10, color: Colors.Textgray }}>USD</Text> -6.18<Text style={{ fontSize: 13, color: Colors.Textgray, }}>%</Text></Text>
+
+                                </View>
                             </View>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 10, }}>
+                                <View style={{ backgroundColor: Colors.lightDark, width: '48%', margin: 3, borderRadius: 16, paddingHorizontal: 18, paddingVertical: 15 }}>
+                                    <Text style={styles.Portfoliotxt}>Cost % Charges</Text>
 
-                            <View style={{ backgroundColor: Colors.lightDark, width: '48%', margin: 3, borderRadius: 16, paddingHorizontal: 18, paddingVertical: 15 }}>
-                                <Text style={styles.Portfoliotxt}>Performance</Text>
+                                    <Text style={styles.heading}>CloudServiceCost</Text>
+                                    <Text style={styles.text}>27</Text>
 
-                                <Text style={styles.heading}>CPUUtilization</Text>
-                                <Text style={styles.text}>12.41</Text>
+                                    <Text style={styles.heading}>MarketDataCost</Text>
+                                    <Text style={styles.text}>37</Text>
 
-                                <Text style={styles.heading}>ErrorCount</Text>
-                                <Text style={styles.text}>49</Text>
+                                    <Text style={styles.heading}>TradeCost</Text>
+                                    <Text style={styles.text}>348</Text>
+
+                                    <Text style={styles.heading}>TotalCost</Text>
+                                    <Text style={styles.text}>412</Text>
+                                </View>
+
+                                <View style={{ backgroundColor: Colors.lightDark, width: '48%', margin: 3, borderRadius: 16, paddingHorizontal: 18, paddingVertical: 15 }}>
+                                    <Text style={styles.Portfoliotxt}>Performance</Text>
+
+                                    <Text style={styles.heading}>CPUUtilization</Text>
+                                    <Text style={styles.text}>12.41</Text>
+
+                                    <Text style={styles.heading}>ErrorCount</Text>
+                                    <Text style={styles.text}>49</Text>
+                                </View>
                             </View>
                         </View>
-                    </View>
-                )}
+                    )}
 
-                <View style={styles.mainbox}>
-
-                    <View style={styles.firstline}>
-                        <Text style={styles.todaytxt}>Today</Text>
+                    <View style={styles.mainbox}>
                         <TouchableOpacity onPress={() => toggleCollapse('Today')}>
-                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: collapsedIds.includes('Today') ? '0deg' : '268deg' }] }}></Image>
+                            <View style={styles.firstline}>
+                                <Text style={styles.todaytxt}>Today</Text>
+
+                                <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: collapsedIds.includes('Today') ? '0deg' : '268deg' }] }}></Image>
+
+                            </View>
+
+                            <View style={styles.secline}>
+                                <Text style={styles.usdtxt}>39,222 USD</Text>
+                                <Text style={styles.perctxt}>(70.5%)</Text>
+                                <Text style={styles.txt}>Trades 80 Winrate 56%</Text>
+                            </View>
                         </TouchableOpacity>
-                    </View>
-
-                    <View style={styles.secline}>
-                        <Text style={styles.usdtxt}>39,222 USD</Text>
-                        <Text style={styles.perctxt}>(70.5%)</Text>
-                        <Text style={styles.txt}>Trades 80 Winrate 56%</Text>
-                    </View>
-
-                    {collapsedIds.includes('Today') && (
-                        <View>
-                            <View style={styles.thirdline}>
+                        {collapsedIds.includes('Today') && (
+                            <View>
                                 <Pressable onPress={() => navigation.navigate('Order')}>
-                                    <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
+                                    <View style={styles.thirdline}>
+
+                                        <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
+
+                                        <View style={styles.amctext}>
+                                            <Text style={styles.amctxt}>AMC</Text>
+                                            <Text style={styles.longtxt}>Long  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
+                                        </View>
+
+
+                                        <View>
+                                            <Text style={styles.USD2txt}>32,078 USD</Text>
+                                            <Text style={styles.perctxt2}>14.89%</Text>
+                                        </View>
+                                    </View>
                                 </Pressable>
-                                <View style={styles.amctext}>
-                                    <Text style={styles.amctxt}>AMC</Text>
-                                    <Text style={styles.longtxt}>Long  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
-                                </View>
+
+                                <View style={styles.borderbottom}></View>
+                                <Pressable onPress={() => navigation.navigate('Order')}>
+                                    <View style={styles.thirdline}>
+                                        <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
+                                        <View style={styles.amctext}>
+                                            <Text style={styles.amctxt}>AMC</Text>
+                                            <Text style={styles.longtxt}>Short  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
+                                        </View>
 
 
-                                <View>
-                                    <Text style={styles.USD2txt}>32,078 USD</Text>
-                                    <Text style={styles.perctxt2}>14.89%</Text>
-                                </View>
+                                        <View>
+                                            <Text style={styles.USD2txt}>32,078 USD</Text>
+                                            <Text style={styles.perctxt2}>14.89%</Text>
+                                        </View>
+                                    </View>
+                                </Pressable>
                             </View>
 
-                            <View style={styles.borderbottom}></View>
+                        )}
 
-                            <View style={styles.thirdline}>
-                                <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
-                                <View style={styles.amctext}>
-                                    <Text style={styles.amctxt}>AMC</Text>
-                                    <Text style={styles.longtxt}>Short  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
-                                </View>
+                    </View>
 
+                    <View style={styles.mainbox}>
 
-                                <View>
-                                    <Text style={styles.USD2txt}>32,078 USD</Text>
-                                    <Text style={styles.perctxt2}>14.89%</Text>
-                                </View>
-                            </View>
+                        <View style={styles.firstline}>
+                            <Text style={styles.todaytxt}>Today</Text>
+                            <TouchableOpacity onPress={() => toggleCollapse('Today')}>
+                                <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: collapsedIds.includes('Today') ? '0deg' : '268deg' }] }}></Image>
+                            </TouchableOpacity>
                         </View>
 
-                    )}
-
-                </View>
-
-                <View style={styles.mainbox}>
-
-                    <View style={styles.firstline}>
-                        <Text style={styles.todaytxt}>Today</Text>
-                        <TouchableOpacity onPress={() => toggleCollapse('Today')}>
-                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: collapsedIds.includes('Today') ? '0deg' : '268deg' }] }}></Image>
-                        </TouchableOpacity>
-                    </View>
-
-                    <View style={styles.secline}>
-                        <Text style={styles.usdtxt}>39,222 USD</Text>
-                        <Text style={styles.perctxt}>(70.5%)</Text>
-                        <Text style={styles.txt}>Trades 80 Winrate 56%</Text>
-                    </View>
-
-                    {collapsedIds.includes('Today') && (
-                        <View>
-                            <View style={styles.thirdline}>
-                                <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
-                                <View style={styles.amctext}>
-                                    <Text style={styles.amctxt}>AMC</Text>
-                                    <Text style={styles.longtxt}>Long  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
-                                </View>
-
-
-                                <View>
-                                    <Text style={styles.USD2txt}>32,078 USD</Text>
-                                    <Text style={styles.perctxt2}>14.89%</Text>
-                                </View>
-                            </View>
-
-                            <View style={styles.borderbottom}></View>
-
-                            <View style={styles.thirdline}>
-                                <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
-                                <View style={styles.amctext}>
-                                    <Text style={styles.amctxt}>AMC</Text>
-                                    <Text style={styles.longtxt}>Short  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
-                                </View>
-
-
-                                <View>
-                                    <Text style={styles.USD2txt}>32,078 USD</Text>
-                                    <Text style={styles.perctxt2}>14.89%</Text>
-                                </View>
-                            </View>
+                        <View style={styles.secline}>
+                            <Text style={styles.usdtxt}>39,222 USD</Text>
+                            <Text style={styles.perctxt}>(70.5%)</Text>
+                            <Text style={styles.txt}>Trades 80 Winrate 56%</Text>
                         </View>
 
-                    )}
+                        {collapsedIds.includes('Today') && (
+                            <View>
+                                <View style={styles.thirdline}>
+                                    <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
+                                    <View style={styles.amctext}>
+                                        <Text style={styles.amctxt}>AMC</Text>
+                                        <Text style={styles.longtxt}>Long  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
+                                    </View>
 
-                </View>
 
-                <View style={styles.mainbox}>
-
-                    <View style={styles.firstline}>
-                        <Text style={styles.todaytxt}>Today</Text>
-                        <TouchableOpacity onPress={() => toggleCollapse('Today')}>
-                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: collapsedIds.includes('Today') ? '0deg' : '268deg' }] }}></Image>
-                        </TouchableOpacity>
-                    </View>
-
-                    <View style={styles.secline}>
-                        <Text style={styles.usdtxt}>39,222 USD</Text>
-                        <Text style={styles.perctxt}>(70.5%)</Text>
-                        <Text style={styles.txt}>Trades 80 Winrate 56%</Text>
-                    </View>
-
-                    {collapsedIds.includes('Today') && (
-
-                        <View>
-                            <View style={styles.thirdline}>
-                                <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
-                                <View style={styles.amctext}>
-                                    <Text style={styles.amctxt}>AMC</Text>
-                                    <Text style={styles.longtxt}>Long  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
+                                    <View>
+                                        <Text style={styles.USD2txt}>32,078 USD</Text>
+                                        <Text style={styles.perctxt2}>14.89%</Text>
+                                    </View>
                                 </View>
 
+                                <View style={styles.borderbottom}></View>
 
-                                <View>
-                                    <Text style={styles.USD2txt}>32,078 USD</Text>
-                                    <Text style={styles.perctxt2}>14.89%</Text>
+                                <View style={styles.thirdline}>
+                                    <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
+                                    <View style={styles.amctext}>
+                                        <Text style={styles.amctxt}>AMC</Text>
+                                        <Text style={styles.longtxt}>Short  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
+                                    </View>
+
+
+                                    <View>
+                                        <Text style={styles.USD2txt}>32,078 USD</Text>
+                                        <Text style={styles.perctxt2}>14.89%</Text>
+                                    </View>
                                 </View>
                             </View>
 
-                            <View style={styles.thirdline}>
-                                <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
-                                <View style={styles.amctext}>
-                                    <Text style={styles.amctxt}>AMC</Text>
-                                    <Text style={styles.longtxt}>Short  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
-                                </View>
+                        )}
 
+                    </View>
 
-                                <View>
-                                    <Text style={styles.USD2txt}>32,078 USD</Text>
-                                    <Text style={styles.perctxt2}>14.89%</Text>
-                                </View>
-                            </View>
+                    <View style={styles.mainbox}>
+
+                        <View style={styles.firstline}>
+                            <Text style={styles.todaytxt}>Today</Text>
+                            <TouchableOpacity onPress={() => toggleCollapse('Today')}>
+                                <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: collapsedIds.includes('Today') ? '0deg' : '268deg' }] }}></Image>
+                            </TouchableOpacity>
                         </View>
 
-                    )}
-
-                </View>
-
-                <View style={styles.mainbox}>
-
-                    <View style={styles.firstline}>
-                        <Text style={styles.todaytxt}>Today</Text>
-                        <TouchableOpacity onPress={() => toggleCollapse('Today')}>
-                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: collapsedIds.includes('Today') ? '0deg' : '268deg' }] }}></Image>
-                        </TouchableOpacity>
-                    </View>
-
-                    <View style={styles.secline}>
-                        <Text style={styles.usdtxt}>39,222 USD</Text>
-                        <Text style={styles.perctxt}>(70.5%)</Text>
-                        <Text style={styles.txt}>Trades 80 Winrate 56%</Text>
-                    </View>
-
-                    {collapsedIds.includes('Today') && (
-
-                        <View>
-                            <View style={styles.thirdline}>
-                                <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
-                                <View style={styles.amctext}>
-                                    <Text style={styles.amctxt}>AMC</Text>
-                                    <Text style={styles.longtxt}>Long  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
-                                </View>
-
-
-                                <View>
-                                    <Text style={styles.USD2txt}>32,078 USD</Text>
-                                    <Text style={styles.perctxt2}>14.89%</Text>
-                                </View>
-                            </View>
-
-                            <View style={styles.thirdline}>
-                                <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
-                                <View style={styles.amctext}>
-                                    <Text style={styles.amctxt}>AMC</Text>
-                                    <Text style={styles.longtxt}>Short  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
-                                </View>
-
-
-                                <View>
-                                    <Text style={styles.USD2txt}>32,078 USD</Text>
-                                    <Text style={styles.perctxt2}>14.89%</Text>
-                                </View>
-                            </View>
+                        <View style={styles.secline}>
+                            <Text style={styles.usdtxt}>39,222 USD</Text>
+                            <Text style={styles.perctxt}>(70.5%)</Text>
+                            <Text style={styles.txt}>Trades 80 Winrate 56%</Text>
                         </View>
 
-                    )}
+                        {collapsedIds.includes('Today') && (
 
-                </View>
+                            <View>
+                                <View style={styles.thirdline}>
+                                    <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
+                                    <View style={styles.amctext}>
+                                        <Text style={styles.amctxt}>AMC</Text>
+                                        <Text style={styles.longtxt}>Long  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
+                                    </View>
 
-                <View style={styles.mainbox}>
 
-                    <View style={styles.firstline}>
-                        <Text style={styles.todaytxt}>Today</Text>
-                        <TouchableOpacity onPress={() => toggleCollapse('Today')}>
-                            <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: collapsedIds.includes('Today') ? '0deg' : '268deg' }] }}></Image>
-                        </TouchableOpacity>
-                    </View>
-
-                    <View style={styles.secline}>
-                        <Text style={styles.usdtxt}>39,222 USD</Text>
-                        <Text style={styles.perctxt}>(70.5%)</Text>
-                        <Text style={styles.txt}>Trades 80 Winrate 56%</Text>
-                    </View>
-
-                    {collapsedIds.includes('Today') && (
-
-                        <View >
-                            <View style={styles.thirdline}>
-                                <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
-                                <View style={styles.amctext}>
-                                    <Text style={styles.amctxt}>AMC</Text>
-                                    <Text style={styles.longtxt}>Long  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
+                                    <View>
+                                        <Text style={styles.USD2txt}>32,078 USD</Text>
+                                        <Text style={styles.perctxt2}>14.89%</Text>
+                                    </View>
                                 </View>
 
+                                <View style={styles.thirdline}>
+                                    <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
+                                    <View style={styles.amctext}>
+                                        <Text style={styles.amctxt}>AMC</Text>
+                                        <Text style={styles.longtxt}>Short  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
+                                    </View>
 
-                                <View>
-                                    <Text style={styles.USD2txt}>32,078 USD</Text>
-                                    <Text style={styles.perctxt2}>14.89%</Text>
+
+                                    <View>
+                                        <Text style={styles.USD2txt}>32,078 USD</Text>
+                                        <Text style={styles.perctxt2}>14.89%</Text>
+                                    </View>
                                 </View>
                             </View>
 
-                            <View style={styles.thirdline}>
-                                <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
-                                <View style={styles.amctext}>
-                                    <Text style={styles.amctxt}>AMC</Text>
-                                    <Text style={styles.longtxt}>Short  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
-                                </View>
+                        )}
 
+                    </View>
 
-                                <View>
-                                    <Text style={styles.USD2txt}>32,078 USD</Text>
-                                    <Text style={styles.perctxt2}>14.89%</Text>
-                                </View>
-                            </View>
+                    <View style={styles.mainbox}>
+
+                        <View style={styles.firstline}>
+                            <Text style={styles.todaytxt}>Today</Text>
+                            <TouchableOpacity onPress={() => toggleCollapse('Today')}>
+                                <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: collapsedIds.includes('Today') ? '0deg' : '268deg' }] }}></Image>
+                            </TouchableOpacity>
                         </View>
 
-                    )}
+                        <View style={styles.secline}>
+                            <Text style={styles.usdtxt}>39,222 USD</Text>
+                            <Text style={styles.perctxt}>(70.5%)</Text>
+                            <Text style={styles.txt}>Trades 80 Winrate 56%</Text>
+                        </View>
 
+                        {collapsedIds.includes('Today') && (
+
+                            <View>
+                                <View style={styles.thirdline}>
+                                    <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
+                                    <View style={styles.amctext}>
+                                        <Text style={styles.amctxt}>AMC</Text>
+                                        <Text style={styles.longtxt}>Long  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
+                                    </View>
+
+
+                                    <View>
+                                        <Text style={styles.USD2txt}>32,078 USD</Text>
+                                        <Text style={styles.perctxt2}>14.89%</Text>
+                                    </View>
+                                </View>
+
+                                <View style={styles.thirdline}>
+                                    <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
+                                    <View style={styles.amctext}>
+                                        <Text style={styles.amctxt}>AMC</Text>
+                                        <Text style={styles.longtxt}>Short  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
+                                    </View>
+
+
+                                    <View>
+                                        <Text style={styles.USD2txt}>32,078 USD</Text>
+                                        <Text style={styles.perctxt2}>14.89%</Text>
+                                    </View>
+                                </View>
+                            </View>
+
+                        )}
+
+                    </View>
+
+                    <View style={styles.mainbox}>
+
+                        <View style={styles.firstline}>
+                            <Text style={styles.todaytxt}>Today</Text>
+                            <TouchableOpacity onPress={() => toggleCollapse('Today')}>
+                                <Image source={Icons.downarrow} style={{ height: 18, width: 18, transform: [{ rotate: collapsedIds.includes('Today') ? '0deg' : '268deg' }] }}></Image>
+                            </TouchableOpacity>
+                        </View>
+
+                        <View style={styles.secline}>
+                            <Text style={styles.usdtxt}>39,222 USD</Text>
+                            <Text style={styles.perctxt}>(70.5%)</Text>
+                            <Text style={styles.txt}>Trades 80 Winrate 56%</Text>
+                        </View>
+
+                        {collapsedIds.includes('Today') && (
+
+                            <View >
+                                <View style={styles.thirdline}>
+                                    <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
+                                    <View style={styles.amctext}>
+                                        <Text style={styles.amctxt}>AMC</Text>
+                                        <Text style={styles.longtxt}>Long  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
+                                    </View>
+
+
+                                    <View>
+                                        <Text style={styles.USD2txt}>32,078 USD</Text>
+                                        <Text style={styles.perctxt2}>14.89%</Text>
+                                    </View>
+                                </View>
+
+                                <View style={styles.thirdline}>
+                                    <Image source={Icons.AMC_show} style={{ height: 36, width: 36 }}></Image>
+                                    <View style={styles.amctext}>
+                                        <Text style={styles.amctxt}>AMC</Text>
+                                        <Text style={styles.longtxt}>Short  <Image source={Icons.recordbutton} style={{ height: 7, width: 7 }}></Image>  Faizan</Text>
+                                    </View>
+
+
+                                    <View>
+                                        <Text style={styles.USD2txt}>32,078 USD</Text>
+                                        <Text style={styles.perctxt2}>14.89%</Text>
+                                    </View>
+                                </View>
+                            </View>
+
+                        )}
+
+                    </View>
+                    <ReportType {...ReportTypeProps} />
+
+
+                    <Calender isCalendar={isCalendar} setIsCalendar={setIsCalendar} />
                 </View>
-                <ReportType {...ReportTypeProps} />
-
-
-                <Calender isCalendar={isCalendar} setIsCalendar={setIsCalendar} />
             </ScrollView>
+
         </View>
     );
 }
@@ -461,7 +466,7 @@ const styles = StyleSheet.create({
     },
 
     iconContainer: {
-        position: 'absolute',
+        // position: 'absolute',
         right: 1,
     },
 
