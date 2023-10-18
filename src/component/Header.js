@@ -16,42 +16,43 @@ const Header = ({ navigation, auditType = false, OnOpenPopup, ScreenName = "", i
   const [isTypePopup, setIsTypePopup] = useState(false)
   return (
     <View style={{ backgroundColor: Colors.background, color: "#fff" }}>
+      <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 15, height: height / 9.9 }}>
 
-      <View style={styles.Header}>
-        <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 15, height: height / 9.0 }}>
+        <View style={styles.headertxt}>
+          <Pressable
+            activeOpacity={1} onPress={() => navigation.navigate(goBack)}>
+            <Image source={Icons.left} resizeMode="cover" style={{ width: 30, height: 30, opacity: 0.8 }} />
+          </Pressable >
 
-          <View style={styles.headertxt}>
-            <Pressable style={{}}
-              activeOpacity={1} onPress={() => navigation.navigate(goBack)}>
-              <Image source={Icons.left} resizeMode="cover" style={{ width: 30, height: 30, opacity: 0.8 }} />
-            </Pressable >
-            <View style={styles.Item}>
-              <Text style={styles.reporttxt}>{ScreenName}</Text>
-            </View>
-            {auditType &&
-              <Pressable style={styles.typebox} onPress={() => setIsTypePopup(!isTypePopup)} activeOpacity={1}>
-                <Text style={styles.type}>Type</Text>
-              </Pressable>
-            }
-            {isReportPopup &&
-              <Pressable style={styles.typebox} onPress={OnOpenPopup} activeOpacity={1}>
-                <Text style={styles.type}>Type Report</Text>
-              </Pressable>
-            }
-            {isAcount &&
-              <Pressable onPress={OnOpenPopup}>
-                <View style={styles.assignbox}>
-                  <View style={styles.txtalign}>
-                    <Text style={styles.assigntxt}>Kashan</Text>
-                    <Image source={Icons.downarrow} style={{ height: 15, width: 15, }}></Image>
-                  </View>
-                </View>
-              </Pressable>
-            }
-
+          <View style={styles.Item}>
+            <Text style={styles.reporttxt}>{ScreenName}</Text>
           </View>
-        </ImageBackground>
-      </View>
+
+          {auditType &&
+            <Pressable style={styles.typebox} onPress={() => setIsTypePopup(!isTypePopup)} activeOpacity={1}>
+              <Text style={styles.type}>Type</Text>
+            </Pressable>
+          }
+
+          {isReportPopup &&
+            <Pressable style={styles.typebox} onPress={OnOpenPopup} activeOpacity={1}>
+              <Text style={styles.type}>Type Report</Text>
+            </Pressable>
+          }
+
+          {isAcount &&
+            <Pressable onPress={OnOpenPopup}>
+              <View style={styles.assignbox}>
+                <View style={styles.txtalign}>
+                  <Text style={styles.assigntxt}>Kashan</Text>
+                  <Image source={Icons.downarrow} style={{ height: 15, width: 15, }}></Image>
+                </View>
+              </View>
+            </Pressable>
+          }
+        </View>
+      </ImageBackground>
+
       {isTypePopup &&
         <LogtypeModal visible={isTypePopup} onClose={() => setIsTypePopup(false)} />
       }
@@ -63,12 +64,11 @@ const Header = ({ navigation, auditType = false, OnOpenPopup, ScreenName = "", i
 export default Header
 
 const styles = StyleSheet.create({
-
   headertxt: {
     flexDirection: 'row',
     alignItems: 'center',
-    top: 30,
-    paddingHorizontal:10
+    top: '8%',
+    paddingHorizontal: 10,
   },
   Item: {
     flex: 1,
@@ -88,7 +88,6 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
     paddingTop: 5,
     borderRadius: 12,
-    backgroundColor: Colors.MediumDark,
     opacity: 0.6
   },
   type: {
