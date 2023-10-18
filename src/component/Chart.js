@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { View, Text, Pressable } from 'react-native'
-import { View, Text, Pressable } from 'react-native'
 import ProgressCircle from 'react-native-progress-circle'
 import { Colors, Metrics } from '../theme'
 import TargetModal from './TargetModal'
