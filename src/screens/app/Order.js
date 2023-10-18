@@ -5,9 +5,10 @@ import { Icons } from '../../constants';
 import { Colors } from '../../theme';
 
 const { fontSize } = Metrics
-const Order = () => {
+const Order = ({navigation}) => {
     const HeaderProps = {
         ScreenName: 'Order',
+        navigation, navigation
     }
     return (
         <View style={{ backgroundColor: Colors.background, flex: 1, }}>
