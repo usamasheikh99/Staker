@@ -21,7 +21,7 @@ export default function HomeScreen({ navigation }) {
     return (
         <View style={[styles.container, { height: Platform.OS == 'ios' ? '90%' : '88%' }]}>
             <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false}>
-                <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 25,paddingTop: Platform.OS == 'android' ? 0 : 35, paddingBottom: 12 }}>
+                <ImageBackground source={Icons.HomeNew} resizeMode="cover" style={{ paddingHorizontal: 25,paddingTop: Platform.OS == 'android' ? 0 : 35, paddingBottom: 12 }}>
                     <View style={styles.Item}>
                         <View style={{ flexDirection: 'row' }}>
                             <Text style={styles.total}>Total Capital</Text>

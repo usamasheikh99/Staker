@@ -48,4 +48,5 @@ export default Icons = {
     Logo : require('../assets/icons/Logo.png'),
     GetStarted : require('../assets/icons/GetStarted.png'),
     Shuttle : require('../assets/icons/Shuttle.png'),
+    HomeNew : require('../assets/icons/new.png'),
 }

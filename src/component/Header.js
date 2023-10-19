@@ -17,7 +17,7 @@ const Header = ({ navigation, auditType = false, OnOpenPopup, ScreenName = "", i
   const [isTypePopup, setIsTypePopup] = useState(false)
   return (
     <View style={{ backgroundColor: Colors.background, color: "#fff" }}>
-      <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 15, paddingTop: Platform.OS == 'android' ? 20 : 45, paddingBottom: 20 }}>
+      <ImageBackground source={Icons.HomeNew} resizeMode="cover" style={{ paddingHorizontal: 15, paddingTop: Platform.OS == 'android' ? 20 : 45, paddingBottom: 20 }}>
 
         <View style={styles.headertxt}>
           <Pressable
@@ -26,7 +26,7 @@ const Header = ({ navigation, auditType = false, OnOpenPopup, ScreenName = "", i
           </Pressable >
 
           <View style={styles.Item}>
-            <Text style={styles.reporttxt}>{ScreenName}</Text>
+            <Text style={[styles.reporttxt]}>{ScreenName}</Text>
           </View>
 
           {auditType &&
@@ -37,7 +37,7 @@ const Header = ({ navigation, auditType = false, OnOpenPopup, ScreenName = "", i
 
           {isReportPopup &&
             <Pressable style={styles.typebox} onPress={OnOpenPopup} activeOpacity={1}>
-              <Text style={styles.type}>Type</Text>
+              <Text >Type</Text>
             </Pressable>
           }
 
@@ -69,6 +69,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 13,
+    justifyContent:'space-between'
+
   },
   Item: {
     flex: 1,

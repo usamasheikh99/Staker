@@ -2,6 +2,7 @@ import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Home, Setting, Report, Control, Audit } from "../../screens/app/index"
 import { Icons } from '../../constants';
+import { Colors } from '../../theme';
 import { Image } from 'react-native'
 import Position from '../../screens/app/Position';
 import Order from '../../screens/app/Order';
@@ -21,7 +22,7 @@ const Tab = createBottomTabNavigator();
 function AppStack() {
 
   const handleReceiveData = (payload) => {
-    console.log(';payload',payload)
+    console.log(';payload', payload)
     switch (payload.Type) {
       case "TradingAlert":
         Toast.show({
@@ -126,6 +127,9 @@ function AppStack() {
             }
             return <Image source={iconName} style={{ width: iconsize, height: iconsize, ...style }} color={color} />;
           },
+
+          tabBarActiveTintColor: Colors.ButtonColor,
+          tabBarInactiveTintColor: 'gray',
         })}
       >
         <Tab.Screen name={controlsName} component={Control} />

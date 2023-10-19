@@ -5,7 +5,7 @@ import { Icons } from '../../constants';
 import { Colors } from '../../theme';
 
 const { fontSize } = Metrics
-const Order = ({navigation}) => {
+const Order = ({ navigation }) => {
     const HeaderProps = {
         ScreenName: 'Order',
         navigation, navigation

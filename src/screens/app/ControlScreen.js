@@ -8,8 +8,10 @@ import {
   Text,
   StyleSheet,
   ScrollView,
-  Pressable
+  Pressable,
+  Platform
 } from 'react-native'
+
 
 
 const { fontSize } = Metrics
@@ -174,8 +176,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginHorizontal: 19,
     marginVertical: 4,
-    paddingTop: 15,
-    paddingBottom: 15,
+    paddingTop: Platform.OS == 'android' ? 15:5,
+    paddingBottom: Platform.OS == 'android' ? 15:5,
     flexDirection: 'row',
     alignItems: 'center'
   },
