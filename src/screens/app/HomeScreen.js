@@ -19,17 +19,16 @@ import {
 const { fontSize, height, width } = Metrics
 export default function HomeScreen({ navigation }) {
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, { height: Platform.OS == 'ios' ? '90%' : '88%' }]}>
             <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false}>
-
-                <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 25,height:height / 9.0}}>
+                <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 25, paddingBottom: 12 }}>
                     <View style={styles.Item}>
-                        <Text style={styles.total}>Total Capital</Text>
-                        <TouchableOpacity activeOpacity={1}>
-                            <Image source={Icons.eyes_show} style={styles.eyeIcon} />
-                        </TouchableOpacity>
-                    </View>
-                    <View style={styles.topHeaderLeft}>
+                        <View style={{ flexDirection: 'row' }}>
+                            <Text style={styles.total}>Total Capital</Text>
+                            <TouchableOpacity activeOpacity={1} >
+                                <Image source={Icons.eyes_show} style={styles.eyeIcon} />
+                            </TouchableOpacity>
+                        </View>
                         <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('Login')}>
                             <Image source={Icons.logout} style={styles.IconSize} />
                         </TouchableOpacity>
@@ -50,12 +49,10 @@ export default function HomeScreen({ navigation }) {
                 {/* EarningList */}
                 <View style={styles.EarningText}>
                     <Text style={styles.earning}>Earnings</Text>
-                    <TouchableOpacity style={styles.moreClick}
-                        onPress={() => navigation.navigate('Report')}>
+                    <TouchableOpacity style={styles.moreClick} onPress={() => navigation.navigate('Report')}>
                         <Text style={styles.more}>More</Text></TouchableOpacity>
                 </View>
-                <ScrollView style={{ height: height / 4.2 }}
-                    horizontal={true}>
+                <ScrollView horizontal={true}>
                     <EarningList />
                     <EarningList />
                 </ScrollView>
@@ -63,8 +60,7 @@ export default function HomeScreen({ navigation }) {
                 {/* WeeklyTargets */}
                 <View style={styles.WeeklyText}>
                     <Text style={styles.Weekly}>Weekly targets</Text>
-                    <TouchableOpacity style={styles.moreClick}
-                        onPress={() => navigation.navigate('Report')}>
+                    <TouchableOpacity style={styles.moreClick} onPress={() => navigation.navigate('Report')}>
                         <Text style={styles.more}>More</Text></TouchableOpacity></View>
                 <ScrollView horizontal={true}>
                     <View style={{ flexDirection: 'row' }}>
@@ -83,7 +79,7 @@ export default function HomeScreen({ navigation }) {
                 <MaketSentiment
                     tittle='Negitive' />
             </ScrollView>
-        </View>
+        </View >
 
     );
 }
@@ -96,39 +92,36 @@ const styles = StyleSheet.create({
         paddingBottom: 78,
     },
     eyeIcon: {
-        width: 19,
-        height: 19,
-        left: 8,
-        top: 25,
+        width: 17,
+        height: 17,
+        left: '40%',
     },
     Item: {
         flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginTop: '3%',
+        alignItems: 'center',
+        top: '2%'
     },
     IconSize: {
-        width: 17,
-        height: 18,
-        right: 7,
-        top: 11
-    },
-    topHeaderLeft: {
-        alignItems: 'flex-end',
+        width: 16,
+        height: 17,
     },
     total: {
         fontSize: fontSize(12),
         color: Colors.white,
-        top: 25,
         fontFamily: 'MyriadPro-Light'
     },
     rating: {
         fontSize: fontSize(25),
-        color: Colors.white,
-        top: 6
+        color: Colors.white
     },
     EarningText: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingHorizontal: 13,
-        top: 20,
+        alignItems: 'center',
+        paddingVertical: 5
     },
     earning: {
         fontSize: fontSize(16),
@@ -143,6 +136,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingHorizontal: 13,
+        alignItems: 'center',
+        marginTop: 15,
+        paddingVertical: 10,
     },
     Weekly: {
         fontSize: fontSize(16),
@@ -160,7 +156,7 @@ const styles = StyleSheet.create({
     scroll: {
         backgroundColor: Colors.background,
         flex: 1,
-        color: "#fff"
+        color: "#fff",
     },
     moreClick: {
         paddingLeft: 40,
@@ -168,7 +164,6 @@ const styles = StyleSheet.create({
         paddingTop: 5,
         bottom: 5,
         left: 5,
-        // backgroundColor:"red",
         borderRadius: 15
     }
 })

@@ -13,7 +13,7 @@ const { fontSize } = Metrics
 const TradeList = ({ navigation }) => {
 
     return (
-        <View>
+        <View style={{ marginBottom: '2%' }}>
 
             {/* Trade List  */}
             <Pressable onPress={() => navigation.navigate('Position')}>
@@ -193,8 +193,7 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         marginHorizontal: 10,
         marginVertical: 5,
-        paddingTop: 12,
-        paddingBottom: 10,
+        paddingTop: 5,
     },
     stockSymbol: {
         fontSize: fontSize(14),

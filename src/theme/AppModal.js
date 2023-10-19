@@ -3,7 +3,7 @@ import { Colors, Metrics } from '.';
 import { Modal, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { Icons } from '../constants'
 
-const { fontsize, width } = Metrics
+const { fontsize, width ,height} = Metrics
 const AppModal = ({ visible, onClose, children }) => {
     return (
         <Modal
@@ -51,17 +51,16 @@ const styles = StyleSheet.create({
     },
     closeIconContainer: {
         position: 'absolute',
-        top: 10, // Adjust the top position as needed
-        right: 0, // Adjust the right position as needed
-        height: 80,
+        right: 0, 
+        height:height /10.3,
         width: width / 4.0,
     },
     crosicon: {
         height: 12,
-        width: 12,
+        width: 13,
         opacity: 0.8,
-        top: 17,
-        marginLeft: 45,
+        top: 22,
+        marginLeft: 60,
     }
 });
 

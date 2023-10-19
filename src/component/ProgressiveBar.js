@@ -4,12 +4,11 @@ import ProgressCircle from 'react-native-progress-circle'
 import { Colors } from '../theme'
 const ProgressiveBar = () => {
     return (
-        <View>
-            <View style={{ flexDirection: 'row', }}>
-                <View style={{bottom:35,left: 75 }}>
+            <View style={{ flexDirection: 'row' }}>
+                <View style={{bottom:35,left: 90 }}>
                     <ProgressCircle
                         percent={100}
-                        radius={110}
+                        radius={100}
                         borderWidth={2}
                         color={Colors.Card2}
                         shadowColor={Colors.MediumDark}
@@ -17,10 +16,10 @@ const ProgressiveBar = () => {
                     >
                     </ProgressCircle>
                 </View>
-                <View style={{ bottom:25, right: 136 }}>
+                <View style={{ bottom:24, right: 100 }}>
                     <ProgressCircle
                         percent={70}
-                        radius={100}
+                        radius={90}
                         borderWidth={2}
                         color={Colors.Card}
                         shadowColor={Colors.MediumDark}
@@ -32,7 +31,7 @@ const ProgressiveBar = () => {
                     </ProgressCircle>
                 </View>
             </View>
-        </View>
+     
     )
 }
 

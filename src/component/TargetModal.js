@@ -9,14 +9,14 @@ import {
     StyleSheet,
 } from 'react-native';
 
-const {fontSize,width} = Metrics
+const { fontSize, width } = Metrics
 const TargetModal = ({ IsTargetModel, targetModelHandle, props }) => {
     return (
-
         <AppModal visible={IsTargetModel} onClose={targetModelHandle}>
             <View style={styles.header}>
                 <Text style={styles.targetText}>Target</Text>
-                <ProgressiveBar />
+                <View style={{ alignItems: 'center' }}>
+                    <ProgressiveBar /></View>
                 <View style={styles.targetMaine}>
                     <View style={styles.targetNumber}>
                         <Text style={styles.person}>-4.69</Text>
@@ -47,9 +47,9 @@ const styles = StyleSheet.create({
     person: {
         backgroundColor: Colors.background,
         borderRadius: 9,
-        fontSize:fontSize(17),
+        fontSize: fontSize(16),
         color: Colors.Textgray,
-        marginRight: 15,
+        marginRight: 16,
         marginBottom: 10,
         paddingHorizontal: 23,
         paddingTop: 13,
@@ -57,21 +57,22 @@ const styles = StyleSheet.create({
     },
     targetNumber: {
         flexDirection: 'row',
-        paddingHorizontal:10
+        // paddingHorizontal:10
     },
     targetMaine: {
         alignItems: 'center',
         marginLeft: 9,
-        bottom:10,
     },
     header: {
     },
     targetText: {
         color: Colors.white,
         textAlign: 'center',
-        fontSize:fontSize(16),
+        fontSize: fontSize(16),
         opacity: 0.8,
         bottom: 35,
-        paddingVertical:20
+        paddingVertical: 20,
+        zIndex: -1
+
     }
 });

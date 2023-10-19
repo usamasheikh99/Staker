@@ -24,11 +24,11 @@ function App() {
 
   return (
     <>
-      <StackContainer />
-      <StatusBar
-        backgroundColor='#0A0B0F'
-        barStyle='light-content'
-        hidden={false} />
+        <StackContainer />
+        <StatusBar
+          backgroundColor='#0A0B0F'
+          barStyle='light-content'
+          hidden={false} />
     </>
   );
 }

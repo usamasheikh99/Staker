@@ -26,7 +26,7 @@ export default function ControlScreen({ navigation }) {
   }
   return (
     <ScrollView style={styles.scroll}>
-      <View style={{ paddingBottom: 105 }}>
+      <View style={{ paddingBottom: 110 }}>
         <View>
           <Header {...HeaderProps} />
         </View>
@@ -40,9 +40,8 @@ export default function ControlScreen({ navigation }) {
           underlayColor="transparent"
         >
           <Text style={styles.today}>today's Exit</Text>
-          <Text style={styles.ScalpingText}>initiate the sale process and pause all scalping positions for the for the
-            rest ot that trading day
-          </Text>
+          <Text style={styles.ScalpingText}>Initiate the sale process and pause all scalping 
+          positions for the rest of the  trading day</Text>
         </Pressable>
         <View>
           <Pressable
@@ -54,7 +53,7 @@ export default function ControlScreen({ navigation }) {
             underlayColor="transparent"
           >
             <Text style={styles.Scalping}>Scalping halt</Text>
-            <Text style={styles.ScalpingText}>initiate the sale process and pause all </Text>
+            <Text style={styles.ScalpingText}>Refresh from puchashing new order based on signal</Text>
           </Pressable>
           <Pressable
             style={[
@@ -65,7 +64,7 @@ export default function ControlScreen({ navigation }) {
             underlayColor="transparent"
           >
             <Text style={styles.Scalping}>Swing Signal halt</Text>
-            <Text style={styles.ScalpingText}>initiate the sale process and pause all </Text>
+            <Text style={styles.ScalpingText}>Refresh from puchashing new swing order based on signal</Text>
           </Pressable>
           <Pressable
             style={[
@@ -76,7 +75,7 @@ export default function ControlScreen({ navigation }) {
             underlayColor="transparent"
           >
             <Text style={styles.Scalping}>Short Signal pause</Text>
-            <Text style={styles.ScalpingText}>Do not place new  short orders from signal</Text>
+            <Text style={styles.ScalpingText}>Do not place new  short orders from signals</Text>
           </Pressable>
           <Pressable
             style={[
@@ -87,7 +86,7 @@ export default function ControlScreen({ navigation }) {
             underlayColor="transparent"
           >
             <Text style={styles.Scalping}>Long Signal pause</Text>
-            <Text style={styles.ScalpingText}>Avoid placing new ong orders from signal</Text>
+            <Text style={styles.ScalpingText}>Avoid placing new long orders from signal</Text>
           </Pressable>
           <Pressable
             style={[
@@ -98,7 +97,7 @@ export default function ControlScreen({ navigation }) {
             underlayColor="transparent"
           >
             <Text style={styles.Scalping}>Profitable Sale</Text>
-            <Text style={styles.ScalpingText}>initiate the sale process and pause all </Text>
+            <Text style={styles.ScalpingText}>proceed with the sale procees for all Profitable order</Text>
           </Pressable>
           <Pressable
             style={[
@@ -109,19 +108,19 @@ export default function ControlScreen({ navigation }) {
             underlayColor="transparent"
           >
             <Text style={styles.Scalping}>Profitable Loss Sale</Text>
-            <Text style={styles.ScalpingText}>initiate the sale process and pause all </Text>
+            <Text style={styles.ScalpingText}>proceed with the sale procees for all loss order</Text>
           </Pressable>
           <Pressable
             style={[
               styles.todaylists,
-              selectedItem === '8' && { backgroundColor: '#414247', opacity: 0.7 },
+              selectedItem === '8' && { opacity: 0.7 },
             ]}
             onPress={() => handleItemPress('8')}
             underlayColor="transparent"
           >
             <Text style={styles.Scalping}>Trade Limits</Text>
-            <View style={{ width: '80%', bottom: 10 }}>
-              <Text style={{ color: 'white', fontSize:fontSize(10), left: 70 }}>{slider}</Text>
+            <View style={{ width: '80%', bottom: 5 }}>
+              <Text style={{ color: 'white', fontSize: fontSize(10), left: 70 }}>{slider}</Text>
               <Slider
                 value={slider}
                 onValueChange={(newValue) => setSilder(newValue)}
@@ -130,9 +129,7 @@ export default function ControlScreen({ navigation }) {
                 step={1}
                 thumbTintColor="red"
                 minimumTrackTintColor="red"
-              // style={{ transform: [{ 0 }] }}
               />
-
             </View>
           </Pressable>
           <View>
@@ -147,7 +144,7 @@ export default function ControlScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   carefullText: {
-    fontSize:fontSize(14),
+    fontSize: fontSize(14),
     paddingVertical: 15,
     color: Colors.white,
     left: 25
@@ -168,8 +165,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginHorizontal: 19,
     marginVertical: 4,
-    paddingTop: 15,
-    paddingBottom: 15,
+    paddingTop: 12,
+    paddingBottom: 12,
   },
   todaylists: {
     backgroundColor: Colors.lightDark,
@@ -177,21 +174,22 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginHorizontal: 19,
     marginVertical: 4,
-    paddingTop: 18,
-    paddingBottom: 18,
+    paddingTop: 15,
+    paddingBottom: 15,
     flexDirection: 'row',
-    // alignItems: 'center'
+    alignItems: 'center'
   },
   Scalping: {
-    fontSize:fontSize(12),
+    fontSize: fontSize(12),
     color: Colors.white,
     paddingVertical: 2
   },
   ScalpingText: {
-    color: Colors.Textgray
+    color: Colors.Textgray,
+    fontSize: fontSize(10.1)
   },
   today: {
     color: Colors.white,
-    fontSize:fontSize(12)
+    fontSize: fontSize(12)
   }
 })
