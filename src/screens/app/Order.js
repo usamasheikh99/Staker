@@ -115,12 +115,14 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         marginTop: 25,
         alignItems: 'center',
+        marginHorizontal: 9
     },
 
     secondline: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
+        paddingHorizontal: 8
     },
 
     bathline: {
