@@ -27,9 +27,7 @@ export default function SettingsScreen({ navigation }) {
             text2: 'This is the secondary text',
             autoHide: true,
             visibilityTime: 5000,
-            onShow: () => console.log('Toast Visible!!'),
-            onHide: () => console.log('Toast Hidden'),
-            onPress: () => console.log('Toast clicked!!p'),
+           
         })
     }
     return (

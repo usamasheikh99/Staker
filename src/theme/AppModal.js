@@ -56,11 +56,11 @@ const styles = StyleSheet.create({
         width: width / 4.0,
     },
     crosicon: {
-        height: 14,
-        width: 14,
+        height: 12,
+        width: 13,
         opacity: 0.8,
         top: 22,
-        marginLeft: 50,
+        marginLeft: 60,
     }
 });
 

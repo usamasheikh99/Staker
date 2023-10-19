@@ -3,7 +3,6 @@ import { Provider } from 'react-redux';
 import { createStore, compose, applyMiddleware } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist'
 import { PersistGate } from 'redux-persist/lib/integration/react'
-import AsyncStorage from '@react-native-community/async-storage'
 import thunk from 'redux-thunk'
 
 //Reducers
@@ -12,8 +11,6 @@ import AllReducers from './reducers'
 
 const persistConfig = {
     key: 'root',
-    storage: AsyncStorage,
-    whitelist: ['userReducer', 'recordReducer']
 }
 
 const persistedReducer = persistReducer(persistConfig, AllReducers)

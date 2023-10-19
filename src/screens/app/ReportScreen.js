@@ -548,7 +548,7 @@ const styles = StyleSheet.create({
     perctxt2: {
         fontSize: fontSize(14),
         color: Colors.btnGreen,
-        marginLeft: 58
+        textAlign: 'right'
     },
 
     borderbottom: {

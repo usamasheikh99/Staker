@@ -19,10 +19,9 @@ import {
 const { fontSize, height, width } = Metrics
 export default function HomeScreen({ navigation }) {
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, { height: Platform.OS == 'ios' ? '90%' : '88%' }]}>
             <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false}>
-
-                <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 25, height: height / 9.2, paddingTop: 5 }}>
+                <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 25, paddingBottom: 12 }}>
                     <View style={styles.Item}>
                         <View style={{ flexDirection: 'row' }}>
                             <Text style={styles.total}>Total Capital</Text>
@@ -53,8 +52,7 @@ export default function HomeScreen({ navigation }) {
                     <TouchableOpacity style={styles.moreClick} onPress={() => navigation.navigate('Report')}>
                         <Text style={styles.more}>More</Text></TouchableOpacity>
                 </View>
-                <ScrollView style={{ height: height / 5.2 }}
-                    horizontal={true}>
+                <ScrollView horizontal={true}>
                     <EarningList />
                     <EarningList />
                 </ScrollView>
@@ -81,7 +79,7 @@ export default function HomeScreen({ navigation }) {
                 <MaketSentiment
                     tittle='Negitive' />
             </ScrollView>
-        </View>
+        </View >
 
     );
 }
@@ -136,12 +134,11 @@ const styles = StyleSheet.create({
     },
     WeeklyText: {
         flexDirection: 'row',
-        justifyContent: 'space-between',   
+        justifyContent: 'space-between',
         paddingHorizontal: 13,
         alignItems: 'center',
         marginTop: 15,
         paddingVertical: 10,
-        // backgroundColor:'red'
     },
     Weekly: {
         fontSize: fontSize(16),
@@ -159,7 +156,7 @@ const styles = StyleSheet.create({
     scroll: {
         backgroundColor: Colors.background,
         flex: 1,
-        color: "#fff"
+        color: "#fff",
     },
     moreClick: {
         paddingLeft: 40,

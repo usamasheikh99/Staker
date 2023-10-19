@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         marginHorizontal: 10,
         marginVertical: 5,
-        paddingTop: 12,
+        paddingTop: 5,
     },
     stockSymbol: {
         fontSize: fontSize(14),

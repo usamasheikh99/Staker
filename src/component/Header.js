@@ -16,12 +16,12 @@ const Header = ({ navigation, auditType = false, OnOpenPopup, ScreenName = "", i
   const [isTypePopup, setIsTypePopup] = useState(false)
   return (
     <View style={{ backgroundColor: Colors.background, color: "#fff" }}>
-      <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 15, height: height / 9.9 }}>
+      <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 15, paddingTop: 20, paddingBottom: 20 }}>
 
         <View style={styles.headertxt}>
           <Pressable
             activeOpacity={1} onPress={() => navigation.navigate(goBack)}>
-            <Image source={Icons.left} resizeMode="cover" style={{ width: 30, height: 30, opacity: 0.8 }} />
+            <Image source={Icons.left} resizeMode="cover" style={{ width: 25, height: 25, opacity: 0.7 }} />
           </Pressable >
 
           <View style={styles.Item}>
@@ -36,7 +36,7 @@ const Header = ({ navigation, auditType = false, OnOpenPopup, ScreenName = "", i
 
           {isReportPopup &&
             <Pressable style={styles.typebox} onPress={OnOpenPopup} activeOpacity={1}>
-              <Text style={styles.type}>Type Report</Text>
+              <Text style={styles.type}>Type</Text>
             </Pressable>
           }
 
@@ -67,8 +67,7 @@ const styles = StyleSheet.create({
   headertxt: {
     flexDirection: 'row',
     alignItems: 'center',
-    top: '8%',
-    paddingHorizontal: 10,
+    paddingHorizontal: 13,
   },
   Item: {
     flex: 1,
@@ -81,14 +80,14 @@ const styles = StyleSheet.create({
   },
 
   typebox: {
-    backgroundColor: Colors.MediumDark,
-    borderRadius: 8,
-    paddingLeft: 15,
-    paddingRight: 15,
-    paddingBottom: 5,
-    paddingTop: 5,
-    borderRadius: 12,
-    opacity: 0.6
+    // backgroundColor: Colors.MediumDark,
+    // borderRadius: 8,
+    // paddingLeft: 15,
+    // paddingRight: 15,
+    // paddingBottom: 5,
+    // paddingTop: 5,
+    // borderRadius: 12,
+    // opacity: 0.6
   },
   type: {
     color: Colors.white,

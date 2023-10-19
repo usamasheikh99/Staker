@@ -5,19 +5,17 @@ import { Colors, Metrics } from '../theme'
 import TargetModal from './TargetModal'
 
 
-const { fontSize, width ,height} = Metrics
+const { fontSize, width } = Metrics
 const Chart = () => {
-
     const [IsTargetModel, setIsTargetModel] = useState(false);
-
     const targetModelHandle = () => {
         setIsTargetModel(!IsTargetModel);
     };
     return (
-        <View style={{ backgroundColor: Colors.background, flexDirection: 'row', height: 195 }}>
+        <View style={{ flexDirection: 'row', height: 195 }}>
             <TargetModal IsTargetModel={IsTargetModel} targetModelHandle={targetModelHandle} />
-            <View style={{ width: '50%', }}>
-                <View style={{ top: '10%', left: width / 34 }}>
+            <View style={{ width: width / 2, alignItems: 'center' }}>
+                <View style={{ top: '10%' }}>
                     <ProgressCircle
                         percent={50}
                         radius={80}
@@ -28,8 +26,7 @@ const Chart = () => {
                     >
                     </ProgressCircle>
                 </View>
-
-                <View style={{ bottom: '67%', left: width / 18 }}>
+                <View style={{ bottom: '67%' }}>
                     <Pressable onPress={targetModelHandle}>
 
                         <ProgressCircle
@@ -47,8 +44,8 @@ const Chart = () => {
                     </Pressable>
                 </View>
             </View>
-            <View style={{ width: '50%', }}>
-                <View style={{ top: '10%', left: width / 34 }}>
+            <View style={{ width: width / 2, alignItems: 'center' }}>
+                <View style={{ top: '10%' }}>
                     <ProgressCircle
                         percent={60}
                         radius={80}
@@ -60,7 +57,7 @@ const Chart = () => {
                     </ProgressCircle>
                 </View>
 
-                <View style={{ bottom: '67%', left: width / 18 }}>
+                <View style={{ bottom: '67%' }}>
                     <Pressable onPress={targetModelHandle}>
 
                         <ProgressCircle

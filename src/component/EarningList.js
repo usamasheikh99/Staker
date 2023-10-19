@@ -1,5 +1,5 @@
 import React from 'react'
-import { Colors, Metrics } from '../theme'
+import { Colors, Metrics } from '../theme' 
 import { Icons } from "../constants"
 import {
     View,
@@ -21,14 +21,20 @@ const EarningList = () => {
                     </View>
                     <Text style={styles.stockname}>AMC</Text>
                 </View>
+                <View style={{ margin: 7, marginTop: 10 }}>
+                    <Image source={Icons.Greenline_show} style={{ height: 20, width: 50 }} />
+                </View>
 
-                <Image source={Icons.Greenline_show} style={{ height: 20, width: 50, top: '10%' }} />
-                <Text style={styles.price}><Text style={{ fontSize: fontSize(11), }}>$</Text>43,00</Text>
+                <View style={{ marginVertical: 5 }}>
+                    <Text style={styles.price}><Text style={{ fontSize: fontSize(11), }}>$</Text>43,00</Text>
+                </View>
 
                 <View style={styles.signal}>
                     <Image source={Icons.UpTrend} style={styles.trend} />
-                    <Text style={{ color: Colors.green, opacity: 0.8, fontSize: fontSize(10), }}>3.15%</Text>
+                    <Text style={{ color: Colors.green, opacity: 0.8, fontSize: fontSize(10), flex: 1 }}>3.15%</Text>
+
                     <Image source={Icons.DotG} style={styles.trends} />
+
                 </View>
             </View>
             {/* EARNING BOX NO AND 1  */}
@@ -41,14 +47,20 @@ const EarningList = () => {
                     </View>
                     <Text style={styles.stockname}>AMC</Text>
                 </View>
+                <View style={{ margin: 7, marginTop: 10 }}>
+                    <Image source={Icons.Redline_show} style={{ height: 20, width: 50 }} />
+                </View>
 
-                <Image source={Icons.Greenline_show} style={{ height: 20, width: 50, top: '10%' }} />
-                <Text style={styles.price}><Text style={{ fontSize: fontSize(11), }}>$</Text>43,00</Text>
+                <View style={{ marginVertical: 5 }}>
+                    <Text style={styles.price}><Text style={{ fontSize: fontSize(11), }}>$</Text>43,00</Text>
+                </View>
 
                 <View style={styles.signal}>
-                    <Image source={Icons.UpTrend} style={styles.trend} />
-                    <Text style={{ color: Colors.green, opacity: 0.8, fontSize: fontSize(10), }}>3.15%</Text>
-                    <Image source={Icons.DotG} style={styles.trends} />
+                    <Image source={Icons.DownTrend} style={styles.trend} />
+                    <Text style={{ color: Colors.red, opacity: 0.8, fontSize: fontSize(10), flex: 1 }}>3.15%</Text>
+
+                    <Image source={Icons.DotR} style={styles.trends} />
+
                 </View>
             </View>
             {/* EARNING BOX NO 2 END  */}
@@ -58,8 +70,9 @@ const EarningList = () => {
 
 const styles = StyleSheet.create({
     Container: {
+        flex: 1,
         flexDirection: 'row',
-        left: '2%',
+        left: '2%'
     },
     EarningList: {
         width: width / 3.4,
@@ -86,8 +99,7 @@ const styles = StyleSheet.create({
     },
     signal: {
         flexDirection: 'row',
-        top: '22%',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     stockSymbol: {
         fontSize: fontSize(13),
@@ -97,9 +109,8 @@ const styles = StyleSheet.create({
         top: 5
     },
     price: {
-        fontSize: fontSize(18),
+        fontSize: fontSize(17),
         color: Colors.white,
-        top: '15%'
     },
     trend: {
         width: 10,
@@ -110,9 +121,8 @@ const styles = StyleSheet.create({
     trends: {
         height: 10,
         width: 10,
-        marginRight: 5,
+        marginRight: 9,
         opacity: 0.8,
-        left: 30
     },
 
     // tradeline: {
