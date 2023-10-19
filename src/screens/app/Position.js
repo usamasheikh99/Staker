@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Image, StyleSheet, TouchableOpacity, ScrollView, Pressable } from 'react-native'
+import { View, Image, StyleSheet, TouchableOpacity, ScrollView, Pressable,  } from 'react-native'
 import Header from '../../component/Header';
 import { Icons } from '../../constants';
 import { Colors, Text } from '../../theme';
@@ -67,21 +67,21 @@ const Position = ({ navigation }) => {
                             <Image source={Icons.Shuttle} style={{ height: 23, width: 23, marginTop: 3, opacity: 0.8 }} />
                         </Pressable>
 
-                        <TouchableOpacity
+                        <TouchableOpacity activeOpacity={0.5}
                             style={[styles.btn, selectPosition === 'Scalping' && { backgroundColor: Colors.lightDark }]}
                             onPress={() => handleButtonPress('Scalping')}
                         >
                             <Text style={styles.btntxt2}>Scalping</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity
+                        <TouchableOpacity activeOpacity={0.5}
                             style={[styles.btn2, selectPosition === 'Swing' && { backgroundColor: Colors.lightDark }]}
                             onPress={() => handleButtonPress('Swing')}
                         >
                             <Text style={styles.btntxt2}>Swing</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity
+                        <TouchableOpacity activeOpacity={0.5}
                             style={[styles.btn2, selectPosition === 'Holding' && { backgroundColor: Colors.lightDark }]}
                             onPress={() => handleButtonPress('Holding')}
                         >

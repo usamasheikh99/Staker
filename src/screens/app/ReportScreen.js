@@ -10,6 +10,7 @@ const { fontSize } = Metrics
 
 
 export default function ReportScreen({ navigation }) {
+    
     const [isReportPopup, setIsReportPopup] = useState(false);
     const [collapsedIds, setCollapsedIds] = useState([]);
     const [isCalendar, setIsCalendar] = useState(false);
@@ -44,7 +45,7 @@ export default function ReportScreen({ navigation }) {
                             <Text style={styles.calendertxt}>Wen 1 Jan - Sat 18 Jan (18 days)</Text>
                         </Pressable>
                     </View>
-                    <TouchableOpacity onPress={() => toggleCollapse('Pnl')} style={styles.iconContainer}>
+                    <TouchableOpacity activeOpacity={0.7} onPress={() => toggleCollapse('Pnl')} style={styles.iconContainer}>
                         <View style={styles.profitbox}>
                             <View style={styles.profittxt}>
                                 <Text style={styles.PLtxt}>P&L</Text>
@@ -142,7 +143,7 @@ export default function ReportScreen({ navigation }) {
                     )}
 
                     <View style={styles.mainbox}>
-                        <TouchableOpacity onPress={() => toggleCollapse('Today')}>
+                        <TouchableOpacity activeOpacity={0.7} onPress={() => toggleCollapse('Today')}>
                             <View style={styles.firstline}>
                                 <Text style={styles.todaytxt}>Today</Text>
 
