@@ -9,6 +9,7 @@ import {
   Pressable,
   StyleSheet,
   ImageBackground,
+  Platform,
 } from 'react-native'
 
 const { fontSize, height, width } = Metrics
@@ -16,7 +17,7 @@ const Header = ({ navigation, auditType = false, OnOpenPopup, ScreenName = "", i
   const [isTypePopup, setIsTypePopup] = useState(false)
   return (
     <View style={{ backgroundColor: Colors.background, color: "#fff" }}>
-      <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 15, paddingTop: 20, paddingBottom: 20 }}>
+      <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 15, paddingTop: Platform.OS == 'android' ? 20 : 45, paddingBottom: 20 }}>
 
         <View style={styles.headertxt}>
           <Pressable

@@ -509,7 +509,7 @@ const styles = StyleSheet.create({
 
     perctxt: {
         color: Colors.btnGreen,
-        marginRight: 38
+        marginRight: Platform.OS == 'android' ? 38 : 11,
     },
 
     txt: {
