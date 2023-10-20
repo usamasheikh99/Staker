@@ -121,7 +121,7 @@ export default function ControlScreen({ navigation }) {
             underlayColor="transparent"
           >
             <Text style={styles.Scalping}>Trade Limits</Text>
-            <View style={{ width: '80%', bottom: 5 }}>
+            <View style={{ width: '80%', bottom: 5,}}>
               <Text style={{ color: 'white', fontSize: fontSize(10), left: 70 }}>{slider}</Text>
               <Slider
                 value={slider}

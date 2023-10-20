@@ -13,6 +13,7 @@ import {
     ScrollView,
     TouchableOpacity,
     ImageBackground,
+    Platform
 } from 'react-native';
 
 //publish dev branchs
@@ -33,7 +34,8 @@ export default function HomeScreen({ navigation }) {
                             <Image source={Icons.logout} style={styles.IconSize} />
                         </TouchableOpacity>
                     </View>
-                    <Text fontWeight={'normal'} style={styles.rating}><Text style={{ fontSize: fontSize(13), }}>$</Text>32,149.80</Text>
+                    <View>
+                    <Text fontWeight={'normal'} style={styles.rating}><Text style={{ fontSize: fontSize(13), }}>$</Text>32,149.80</Text></View> 
                 </ImageBackground>
 
                 {/* CHAT */}
@@ -95,6 +97,7 @@ const styles = StyleSheet.create({
         width: 17,
         height: 17,
         left: '40%',
+        bottom:'20%'
     },
     Item: {
         flexDirection: 'row',
@@ -114,7 +117,8 @@ const styles = StyleSheet.create({
     },
     rating: {
         fontSize: fontSize(25),
-        color: Colors.white
+        color: Colors.white,
+        marginTop:Platform.OS == 'android' ? 0 : 8 
     },
     EarningText: {
         flexDirection: 'row',
