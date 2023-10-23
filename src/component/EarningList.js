@@ -43,9 +43,9 @@ const EarningList = () => {
             <View style={styles.EarningList}>
                 <View style={styles.Header}>
                     <View style={styles.logoContainer}>
-                        <Image source={Icons.AMC_show} style={{ width: 25, height: 28 }} />
+                        <Image source={Icons.AFRM_show} style={{ width: 25, height: 28 }} />
                     </View>
-                    <Text style={styles.stockname}>AMC</Text>
+                    <Text style={styles.stockname}>AFRM</Text>
                 </View>
                 <View style={{ margin: 7, marginTop: 10 }}>
                     <Image source={Icons.Redline_show} style={{ height: 20, width: 50 }} />
