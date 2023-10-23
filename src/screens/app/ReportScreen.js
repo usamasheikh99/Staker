@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Pressable, Image, Animated, ScrollView, Platform } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Pressable, Image, Animated, ScrollView } from 'react-native';
 import { Icons } from '../../constants';
 import { Colors } from '../../theme';
 import Header from '../../component/Header';
@@ -52,7 +52,7 @@ export default function ReportScreen({ navigation }) {
                                 <Text style={styles.totaltxt}>-1481.32 USD</Text>
                                 <Text style={styles.percentagetxt}>-6.18%</Text>
 
-                                <Image source={Icons.downarrow} style={{ height: 18, width: 18, left: Platform.OS == 'ios' ? 62 : 83, transform: [{ rotate: collapsedIds.includes('Pnl') ? '0deg' : '268deg' }] }}></Image>
+                                <Image source={Icons.downarrow} style={{ height: 18, width: 18, left: 81, transform: [{ rotate: collapsedIds.includes('Pnl') ? '0deg' : '268deg' }] }}></Image>
 
                             </View>
                         </View>
@@ -448,20 +448,20 @@ const styles = StyleSheet.create({
 
     PLtxt: {
         color: Colors.indicatorColor,
-        fontSize: Platform.OS == 'ios' ?  fontSize(17) : (18),
+        fontSize: fontSize(18),
         fontStyle: 'italic'
     },
 
     totaltxt: {
         color: Colors.white,
-        fontSize: Platform.OS == 'ios' ?  fontSize(17) : (18),
+        fontSize: fontSize(18),
         fontWeight: '500',
         marginLeft: 10
     },
 
     percentagetxt: {
         color: Colors.red,
-        fontSize: Platform.OS == 'ios' ?  fontSize(17) : (18),
+        fontSize: fontSize(18),
         fontWeight: '500',
         marginLeft: 10
     },
@@ -503,7 +503,7 @@ const styles = StyleSheet.create({
     },
 
     usdtxt: {
-        fontSize: fontSize(18),
+        fontSize: fontSize(19),
         color: Colors.white,
         fontWeight: '500'
     },
