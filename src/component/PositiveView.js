@@ -8,7 +8,7 @@ const { fontSize } = Metrics
 const PositiveView = ({ isPostive, setIsPostive }) => {
     return (
         <AppModal visible={isPostive} onClose={() => setIsPostive(false)}>
-            <View style={{marginLeft: 20}}>
+            <View style={{marginHorizontal: 20}}>
                 <View style={styles.firstline}>
                     <Text style={styles.datetime}>27 Sep, 8:09 PM</Text>
                 </View>
