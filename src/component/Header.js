@@ -37,7 +37,7 @@ const Header = ({ navigation, auditType = false, OnOpenPopup, ScreenName = "", i
 
           {isReportPopup &&
             <Pressable style={styles.typebox} onPress={OnOpenPopup} activeOpacity={1}>
-              <Text >Type</Text>
+              <Text style={styles.type}>Type</Text>
             </Pressable>
           }
 
