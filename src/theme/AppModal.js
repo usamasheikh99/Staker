@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
         right: 0, 
         height:height /10.3,
         width: width / 4.0,
+        zIndex:10
     },
     crosicon: {
         height: 12,

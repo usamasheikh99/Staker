@@ -21,11 +21,12 @@ const Header = ({ navigation, auditType = false, OnOpenPopup, ScreenName = "", i
 
         <View style={styles.headertxt}>
           <Pressable
+            style={styles.backstyle}
             activeOpacity={1} onPress={() => navigation.navigate(goBack)}>
             <Image source={Icons.left} resizeMode="cover" style={{ width: 25, height: 25, opacity: 0.7 }} />
           </Pressable>
 
-          <View style={[styles.Item, isAcount && { marginLeft: 40 }]}>
+          <View style={styles.Item}>
             <Text style={[styles.reporttxt]}>{ScreenName}</Text>
           </View>
 
@@ -42,15 +43,16 @@ const Header = ({ navigation, auditType = false, OnOpenPopup, ScreenName = "", i
           }
 
           {isAcount &&
-            <Pressable onPress={OnOpenPopup}>
-              <View style={styles.assignbox}>
-                <View style={styles.txtalign}>
-                  <Text style={styles.assigntxt}>Kashan</Text>
-                  <Image source={Icons.downarrow} style={{ height: 15, width: 15, }}></Image>
+            <View style={styles.AccountStyle}>
+              <Pressable onPress={OnOpenPopup}>
+                <View style={styles.assignbox}>
+                  <View style={styles.txtalign}>
+                    <Text style={styles.assigntxt}>Kashan</Text>
+                    <Image source={Icons.downarrow} style={{ height: 15, width: 15, }}></Image>
+                  </View>
                 </View>
-              </View>
-            </Pressable>
-
+              </Pressable>
+            </View>
           }
         </View>
       </ImageBackground>
@@ -66,6 +68,14 @@ const Header = ({ navigation, auditType = false, OnOpenPopup, ScreenName = "", i
 export default Header
 
 const styles = StyleSheet.create({
+  AccountStyle:{
+    position:'absolute',
+    right:5
+  },
+  backstyle: {
+    position: 'absolute',
+    zIndex: 9
+  },
   headertxt: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -83,14 +93,16 @@ const styles = StyleSheet.create({
   },
 
   typebox: {
-    // backgroundColor: Colors.MediumDark,
-    // borderRadius: 8,
-    // paddingLeft: 15,
-    // paddingRight: 15,
-    // paddingBottom: 5,
-    // paddingTop: 5,
-    // borderRadius: 12,
-    // opacity: 0.6
+    backgroundColor: Colors.MediumDark,
+    borderRadius: 8,
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingBottom: 5,
+    paddingTop: 5,
+    borderRadius: 12,
+    opacity: 0.6,
+    position: 'absolute',
+    right: 5
   },
   type: {
     color: Colors.white,
@@ -101,11 +113,10 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderColor: Colors.MediumDark,
     backgroundColor: Colors.MediumDark,
-    flexDirection: "row",
-    alignItems: "center",
     paddingVertical: 7,
-    paddingHorizontal: 10
+    paddingHorizontal: 10,
   },
+
 
   txtalign: {
     flexDirection: 'row',
