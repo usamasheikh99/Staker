@@ -122,7 +122,7 @@ export default function ControlScreen({ navigation }) {
           >
             <Text style={styles.Scalping}>Trade Limits</Text>
             <View style={{ width: '80%', bottom: 5,}}>
-              <Text style={{ color: 'white', fontSize: fontSize(10), left: 70 }}>{slider}</Text>
+              <Text style={{ color: 'white', fontSize: fontSize(12), textAlign:'left',marginLeft:15 }}>{slider}</Text>
               <Slider
                 value={slider}
                 onValueChange={(newValue) => setSilder(newValue)}
@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.lightDark,
     padding: 18,
     borderRadius: 10,
-    marginHorizontal: 19,
+    marginHorizontal: 12,
     marginVertical: 4,
     paddingTop: 12,
     paddingBottom: 12,
@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.lightDark,
     padding: 18,
     borderRadius: 10,
-    marginHorizontal: 19,
+    marginHorizontal: 12,
     marginVertical: 4,
     paddingTop: Platform.OS == 'android' ? 15:5,
     paddingBottom: Platform.OS == 'android' ? 15:5,

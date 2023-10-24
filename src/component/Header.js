@@ -17,15 +17,15 @@ const Header = ({ navigation, auditType = false, OnOpenPopup, ScreenName = "", i
   const [isTypePopup, setIsTypePopup] = useState(false)
   return (
     <View style={{ backgroundColor: Colors.background, color: "#fff" }}>
-      <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 15, paddingTop:Platform.OS == 'android' ? 20 :  60, paddingBottom: 20 }}>
+      <ImageBackground source={Icons.Homebg} resizeMode="cover" style={{ paddingHorizontal: 15, paddingTop: Platform.OS == 'android' ? 20 : 60, paddingBottom: 20 }}>
 
         <View style={styles.headertxt}>
           <Pressable
             activeOpacity={1} onPress={() => navigation.navigate(goBack)}>
             <Image source={Icons.left} resizeMode="cover" style={{ width: 25, height: 25, opacity: 0.7 }} />
-          </Pressable >
+          </Pressable>
 
-          <View style={styles.Item}>
+          <View style={[styles.Item, isAcount && { marginLeft: 40 }]}>
             <Text style={[styles.reporttxt]}>{ScreenName}</Text>
           </View>
 
@@ -50,6 +50,7 @@ const Header = ({ navigation, auditType = false, OnOpenPopup, ScreenName = "", i
                 </View>
               </View>
             </Pressable>
+
           }
         </View>
       </ImageBackground>
@@ -68,8 +69,7 @@ const styles = StyleSheet.create({
   headertxt: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 13,
-    justifyContent:'space-between'
+    justifyContent: 'space-between',
 
   },
   Item: {
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   reporttxt: {
     fontSize: fontSize(16),
     color: Colors.white,
-    textAlign: 'center',
+    textAlign: 'center'
   },
 
   typebox: {
@@ -103,20 +103,19 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.MediumDark,
     flexDirection: "row",
     alignItems: "center",
-    width: 90,
-    height: 32
+    paddingVertical: 7,
+    paddingHorizontal: 10
   },
 
   txtalign: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 12
   },
 
   assigntxt: {
     color: Colors.white,
     fontSize: fontSize(10),
-    marginHorizontal: 5
+    marginRight: 5
   }
 })
 

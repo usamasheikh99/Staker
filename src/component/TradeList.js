@@ -198,7 +198,7 @@ const styles = StyleSheet.create({
     stockSymbol: {
         fontSize: fontSize(14),
         color: Colors.white,
-        bottom: 2,
+        bottom: 2
     },
     Dollar:
     {
@@ -210,7 +210,7 @@ const styles = StyleSheet.create({
     Indicator: {
         color: Colors.textBlue,
         fontSize: fontSize(10),
-        opacity: 0.9
+        opacity: 0.9,
     },
     Dollars: {
         color: Colors.red,
@@ -219,7 +219,7 @@ const styles = StyleSheet.create({
     },
     task: {
         fontSize: fontSize(10),
-        opacity: 0.9,
-        color: Colors.Textgray
+        opacity: 0.8,
+        color: Colors.white
     }
 })

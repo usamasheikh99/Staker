@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     },
     targetMaine: {
         alignItems: 'center',
-        marginLeft: 9,
+        marginLeft: 18,
     },
     header: {
     },

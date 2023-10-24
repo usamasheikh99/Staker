@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
         width: 17,
         height: 17,
         left: '40%',
-        bottom:'20%'
+        bottom:Platform.OS == 'android' ? 0 : '20%'
     },
     Item: {
         flexDirection: 'row',
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     rating: {
         fontSize: fontSize(25),
         color: Colors.white,
-        marginTop:Platform.OS == 'android' ? 0 : 8 
+        marginTop:Platform.OS == 'android' ? 0 : 8 ,
     },
     EarningText: {
         flexDirection: 'row',

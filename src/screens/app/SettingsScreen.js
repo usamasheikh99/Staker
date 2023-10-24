@@ -1,7 +1,8 @@
 import * as React from 'react';
 import Header from '../../component/Header';
-import{ Colors, Metrics} from "../../theme"
+import { Colors, Metrics } from "../../theme"
 import { Toast } from 'react-native-toast-message/lib/src/Toast'
+import Breakup from '../../component/Breakup';
 import {
     View,
     Text,
@@ -9,16 +10,16 @@ import {
     TouchableOpacity
 } from 'react-native';
 
-const {fontSize} = Metrics
+const { fontSize } = Metrics
 export default function SettingsScreen({ navigation }) {
     const handleItemPress = (itemText) => {
         setSelectedItem(itemText);
     };
     const HeaderProps = {
-        navigation:navigation,
+        navigation: navigation,
         ScreenName: 'Backtest',
-        Type:false,
-        
+        Type: false,
+
     }
     const ShowToast = () => {
         Toast.show({
@@ -27,38 +28,41 @@ export default function SettingsScreen({ navigation }) {
             text2: 'This is the secondary text',
             autoHide: true,
             visibilityTime: 5000,
-           
+
         })
     }
     return (
         <View style={styles.container}>
             <View>
-                <Header {...HeaderProps}/>
+                <Header {...HeaderProps} />
             </View>
             <TouchableOpacity style={{ paddingHorizontal: 45 }} onPress={ShowToast}>
                 <View style={styles.button}>
                     <Text style={styles.Execute}>Execute Backtest</Text>
-                    <Toast/>
+                    <Toast />
                 </View>
             </TouchableOpacity>
-            <Text style={{ top: 45, fontSize:fontSize(15), color: Colors.white, marginLeft: 25 }}>Results</Text>
-                <View style={styles.todaylist}>
-                    <Text style={styles.Bnchmark}>Benchmark Profile</Text>
-                    <Text style={styles.parcentage}>4.5%</Text>
-                </View>
+            <Text style={{ top: 45, fontSize: fontSize(15), color: Colors.white, marginLeft: 25 }}>Results</Text>
+            <View style={styles.todaylist}>
+                <Text style={styles.Bnchmark}>Benchmark Profile</Text>
+                <Text style={styles.parcentage}>4.5%</Text>
+            </View>
 
             <View style={styles.todaylist}>
                 <Text style={styles.Bnchmark}>Overall lose</Text>
                 <Text style={styles.parcentage}>1.5%</Text>
             </View>
-                <View style={styles.todaylist}>
-                    <Text style={styles.Bnchmark}>No.Of Trades</Text>
-                    <Text style={styles.parcentage}>20</Text>
-                </View>
-                <View style={styles.todaylist}>
-                    <Text style={styles.Bnchmark}>Winrate</Text>
-                    <Text style={styles.parcentage}>87%</Text>
-                </View>
+            <View style={styles.todaylist}>
+                <Text style={styles.Bnchmark}>No.Of Trades</Text>
+                <Text style={styles.parcentage}>20</Text>
+            </View>
+            <View style={styles.todaylist}>
+                <Text style={styles.Bnchmark}>Winrate</Text>
+                <Text style={styles.parcentage}>87%</Text>
+            </View>
+            {/* <View>
+                    <Breakup/>
+                </View> */}
         </View >
     );
 }
@@ -74,11 +78,12 @@ const styles = StyleSheet.create({
         paddingVertical: 15,
         borderRadius: 15,
         top: 20,
+        opacity: 0.8
     },
     Execute: {
         textAlign: 'center',
         alignItems: 'center',
-        fontSize:fontSize(15),
+        fontSize: fontSize(15),
         color: Colors.white
     },
     todaylist: {
@@ -89,14 +94,14 @@ const styles = StyleSheet.create({
         marginVertical: 5,
         top: 50,
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
     },
     Bnchmark: {
-        fontSize:fontSize(12),
+        fontSize: fontSize(12),
         color: Colors.white,
     },
     parcentage: {
         color: Colors.white,
-        fontSize:fontSize(13),
+        fontSize: fontSize(13),
     },
 })
